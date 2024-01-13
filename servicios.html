@@ -40,6 +40,14 @@
       height: 400px; /* Ajusta la altura según sea necesario */
       /*object-fit: cover;*/
       border-radius: 10px; /* Bordes redondeados */
+      border: 6px solid #ccc; /* Color del borde del carrusel */
+    }
+
+    .carousel-container {
+      /*max-width: 600px;
+      margin: auto;
+      border: 6px solid #0056b3; /* Color del borde del carrusel */
+      overflow: hidden;
     }
 
     /* Ancho del carrusel */
@@ -82,7 +90,8 @@
 
 <br>
 <!-- Carousel -->
-<div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="3000">
+
+<div id="carouselExample" class="carousel slide carousel-container" data-ride="carousel" data-interval="3000">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="imagenes\foto1.jpg" class="d-block w-100" alt="Slide 1">
@@ -106,9 +115,11 @@
   </div>
 </div>
 
+
 <br>
 <div class="centered-box">
   <h2>Cuidados Animales</h2>
+  <hr>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -119,28 +130,34 @@
 <br>
 <div class="centered-box">
   <h2>Cuidados Medicinales</h2>
+  <hr>
   <p>Descripción del servicio Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </div>
 <br>
 <div class="centered-box">
   <h2>Estética</h2>
+  <hr>
   <p>Descripción del servicio Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </div>
 <br>
 <div class="centered-box">
   <h2>Arrendamientos de jaulas</h2>
+  <hr>
   <p>Descripción del servicio Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </div>
 <br><div class="centered-box">
   <h2>Hospitalización</h2>
+  <hr>
   <p>Descripción del servicio Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </div>
 <br><div class="centered-box">
   <h2>Hotelería animal</h2>
+  <hr>
   <p>Descripción del servicio Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </div>
 <br><div class="centered-box">
   <h2>Venta de productos para mascotas</h2>
+  <hr>
   <p>Descripción del servicio Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </div>
 <br>
