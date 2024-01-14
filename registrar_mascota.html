@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Formulario de Contacto</title>
+  <title>Registrar Cliente</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -41,23 +41,40 @@
 <br>    
 
 <div class="container">
-  <h2>Formulario de Contacto</h2>
-  <form action="enviar_email.php" method="post">
+  <h2>Registrar Mascota</h2>
+  <form action="procesar_registro_mascota.php" method="post">
     <div class="form-group">
-      <label for="nombre">Nombre:</label>
-      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+      <label for="cliente_id">Cliente ID:</label>
+      <input type="text" class="form-control" id="cliente_id" name="cliente_id" placeholder="Ingrese ID del cliente">
     </div>
     <div class="form-group">
-      <label for="email">Correo electrónico:</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico">
+      <label for="nombre">Nombre de la Mascota:</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre de la mascota">
     </div>
     <div class="form-group">
-      <label for="mensaje">Mensaje:</label>
-      <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Ingrese su mensaje"></textarea>
+      <label for="foto">Foto:</label>
+      <input type="text" class="form-control" id="foto" name="foto" placeholder="Ingrese URL de la foto">
     </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <div class="form-group">
+      <label for="raza">Raza:</label>
+      <input type="text" class="form-control" id="raza" name="raza" placeholder="Ingrese raza">
+    </div>
+    <div class="form-group">
+      <label for="color">Color:</label>
+      <input type="text" class="form-control" id="color" name="color" placeholder="Ingrese color">
+    </div>
+    <div class="form-group">
+      <label for="fecha_de_nac">Fecha de Nacimiento:</label>
+      <input type="date" class="form-control" id="fecha_de_nac" name="fecha_de_nac">
+    </div>
+    <div class="form-group">
+      <label for="fecha_muerte">Fecha de Muerte:</label>
+      <input type="date" class="form-control" id="fecha_muerte" name="fecha_muerte">
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar Mascota</button>
   </form>
 </div>
+
 <br><br><br>
 
 
