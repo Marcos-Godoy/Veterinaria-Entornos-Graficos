@@ -41,24 +41,31 @@
 <br>    
 
 <div class="container">
-  <h2>Formulario de Contacto</h2>
-  <form action="enviar_email.php" method="post">
+  <h2>Registrar Personal</h2>
+  <form action="registrar_personal.php" method="post">
     <div class="form-group">
       <label for="nombre">Nombre:</label>
-      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+      <input type="nombre" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre" required>
+    </div>
+    <div class="form-group">
+      <label for="apellido">Apellido:</label>
+      <input type="apellido" class="form-control" id="apellido" name="apellido" placeholder="Ingrese apellido" required>
     </div>
     <div class="form-group">
       <label for="email">Correo electrónico:</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico">
+      <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese correo electrónico" required>
     </div>
     <div class="form-group">
-      <label for="mensaje">Mensaje:</label>
-      <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Ingrese su mensaje"></textarea>
+      <label for="clave">Clave:</label>
+      <input type="password" class="form-control" id="clave" name="clave" placeholder="Ingrese clave" required>
     </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <div class="form-group">
+      <label for="rol_id">Rol ID:</label>
+      <input type="text" class="form-control" id="rol_id" name="rol_id" placeholder="Ingrese Rol ID" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar Personal</button>
   </form>
-</div>
-<br><br><br>
+</div><br>
 
 
 

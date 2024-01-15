@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Formulario de Contacto</title>
+  <title>Mi Perfil</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -38,29 +38,39 @@
     </ul>
   </div>
 </nav>
-<br>    
-
-<div class="container">
-  <h2>Formulario de Contacto</h2>
-  <form action="enviar_email.php" method="post">
-    <div class="form-group">
-      <label for="nombre">Nombre:</label>
-      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre">
-    </div>
-    <div class="form-group">
-      <label for="email">Correo electrónico:</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico">
-    </div>
-    <div class="form-group">
-      <label for="mensaje">Mensaje:</label>
-      <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Ingrese su mensaje"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
-</div>
 <br><br><br>
 
 
+<div class="container">
+  <h2>Completar Atención</h2>
+
+  <!-- Formulario para completar una atención -->
+  <form action="procesar_atencion.php" method="post">
+    <div class="form-group">
+      <label for="nombre_mascota">Mascota:</label>
+      <input type="text" class="form-control" id="nombre_mascota" name="nombre_mascota" placeholder="Nombre de la mascota" required>
+    </div>
+    <div class="form-group">
+      <label for="servicio_id">Servicio:</label>
+      <input type="text" class="form-control" id="servicio_id" name="servicio_id" placeholder="ID del servicio" required>
+    </div>
+    <div class="form-group">
+      <label for="fecha_hora">Fecha y Hora:</label>
+      <input type="datetime-local" class="form-control" id="fecha_hora" name="fecha_hora" required>
+    </div>
+    <div class="form-group">
+      <label for="titulo">Título:</label>
+      <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Ingrese el título" required>
+    </div>
+    <div class="form-group">
+      <label for="descripcion">Descripción:</label>
+      <textarea class="form-control" id="descripcion" name="descripcion" rows="4" placeholder="Ingrese la descripción" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Completar Atención</button>
+  </form>
+</div>
+
+<br><br>
 
 <footer class="footer bg-dark text-light">
   <div class="container">
@@ -88,7 +98,5 @@
     </div>
   </div>
 </footer>
-
-
 </body>
 </html>

@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Formulario de Contacto</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Mascotas</title>
+  <!-- Agrega los estilos de Bootstrap y el CSS personalizado -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
 
@@ -38,29 +43,19 @@
     </ul>
   </div>
 </nav>
-<br>    
-
-<div class="container">
-  <h2>Formulario de Contacto</h2>
-  <form action="enviar_email.php" method="post">
-    <div class="form-group">
-      <label for="nombre">Nombre:</label>
-      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre">
-    </div>
-    <div class="form-group">
-      <label for="email">Correo electrónico:</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico">
-    </div>
-    <div class="form-group">
-      <label for="mensaje">Mensaje:</label>
-      <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Ingrese su mensaje"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
-</div>
 <br><br><br>
 
 
+<div class="container">
+  <h2>Consulta de Mascotas</h2>
+  <form action="consultar_mascota.php" method="post">
+    <div class="form-group">
+      <label for="idCliente">ID del Cliente:</label>
+      <input type="text" class="form-control" id="idCliente" name="idCliente" placeholder="Ingrese ID del cliente">
+    </div>
+    <button type="submit" class="btn btn-primary">Consultar Mascotas</button>
+  </form>
+</div>
 
 <footer class="footer bg-dark text-light">
   <div class="container">
@@ -89,6 +84,10 @@
   </div>
 </footer>
 
+<!-- Agrega los scripts de Bootstrap y jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </body>
 </html>
