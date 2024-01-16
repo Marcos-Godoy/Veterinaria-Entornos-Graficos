@@ -22,9 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     // Consulta SQL para verificar las credenciales del usuario en ambas tablas
-    $sql = "SELECT id, email, 'cliente' as tipo, rol_id FROM clientes WHERE email = '$email' AND clave = '$password'
-            UNION
-            SELECT id, email, 'personal' as tipo, rol_id FROM personal WHERE email = '$email' AND clave = '$password'";
+    $sql = "SELECT id, email, 'cliente' as tipo FROM clientes WHERE email = '$email' AND clave = '$password'
+        UNION
+        SELECT id, email, 'personal' as tipo FROM personal WHERE email = '$email' AND clave = '$password'";
+
 
     $result = $conn->query($sql);
 
