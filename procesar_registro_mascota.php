@@ -32,12 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           VALUES ($cliente_id, '$nombre', '$foto', '$raza', '$color', '$fecha_de_nac', '$fecha_muerte')";
 
         if ($conn->query($mascota_query) === TRUE) {
-            echo "Mascota registrada exitosamente";
+            echo "<script>alert('Registro exitoso'); window.location.href = 'mi-perfil.html';</script>";
         } else {
-            echo "Error al registrar la mascota: " . $conn->error;
+            echo "<script>alert('Error en el registro'); window.location.href = 'mi-perfil.html';</script>";
         }
     } else {
-        echo "El cliente con ID $cliente_id no existe";
+        echo "<script>alert('El ID del cliente no existe'); window.location.href = 'mi-perfil.html';</script>";
     }
 
     // Cierra la conexión a la base de datos

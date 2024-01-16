@@ -24,9 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $insertar_personal = "INSERT INTO personal (email, clave, rol_id, nombre, apellido) VALUES ('$email', '$clave', '$rol_id', '$nombre', '$apellido')";
 
     if ($conn->query($insertar_personal) === TRUE) {
-        echo "Registro de personal exitoso";
+        echo "<script>alert('Registro exitoso'); window.location.href = 'mi-perfil.html';</script>";
     } else {
-        echo "Error al registrar personal: " . $conn->error;
+        echo "<script>alert('Error en el registro'); window.location.href = 'mi-perfil.html';</script>";
     }
 
     // Cierra la conexión a la base de datos

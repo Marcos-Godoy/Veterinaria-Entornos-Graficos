@@ -45,15 +45,15 @@
   <form action="registrar-cliente.php" method="post">
     <div class="form-group">
       <label for="nombre">Nombre:</label>
-      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre">
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre" required>
     </div>
     <div class="form-group">
       <label for="apellido">Apellido:</label>
-      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese apellido">
+      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese apellido" required>
     </div>
     <div class="form-group">
       <label for="email">Correo electrónico:</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese correo electrónico">
+      <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese correo electrónico" required>
     </div>
     <div class="form-group">
       <label for="ciudad">Ciudad:</label>
@@ -67,10 +67,15 @@
       <label for="telefono">Telefono:</label>
       <input type="telefono" class="form-control" id="telefono" name="telefono" placeholder="Ingrese telefono">
     </div>
+    <div class="form-group">
+      <label for="clave">Clave:</label>
+      <input type="password" class="form-control" id="clave" name="clave" placeholder="Ingrese clave" required>
+    </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
 </div>
 <br><br><br>
+
 
 
 

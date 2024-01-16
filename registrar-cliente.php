@@ -1,18 +1,17 @@
 <?php
-// Verifica si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recupera los datos del formulario
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];
     $email = $_POST["email"];
     $ciudad = $_POST["ciudad"];
     $direccion = $_POST["direccion"];
     $telefono = $_POST["telefono"];
+    $clave = $_POST["clave"];
 
-    // Conecta a la base de datos en localhost sin nombre de usuario ni contraseña
+    // Realiza la conexión a la base de datos
     $servername = "localhost";
-    $username = "root"; // Deja en blanco si no has configurado un nombre de usuario específico
-    $password = ""; // Deja en blanco si no has configurado una contraseña específica
+    $username = "root";
+    $password = "";
     $dbname = "bd_entornos";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -22,17 +21,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    // Prepara la consulta SQL para insertar datos
-    $sql = "INSERT INTO clientes (nombre, apellido, email, ciudad, direccion, telefono) VALUES ('$nombre', '$apellido', '$email', '$ciudad', '$direccion', '$telefono')";
+    // Consulta SQL para insertar datos
+    $consulta = "INSERT INTO clientes (nombre, apellido, email, ciudad, direccion, telefono, clave) 
+                 VALUES ('$nombre', '$apellido', '$email', '$ciudad', '$direccion', '$telefono', '$clave')";
 
-    // Ejecuta la consulta
-    if ($conn->query($sql) === TRUE) {
-        echo "Cliente registrado exitosamente";
+    if ($conn->query($consulta) === TRUE) {
+        // Registro exitoso, muestra el cartel y redirige a la página de perfil
+        echo "<script>alert('Registro exitoso'); window.location.href = 'mi-perfil.html';</script>";
     } else {
-        echo "Error al registrar el cliente: " . $conn->error;
+        echo "<script>alert('Error en el registro'); window.location.href = 'mi-perfil.html';</script>";
     }
 
-    // Cierra la conexión a la base de datos
+    // Cierra la conexión
     $conn->close();
 }
 ?>
