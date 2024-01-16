@@ -23,6 +23,7 @@
         <th>Email</th>
         <th>Rol ID</th>
         <th>Acciones</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -54,6 +55,7 @@
               echo "<td>{$personal['email']}</td>";
               echo "<td>{$personal['rol_id']}</td>";
               echo "<td><a href='modificar_personal.php?id={$personal['id']}'>Modificar</a></td>";
+              echo "<td><a href='dar_baja_personal.php?id={$personal['id']}'>Dar de Baja</a></td>";
               echo "</tr>";
           }
       } else {
