@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Mi Perfil</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Clientes</title>
+  <!-- Agrega los estilos de Bootstrap y el CSS personalizado -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
 
@@ -40,32 +45,20 @@
 </nav>
 <br><br>
 
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="list-group">
-          <a href="registrar-cliente.html" class="list-group-item list-group-item-action active">Registrar Cliente</a>
-          <a href="registrar_mascota.html" class="list-group-item list-group-item-action">Registrar Mascota</a>
-          <a href="registrar_personal.html" class="list-group-item list-group-item-action">Registrar Personal</a>
-          <a href="baja_mascota.html" class="list-group-item list-group-item-action">Dar de baja una mascota</a>
-          <a href="consultar_carnet.html" class="list-group-item list-group-item-action">Ver ficha clinica</a>
-          <a href="completar_atencion.html" class="list-group-item list-group-item-action">Llenar Atención</a>
-          <a href="listar_personales.php" class="list-group-item list-group-item-action">Modificar o dar de baja Personal</a>
-          <a href="generar_turno.html" class="list-group-item list-group-item-action">Generar Turnos</a>
-          <a href="buscar_cliente.html" class="list-group-item list-group-item-action">Listar Mascotas por Cliente</a>
-        </div>
-      </div>
-      <div class="col-md-9">
-        <h2>Mi Perfil</h2>
-        <hr>
-        <h4>Perfil de Administrador</h4>
-        <p>Desde aqui podes consultar fichas clinicas, registrar a un cliente y/o un servicio. </p>
-      </div>
+<div class="container">
+  <h2>Buscar Cliente</h2><hr>
+
+  <!-- Formulario para ingresar el nombre de la mascota -->
+  <form action="listar_mascotas.php" method="post">
+    <div class="form-group">
+      <label for="cliente_id">ID de Cliente:</label>
+      <input type="text" class="form-control" id="cliente_id" name="cliente_id" placeholder="Ingrese ID del cliente" required>
     </div>
+    <button type="submit" class="btn btn-primary">Generar Carnet</button>
+  </form>
 </div>
-<br><br><br>
 
-
+<br>
 <footer class="footer bg-dark text-light">
   <div class="container">
     <div class="row">
@@ -92,5 +85,11 @@
     </div>
   </div>
 </footer>
+
+<!-- Agrega los scripts de Bootstrap y jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>

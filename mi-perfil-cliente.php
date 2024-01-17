@@ -94,10 +94,20 @@
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $fechaHora = date("d/m/Y H:i", strtotime($row['fecha_hora']));
-                    echo "<div class='alert alert-danger'>
-                      Fecha y Hora: <strong>{$fechaHora}</strong>
+                    //$fechaHora = date("d/m/Y H:i", strtotime($row['fecha_hora']));
+                    $fechaHora = date("Y-m-d H:i", strtotime($row['fecha_hora']));
+                    $timestampFechaHora = strtotime($fechaHora);
+
+                    if ($timestampFechaHora > time()) {
+                        echo "<div class='alert alert-info'>
+                      Fecha y Hora: <strong>{$fechaHora}</strong> - Turno Pendiente
                     </div>";
+                    } else {
+                        echo "<div class='alert alert-danger'>
+                      Fecha y Hora: <strong>{$fechaHora}</strong> - Turno Terminado
+                    </div>";
+                    }
+
                 }
             } else {
                 echo "<div class='alert alert-danger'>

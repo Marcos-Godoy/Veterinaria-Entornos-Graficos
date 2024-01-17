@@ -12,8 +12,8 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Obtiene el nombre de la mascota desde el formulario
-$nombre_mascota = $_POST['nombre_mascota'];
+// Obtiene el nombre de la mascota desde el formulario (POST) o por la URL (GET)
+$nombre_mascota = isset($_POST['nombre_mascota']) ? $_POST['nombre_mascota'] : (isset($_GET['nombre_mascota']) ? $_GET['nombre_mascota'] : null);
 
 // Consulta para obtener la información de la mascota
 $consulta_mascota = "SELECT * FROM mascotas WHERE nombre = '$nombre_mascota'";

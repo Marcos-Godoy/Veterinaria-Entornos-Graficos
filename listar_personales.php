@@ -11,9 +11,10 @@
 <nav class="navbar navbar-expand-lg bg-dark">
   <!-- ... (tu barra de navegación) ... -->
 </nav>
-
+<br>
 <div class="container mt-4">
   <h2>Listado de Personales</h2>
+  <br>
   <table class="table">
     <thead>
       <tr>
@@ -54,8 +55,10 @@
               echo "<td>{$personal['apellido']}</td>";
               echo "<td>{$personal['email']}</td>";
               echo "<td>{$personal['rol_id']}</td>";
-              echo "<td><a href='modificar_personal.php?id={$personal['id']}'>Modificar</a></td>";
-              echo "<td><a href='dar_baja_personal.php?id={$personal['id']}'>Dar de Baja</a></td>";
+              echo "<td>";
+              echo "<a href='modificar_personal.php?id={$personal['id']}' class='btn btn-info'>Modificar</a>";
+              echo "<a href='dar_baja_personal.php?id={$personal['id']}' class='btn btn-danger'>Dar de Baja</a>";
+              echo "</td>";
               echo "</tr>";
           }
       } else {

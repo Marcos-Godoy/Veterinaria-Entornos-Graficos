@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $raza = $_POST["raza"];
     $color = $_POST["color"];
     $fecha_de_nac = $_POST["fecha_de_nac"];
-    $fecha_muerte = $_POST["fecha_muerte"];
+    //$fecha_muerte = $_POST["fecha_muerte"];
 
     // Realiza la conexión a la base de datos (ajusta los valores según tu configuración)
     $servername = "localhost";
@@ -28,8 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($cliente_result->num_rows > 0) {
         // El cliente existe, procede a registrar la mascota
-        $mascota_query = "INSERT INTO mascotas (cliente_id, nombre, foto, raza, color, fecha_de_nac, fecha_muerte) 
-                          VALUES ($cliente_id, '$nombre', '$foto', '$raza', '$color', '$fecha_de_nac', '$fecha_muerte')";
+        $mascota_query = "INSERT INTO mascotas (cliente_id, nombre, foto, raza, color, fecha_de_nac) 
+                          VALUES ($cliente_id, '$nombre', '$foto', '$raza', '$color', '$fecha_de_nac')";
 
         if ($conn->query($mascota_query) === TRUE) {
             echo "<script>alert('Registro exitoso'); window.location.href = 'mi-perfil.html';</script>";
