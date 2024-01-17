@@ -6,7 +6,7 @@ $password = "";
 $dbname = "bd_entornos";
 
 // No hay una tabla en la base de datos que maneje usuarios y contraseñas
-
+// prueba cambio de rama
 // Conexión a la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname);
 
