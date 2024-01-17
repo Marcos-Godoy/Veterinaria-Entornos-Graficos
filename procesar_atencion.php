@@ -1,9 +1,8 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Realiza la conexión a la base de datos (ajusta los valores según tu configuración)
 
     if (isset($_SESSION['id_personal'])) {
-    $id_personal = $_SESSION['id_personal']; //tengo que establecer la sesion cuando inicio sesion con $_SESSION['id_personal'] = $id_personal;
+    $id_personal = $_SESSION['usuario_id']; //tengo que establecer la sesion cuando inicio sesion con $_SESSION['id_personal'] = $id_personal;
 
     $servername = "localhost";
     $username = "root";

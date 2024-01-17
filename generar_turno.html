@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Mi Perfil</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Turno</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg  bg-dark ">
   <a class="navbar-brand" href="pagina.html"><img src="imagenes\logovet.png" alt="Logo" width="50" height="50"></a>
 
@@ -38,26 +39,28 @@
     </ul>
   </div>
 </nav>
-<br><br>
+<br>
 
-
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="list-group">
-          <a href="tomar_turno.php" class="list-group-item list-group-item-action active">Solicitar Turno</a>
-        </div>
-      </div>
-      <div class="col-md-9">
-        <h2>Mi Perfil</h2>
+<div class="container mt-4">
+    <div class="carnet">
+        <h2 class="text-center">Generar Turno</h2>
         <hr>
-        <h4>Perfil de Cliente</h4>
-        <p>Desde aqui podes consultar fichas clinicas, registrar a un cliente y/o un servicio. </p>
-      </div>
+
+        <!-- Formulario para generar turno -->
+        <form action="procesar_turno.php" method="post">
+            <div class="form-group">
+                <label for="fecha_hora">Fecha y Hora:</label>
+                <input type="datetime-local" class="form-control" id="fecha_hora" name="fecha_hora" required min="<?php echo date('Y-m-d\TH:i', strtotime('09:00')); ?>" max="<?php echo date('Y-m-d\TH:i', strtotime('18:00')); ?>">
+            </div>
+            <div class="form-group">
+                <label for="servicio_id">Servicio ID:</label>
+                <input type="text" class="form-control" id="servicio_id" name="servicio_id" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Generar Turno</button>
+        </form>
     </div>
 </div>
-<br><br><br>
-
+<br><br>
 
 <footer class="footer bg-dark text-light">
   <div class="container">
@@ -87,3 +90,5 @@
 </footer>
 </body>
 </html>
+
+
