@@ -12,10 +12,10 @@ if (!isset($_SESSION['usuario_id'])) {
 // Contenido específico según el tipo de usuario
 $tipoUsuario = $_SESSION['tipo_usuario']; // Puede ser personal o cliente
 
-if ($tipoUsuario === 'cliente') {
+if ($_SESSION['tipo_usuario'] === 'cliente') {
     // Contenido para clientes
     header("Location: mi-perfil-cliente.html");
-} elseif ($tipoUsuario === 'personal') {
+} elseif ($_SESSION['tipo_usuario'] === 'personal') {
     // Si es personal, verificamos el rol
     if ($_SESSION['rol_id'] === 1) {
         // Contenido para personal (administrador)
@@ -29,3 +29,4 @@ if ($tipoUsuario === 'cliente') {
     header("Location: pagina.html");
     exit();
 }
+?>
