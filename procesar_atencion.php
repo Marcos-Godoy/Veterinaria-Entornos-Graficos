@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    if (isset($_SESSION['id_personal'])) {
+    session_start();
+    if (isset($_SESSION['rol_id'])) {
     $id_personal = $_SESSION['usuario_id']; //tengo que establecer la sesion cuando inicio sesion con $_SESSION['id_personal'] = $id_personal;
 
     $servername = "localhost";
@@ -38,21 +38,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($resultado_servicio->num_rows > 0) {
             // Si el servicio existe, realiza la consulta para insertar el nuevo registro de atención
-            $insertar_atencion = "INSERT INTO atenciones (mascota_id, servicio_id, personal_id, fecha_hora, titulo, descripcion) VALUES ('$id_mascota', '$servicio_id', '$fecha_hora', '$titulo', '$descripcion')";
+            $insertar_atencion = "INSERT INTO atenciones (mascota_id, servicio_id, personal_id, fecha_hora, titulo, descripcion) VALUES ('$id_mascota', '$servicio_id', '$id_personal', '$fecha_hora', '$titulo', '$descripcion')";
 
             if ($conn->query($insertar_atencion) === TRUE) {
-                echo "Atención completada con éxito";
+                //echo "Atención completada con éxito";
+                echo "<script>alert('Atencion completada con exito'); window.location.href = 'gestionar-mi-perfil.php';</script>";
             } else {
-                echo "Error al completar la atención: " . $conn->error;
+                echo "<script>alert('Error al completar la atencion'); window.location.href = 'completar_atencion.html';</script>";
             }
         } else {
-            echo "Error: El servicio con el ID '$servicio_id' no existe.";
+            //echo "Error: El servicio con el ID '$servicio_id' no existe.";
+            echo "<script>alert('Error: El servicio con el ID {$servicio_id} no existe.'); window.location.href = 'completar_atencion.html';</script>";
         }
     } else {
-        echo "Error: La mascota con el nombre '$nombre_mascota' no existe.";
+        //echo "Error: La mascota con el nombre '$nombre_mascota' no existe.";
+        echo "<script>alert('Error: La mascota con el nombre {$nombre_mascota} no existe.'); window.location.href = 'completar_atencion.html';</script>";
     }
 
-    // Cierra la conexión a la base de datos
     $conn->close();
 
     } else {

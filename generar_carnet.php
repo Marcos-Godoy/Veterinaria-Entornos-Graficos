@@ -78,7 +78,7 @@ if ($resultado_mascota->num_rows > 0) {
 </nav>
 <br><br>";
     echo "<div class='carnet'>";
-    echo "<h2>Carnet de Mascota</h2>";
+    echo "<h2>Carnet de {$mascota['nombre']}</h2>";
     echo "<table>";
     echo "<tr><th>ID</th><td>" . $mascota['id'] . "</td></tr>";
     echo "<tr><th>Nombre</th><td>" . $mascota['nombre'] . "</td></tr>";
@@ -91,7 +91,7 @@ if ($resultado_mascota->num_rows > 0) {
 
     
     echo "<div class='atenciones'>";
-    echo "<h2>Atenciones de la Mascota</h2>";
+    echo "<h2>Atenciones de {$mascota['nombre']}</h2><hr>";
 if ($resultado_atenciones->num_rows > 0) {
     echo "<table>";
     echo "<tr><th>ID</th><th>Servicio</th><th>Personal</th><th>Fecha y Hora</th><th>Título</th><th>Descripción</th><th>Acciones</th></tr>";
