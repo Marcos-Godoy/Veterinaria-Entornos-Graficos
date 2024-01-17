@@ -69,8 +69,7 @@ if ($resultado_atencion->num_rows > 0) {
     echo "<div class='form-container'>";
     echo "<h2>Editar Atención</h2>";
     echo "<form action='procesar_edicion_atencion.php' method='post'>";
-    
-    // Campos bloqueados
+
     echo "<label for='id_atencion'>ID de Atención:</label>";
     echo "<input type='text' name='id_atencion' value='" . $atencion['id'] . "' disabled><br>";
 
@@ -80,19 +79,16 @@ if ($resultado_atencion->num_rows > 0) {
     echo "<label for='personal'>Personal:</label>";
     echo "<input type='text' name='personal' value='" . obtenerNombrePersonal($atencion['personal_id'], $conn) . "' disabled><br>";
 
-    // Campos editables
     echo "<label for='titulo'>Título:</label>";
     echo "<input type='text' name='titulo' value='" . $atencion['titulo'] . "'><br>";
 
     echo "<label for='descripcion'>Descripción:</label>";
     echo "<textarea name='descripcion'>" . $atencion['descripcion'] . "</textarea><br>";
 
-    // Añade otros campos según tus necesidades
-
     echo "<input type='hidden' name='id_atencion' value='" . $atencion['id'] . "'>";
     echo "<input type='submit' value='Guardar cambios'>";
     echo "</form>";
-    echo "</div> <footer class='footer bg-dark text-light'>
+    echo "</div> <br> <footer class='footer bg-dark text-light'>
   <div class='container'>
     <div class='row'>
       <div class='col-md-6'>

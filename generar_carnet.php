@@ -1,5 +1,4 @@
 <?php
-// Realiza la conexión a la base de datos (ajusta los valores según tu configuración)
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -7,7 +6,6 @@ $dbname = "bd_entornos";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verifica la conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
@@ -78,7 +76,7 @@ if ($resultado_mascota->num_rows > 0) {
 </nav>
 <br><br>";
     echo "<div class='carnet'>";
-    echo "<h2>Carnet de {$mascota['nombre']}</h2>";
+    echo "<h2>Carnet de {$mascota['nombre']}</h2><hr>";
     echo "<table>";
     echo "<tr><th>ID</th><td>" . $mascota['id'] . "</td></tr>";
     echo "<tr><th>Nombre</th><td>" . $mascota['nombre'] . "</td></tr>";
@@ -104,14 +102,14 @@ if ($resultado_atenciones->num_rows > 0) {
         echo "<td>" . $atencion['titulo'] . "</td>";
         echo "<td>" . $atencion['descripcion'] . "</td>";
         // Agregar un enlace para editar
-        echo "<td><a href='editar_atencion.php?id=" . $atencion['id'] . "'>Editar</a></td>";
+        echo "<td><a href='editar_atencion.php?id=" . $atencion['id'] . "' class = 'btn btn-primary'>Editar</a></td>";
         echo "</tr>";
     }
     echo "</table>";
 } else {
     echo "<p>No hay atenciones registradas para esta mascota.</p>";
 }
-    echo "</div> <footer class='footer bg-dark text-light'>
+    echo "</div><br> <footer class='footer bg-dark text-light'>
   <div class='container'>
     <div class='row'>
       <div class='col-md-6'>
@@ -144,7 +142,7 @@ if ($resultado_atenciones->num_rows > 0) {
     echo "</body>";
     echo "</html>";
 } else {
-    echo "<p>Mascota no encontrada.</p>";
+    echo "<script>alert('No se encontró la mascota con el nombre proporcionado.'); window.location.href = 'consultar_carnet.html';</script>";
 }
 
 // Cierra la conexión a la base de datos

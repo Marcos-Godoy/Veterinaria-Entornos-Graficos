@@ -17,7 +17,7 @@ if ($tipoUsuario === 'cliente') {
     header("Location: mi-perfil-cliente.php");
 } elseif ($tipoUsuario === 'personal') {
     // Si es personal, verificamos el rol
-    if ($_SESSION['rol_id'] === 1) {
+    if ($_SESSION['rol_id'] == 1) {
         // Contenido para personal (administrador)
         header("Location: mi-perfil.html");
     } else {

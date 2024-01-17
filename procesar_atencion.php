@@ -11,12 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Verifica la conexión
     if ($conn->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    // Obtiene los datos del formulario
     $nombre_mascota = $_POST["nombre_mascota"];
     $servicio_id = $_POST["servicio_id"];
     $fecha_hora = $_POST["fecha_hora"];
@@ -24,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $descripcion = $_POST["descripcion"];
 
     // Realiza la consulta para obtener el ID de la mascota por su nombre
-    $consulta_mascota = "SELECT id FROM mascotas WHERE nombre = '$nombre_mascota'";
+    $consulta_mascota = "SELECT id FROM mascotas WHERE nombre = '$nombre_mascota' AND fecha_muerte = '0000-00-00'";
     $resultado_mascota = $conn->query($consulta_mascota);
 
     if ($resultado_mascota->num_rows > 0) {
@@ -51,8 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<script>alert('Error: El servicio con el ID {$servicio_id} no existe.'); window.location.href = 'completar_atencion.html';</script>";
         }
     } else {
-        //echo "Error: La mascota con el nombre '$nombre_mascota' no existe.";
-        echo "<script>alert('Error: La mascota con el nombre {$nombre_mascota} no existe.'); window.location.href = 'completar_atencion.html';</script>";
+        echo "<script>alert('Error: La mascota con el nombre {$nombre_mascota} no existe o esta muerta.'); window.location.href = 'completar_atencion.html';</script>";
     }
 
     $conn->close();
