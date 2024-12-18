@@ -77,6 +77,12 @@ if ($resultado_mascota->num_rows > 0) {
   </div>
 </nav>
 <br><br>";
+
+    // Mostrar mensaje si la mascota está fallecida
+    if (!empty($mascota['fecha_muerte']) && $mascota['fecha_muerte'] != '0000-00-00') {
+      echo "<div class='alert alert-danger text-center'>Esta mascota falleció el " . $mascota['fecha_muerte'] . ".</div>";
+    } 
+
     echo "<div class='carnet'>";
     echo "<h2>Carnet de {$mascota['nombre']}</h2><hr>";
     echo "<div class='info'>";
@@ -106,7 +112,11 @@ if ($resultado_atenciones->num_rows > 0) {
         echo "<td>" . $atencion['fecha_hora'] . "</td>";
         echo "<td>" . $atencion['titulo'] . "</td>";
         echo "<td>" . $atencion['descripcion'] . "</td>";
-        echo "<td><a href='editar_atencion.php?id=" . $atencion['id'] . "' class = 'btn btn-primary'>Editar</a></td>";
+        if (!empty($mascota['fecha_muerte']) && $mascota['fecha_muerte'] != '0000-00-00') {
+          echo "<td><a href='editar_atencion.php?id=" . $atencion['id'] . "' class = 'btn btn-primary disabled'>Editar</a></td>";
+        } else {
+          echo "<td><a href='editar_atencion.php?id=" . $atencion['id'] . "' class = 'btn btn-primary'>Editar</a></td>";
+        }
         echo "</tr>";
     }
     echo "</table>";

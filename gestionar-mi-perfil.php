@@ -22,7 +22,7 @@ if ($tipoUsuario === 'cliente') {
         header("Location: mi-perfil.html");
     } else {
         // Para peluqueros y veterinarios
-        header("Location: mi-perfil-personal.html");
+        header("Location: mi-perfil-personal.php");
     }
 } else {
     // Tipo de usuario no reconocido, redirigir a la página de inicio

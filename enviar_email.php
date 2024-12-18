@@ -15,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Enviar el correo electrónico
     mail($destinatario, $asunto, $contenido);
 
-    echo "Su consulta ha sido enviada, en breve recibirá nuestra
-respuesta."; 
+    //echo "Su consulta ha sido enviada, en breve recibirá nuestra respuesta.";
+    echo "<script>alert('Su consulta ha sido enviada, en breve recibirá nuestra respuesta.'); window.location.href = 'contacto.html';</script>";
     exit();
 }
 ?>
