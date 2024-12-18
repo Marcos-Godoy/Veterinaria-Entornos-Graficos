@@ -34,6 +34,8 @@ if ($resultado_mascota->num_rows > 0) {
     echo "body { font-family: 'Arial', sans-serif; background-color: #f0f0f0; }";
     echo ".carnet { width: 500px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 15px; }";
     echo ".carnet h2 { text-align: center; color: #333; }";
+    echo ".carnet .info { display: flex; align-items: center; }";
+    echo ".carnet img { max-width: 150px; height: auto; border-radius: 10px; margin-right: 20px; }";
     echo ".carnet table { width: 100%; }";
     echo ".carnet th, .carnet td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }";
     echo ".atenciones { margin-top: 20px; }";
@@ -77,14 +79,17 @@ if ($resultado_mascota->num_rows > 0) {
 <br><br>";
     echo "<div class='carnet'>";
     echo "<h2>Carnet de {$mascota['nombre']}</h2><hr>";
+    echo "<div class='info'>";
+    echo "<img src='{$mascota['foto']}' alt='Foto de {$mascota['nombre']}'>";
     echo "<table>";
     echo "<tr><th>ID</th><td>" . $mascota['id'] . "</td></tr>";
     echo "<tr><th>Nombre</th><td>" . $mascota['nombre'] . "</td></tr>";
     echo "<tr><th>Raza</th><td>" . $mascota['raza'] . "</td></tr>";
     echo "<tr><th>Color</th><td>" . $mascota['color'] . "</td></tr>";
     echo "<tr><th>Fecha de Nacimiento</th><td>" . $mascota['fecha_de_nac'] . "</td></tr>";
-    echo "<tr><th>Fecha de Muerte</th><td>" . $mascota['fecha_muerte'] . "</td></tr>";
+    //echo "<tr><th>Fecha de Muerte</th><td>" . $mascota['fecha_muerte'] . "</td></tr>";
     echo "</table>";
+    echo "</div>";
     echo "</div> <br>";
 
     
@@ -101,7 +106,6 @@ if ($resultado_atenciones->num_rows > 0) {
         echo "<td>" . $atencion['fecha_hora'] . "</td>";
         echo "<td>" . $atencion['titulo'] . "</td>";
         echo "<td>" . $atencion['descripcion'] . "</td>";
-        // Agregar un enlace para editar
         echo "<td><a href='editar_atencion.php?id=" . $atencion['id'] . "' class = 'btn btn-primary'>Editar</a></td>";
         echo "</tr>";
     }

@@ -43,7 +43,7 @@
 <div class="container">
   <h2>Registrar Mascota</h2>
   <hr>
-  <form action="procesar_registro_mascota.php" method="post">
+  <form action="procesar_registro_mascota.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="cliente_id">Cliente ID:</label>
       <input type="text" class="form-control" id="cliente_id" name="cliente_id" placeholder="Ingrese ID del cliente" required>
@@ -54,7 +54,7 @@
     </div>
     <div class="form-group">
       <label for="foto">Foto:</label>
-      <input type="text" class="form-control" id="foto" name="foto" placeholder="Ingrese URL de la foto">
+      <input type="file" class="form-control" id="foto" name="foto" required>
     </div>
     <div class="form-group">
       <label for="raza">Raza:</label>
@@ -73,8 +73,6 @@
 </div>
 
 <br><br><br>
-
-
 
 <footer class="footer bg-dark text-light">
   <div class="container">
@@ -102,7 +100,6 @@
     </div>
   </div>
 </footer>
-
 
 </body>
 </html>

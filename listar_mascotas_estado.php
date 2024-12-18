@@ -60,8 +60,7 @@
             <th>Raza</th>
             <th>Color</th>
             <th>Fecha de Nacimiento</th>
-            <th>Fecha de Muerte</th>
-            <th>Acciones</th> <!-- Nueva columna de Acciones -->
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -85,13 +84,16 @@
                 echo "<tr class='active-row'>";
                 echo "<td>{$mascota_activa['id']}</td>";
                 echo "<td>{$mascota_activa['nombre']}</td>";
-                echo "<td>{$mascota_activa['foto']}</td>";
+                echo "<td><img src='{$mascota_activa['foto']}' alt='Foto de {$mascota_activa['nombre']}' style='width: 50px; height: auto;'></td>";
                 echo "<td>{$mascota_activa['raza']}</td>";
                 echo "<td>{$mascota_activa['color']}</td>";
                 echo "<td>{$mascota_activa['fecha_de_nac']}</td>";
-                echo "<td>{$mascota_activa['fecha_muerte']}</td>";
                 echo "<td>";
-                echo "<a href='generar_carnet.php?nombre_mascota={$mascota_activa['nombre']}' class='btn btn-info'>Ver Carnet</a> ";
+                echo "<div class='btn-group' role='group'>";
+                echo "<a href='generar_carnet.php?nombre_mascota={$mascota_activa['nombre']}' class='btn btn-info'>Ver Carnet</a>";
+                echo "<a href='modificar_mascota.php?id={$mascota_activa['id']}' class='btn btn-warning'>Modificar</a>";
+                echo "<button class='btn btn-danger' data-toggle='modal' data-target='#eliminarModal' data-id='{$mascota_activa['id']}'>Eliminar</button>";
+                echo "</div>";
                 echo "</td>";
                 echo "</tr>";
             }
@@ -116,7 +118,6 @@
             <th>Color</th>
             <th>Fecha de Nacimiento</th>
             <th>Fecha de Muerte</th>
-            <!-- No se incluye la columna Acciones para mascotas muertas -->
         </tr>
     </thead>
     <tbody>
@@ -129,12 +130,11 @@
                 echo "<tr class='dead-row'>";
                 echo "<td>{$mascota_muerta['id']}</td>";
                 echo "<td>{$mascota_muerta['nombre']}</td>";
-                echo "<td>{$mascota_muerta['foto']}</td>";
+                echo "<td><img src='{$mascota_muerta['foto']}' alt='Foto de {$mascota_muerta['nombre']}' style='width: 50px; height: auto;'></td>";
                 echo "<td>{$mascota_muerta['raza']}</td>";
                 echo "<td>{$mascota_muerta['color']}</td>";
                 echo "<td>{$mascota_muerta['fecha_de_nac']}</td>";
                 echo "<td>{$mascota_muerta['fecha_muerte']}</td>";
-                // No se incluye la columna Acciones para mascotas muertas
                 echo "</tr>";
             }
         } else {
@@ -174,10 +174,45 @@
   </div>
 </footer>
 
+<!-- Modal para eliminar mascota -->
+<div class="modal fade" id="eliminarModal" tabindex="-1" role="dialog" aria-labelledby="eliminarModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eliminarModalLabel">Eliminar Mascota</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="baja_mascota.php" method="post">
+        <div class="modal-body">
+          <input type="hidden" name="id" id="mascotaId">
+          <div class="form-group">
+            <label for="fecha_muerte">Fecha de Muerte:</label>
+            <input type="date" class="form-control" id="fecha_muerte" name="fecha_muerte" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-danger">Eliminar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <!-- Agrega los scripts de Bootstrap y jQuery -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+  $('#eliminarModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var id = button.data('id');
+    var modal = $(this);
+    modal.find('#mascotaId').val(id);
+  });
+</script>
 
 </body>
 </html>

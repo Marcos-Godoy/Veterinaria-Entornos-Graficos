@@ -35,10 +35,10 @@ $actualizar_turno = "UPDATE turnos SET estado = 'ocupado', cliente_id = $cliente
 
 if ($conn->query($actualizar_turno) === TRUE) {
     // Éxito al tomar el turno
-    echo "<script>alert('¡Turno tomado con éxito!'); window.location.href = 'listar_turnos.php';</script>";
+    echo "<script>alert('¡Turno tomado con éxito!'); window.location.href = 'mi-perfil-cliente.php';</script>";
 } else {
     // Error al tomar el turno
-    echo "<script>alert('Error al tomar el turno.'); window.location.href = 'listar_turnos.php';</script>";
+    echo "<script>alert('Error al tomar el turno.'); window.location.href = 'mi-perfil-cliente.php';</script>";
 }
 
 // Cerrar la conexión a la base de datos

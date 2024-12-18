@@ -1,4 +1,5 @@
 <?php
+// ARCHIVO EN DESUSO -----------------------------------------------------------
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $username = "root";
@@ -11,11 +12,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    $nombre_mascota = $_POST["nombre_mascota"];
-    $fecha_muerte = $_POST["fecha_muerte"];
+    // Obtiene el nombre de la mascota desde el formulario (POST) o por la URL (GET)
+    $id_mascota = isset($_POST['id_mascota']) ? $_POST['id_mascota'] : (isset($_GET['id_mascota']) ? $_GET['id_mascota'] : null);
+
+    // Consulta para obtener la información de la mascota
+    //$consulta_mascota = "SELECT * FROM mascotas WHERE id = '$id_mascota'";
+    //$resultado_mascota = $conn->query($consulta_mascota);
+    
+    //$nombre_mascota = $_POST["nombre_mascota"];
+    //$fecha_muerte = $_POST["fecha_muerte"];
 
     // Consulta para verificar que la mascota exista
-    $consulta_existencia = "SELECT * FROM mascotas WHERE nombre = '$nombre_mascota'";
+    $consulta_existencia = "SELECT * FROM mascotas WHERE id = '$id_mascota'";
     $resultado_existencia = $conn->query($consulta_existencia);
 
     if ($resultado_existencia->num_rows > 0) {
@@ -23,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fecha_actual = date("Y-m-d");
         if (strtotime($fecha_muerte) <= strtotime($fecha_actual)) {
             // Realiza la consulta para realizar la baja lógica de la mascota
-            $baja_mascota = "UPDATE mascotas SET fecha_muerte = '$fecha_muerte' WHERE nombre = '$nombre_mascota'";
+            $baja_mascota = "UPDATE mascotas SET fecha_muerte = '$fecha_muerte' WHERE id = '$id_mascota'";
 
             if ($conn->query($baja_mascota) === TRUE) {
                 echo "<script>alert('Baja lógica de la mascota realizada con éxito'); window.location.href = 'baja_mascota.html';</script>";
