@@ -68,19 +68,7 @@
                 exit();
             }
 
-            // Configuración de la base de datos
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "bd_entornos";
-
-            // Conexión a la base de datos
-            $conn = new mysqli($servername, $username, $password, $dbname);
-
-            // Verificar la conexión
-            if ($conn->connect_error) {
-                die("Error de conexión a la base de datos: " . $conn->connect_error);
-            }
+            include 'conexion.php';
 
             // Consultar los turnos ocupados del cliente desde la base de datos
             $cliente_id = $_SESSION['usuario_id'];

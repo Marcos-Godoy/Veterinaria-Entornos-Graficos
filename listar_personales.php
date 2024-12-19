@@ -29,18 +29,7 @@
     </thead>
     <tbody>
       <?php
-      // Conexión a la base de datos (ajusta según tu configuración)
-      $servername = "localhost";
-      $username = "root";
-      $password = "";
-      $dbname = "bd_entornos";
-
-      $conn = new mysqli($servername, $username, $password, $dbname);
-
-      // Verifica la conexión
-      if ($conn->connect_error) {
-          die("Conexión fallida: " . $conn->connect_error);
-      }
+      include 'conexion.php';
 
       // Consulta para obtener la lista de personales
       $consulta_personales = "SELECT * FROM personal";

@@ -30,18 +30,7 @@
     </thead>
     <tbody>
         <?php
-        // Reemplaza con tus credenciales y ajustes de conexión
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "bd_entornos";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Verifica la conexión
-        if ($conn->connect_error) {
-            die("Conexión fallida: " . $conn->connect_error);
-        }
+        include 'conexion.php';
 
         // Obtén el id_cliente del formulario o de alguna otra fuente
         $id_cliente = $_POST['cliente_id']; // Ajusta según cómo obtienes el id_cliente

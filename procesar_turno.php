@@ -1,15 +1,5 @@
 <?php
-// Conexión a la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bd_entornos";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+include 'conexion.php';
 
 // Procesar el formulario de generación de turno
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

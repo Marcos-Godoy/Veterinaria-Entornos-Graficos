@@ -21,18 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Hubo un error al subir la foto.";
     }
 
-    // Realiza la conexión a la base de datos (ajusta los valores según tu configuración)
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "bd_entornos";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Verifica la conexión
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
+    include 'conexion.php';
 
     // Realiza una consulta para verificar si el cliente existe
     $cliente_query = "SELECT * FROM clientes WHERE id = $cliente_id";

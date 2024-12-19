@@ -1,17 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Realiza la conexión a la base de datos (ajusta los valores según tu configuración)
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "bd_entornos";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Verifica la conexión
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
+    include 'conexion.php';
 
     // Obtiene el ID del cliente del formulario
     $idCliente = $_POST["idCliente"];

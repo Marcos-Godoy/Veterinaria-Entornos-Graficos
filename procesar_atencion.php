@@ -4,16 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_SESSION['rol_id'])) {
     $id_personal = $_SESSION['usuario_id']; //tengo que establecer la sesion cuando inicio sesion con $_SESSION['id_personal'] = $id_personal;
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "bd_entornos";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
+    include 'conexion.php';
 
     $nombre_mascota = $_POST["nombre_mascota"];
     $servicio_id = $_POST["servicio_id"];

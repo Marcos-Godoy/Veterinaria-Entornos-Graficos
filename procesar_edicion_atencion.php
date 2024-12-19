@@ -1,15 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bd_entornos";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verifica la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+include 'conexion.php';
 
 $id_atencion = $_POST['id_atencion'];
 $titulo = $_POST['titulo'];

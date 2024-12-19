@@ -17,17 +17,7 @@ if (!isset($_GET['id'])) {
 // Obtener el ID del turno desde la URL
 $id_turno = $_GET['id'];
 
-// Conexión a la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bd_entornos";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+include 'conexion.php';
 
 // Actualizar el estado del turno a 'ocupado' y asignar el cliente_id
 $cliente_id = $_SESSION['usuario_id'];
@@ -41,7 +31,6 @@ if ($conn->query($actualizar_turno) === TRUE) {
     echo "<script>alert('Error al tomar el turno.'); window.location.href = 'mi-perfil-cliente.php';</script>";
 }
 
-// Cerrar la conexión a la base de datos
 $conn->close();
 ?>
 

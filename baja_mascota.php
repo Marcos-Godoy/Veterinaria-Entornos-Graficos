@@ -1,19 +1,9 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bd_entornos";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+include 'conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
     $fecha_muerte = $_POST["fecha_muerte"];
-
     $fecha_actual = date("Y-m-d");
     // Validar que la fecha de muerte sea válida y anterior o igual a la fecha actual
     if ($fecha_muerte > $fecha_actual) {

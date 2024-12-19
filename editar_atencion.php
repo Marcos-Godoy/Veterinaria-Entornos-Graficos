@@ -1,16 +1,5 @@
 <?php
-// Realiza la conexión a la base de datos (ajusta los valores según tu configuración)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bd_entornos";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verifica la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+include 'conexion.php';
 
 // Obtiene el ID de la atención desde la URL
 $id_atencion = $_GET['id'];

@@ -65,16 +65,7 @@
     </thead>
     <tbody>
         <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "bd_entornos";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        if ($conn->connect_error) {
-            die("Conexión fallida: " . $conn->connect_error);
-        }
+        include 'conexion.php';
 
         $consulta_mascotas_activas = "SELECT * FROM Mascotas WHERE fecha_muerte = '0000-00-00'";
         $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);

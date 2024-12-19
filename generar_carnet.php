@@ -1,14 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bd_entornos";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+include 'conexion.php';
 
 // Obtiene el nombre de la mascota desde el formulario (POST) o por la URL (GET)
 $nombre_mascota = isset($_POST['nombre_mascota']) ? $_POST['nombre_mascota'] : (isset($_GET['nombre_mascota']) ? $_GET['nombre_mascota'] : null);
