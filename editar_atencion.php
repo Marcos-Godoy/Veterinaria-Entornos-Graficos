@@ -15,6 +15,8 @@ if ($resultado_atencion->num_rows > 0) {
     // TODO: Añade aquí el formulario de edición con los campos necesarios
     echo "<html>";
     echo "<head>";
+    echo '<meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">';
     echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>";
     echo "<style>";
     echo "body { font-family: 'Arial', sans-serif; background-color: #f0f0f0; }";

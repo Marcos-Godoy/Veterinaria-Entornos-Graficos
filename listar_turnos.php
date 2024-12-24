@@ -20,6 +20,7 @@ $resultado_turnos = $conn->query($consulta_turnos);
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listar Turnos Disponibles</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Agrega tus enlaces a Bootstrap o CSS aquí -->

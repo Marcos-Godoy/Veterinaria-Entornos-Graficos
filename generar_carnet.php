@@ -21,6 +21,8 @@ if ($resultado_mascota->num_rows > 0) {
     echo "<html>";
     echo "<head>";
     echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>";
+    echo "<meta charset='utf-8'>";
+    echo "<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>";
     echo "<style>";
     echo "body { font-family: 'Arial', sans-serif; background-color: #f0f0f0; }";
     echo ".carnet { width: 500px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 15px; }";
