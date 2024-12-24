@@ -75,7 +75,7 @@
                 echo "<tr class='active-row'>";
                 echo "<td>{$mascota_activa['id']}</td>";
                 echo "<td>{$mascota_activa['nombre']}</td>";
-                echo "<td><img src='{$mascota_activa['foto']}' alt='Foto de {$mascota_activa['nombre']}' style='width: 50px; height: auto;'></td>";
+                echo "<td><img src='{$mascota_activa['foto']}' alt='Foto de {$mascota_activa['nombre']}' style='width: 50px; height: 40px;'></td>";
                 echo "<td>{$mascota_activa['raza']}</td>";
                 echo "<td>{$mascota_activa['color']}</td>";
                 echo "<td>{$mascota_activa['fecha_de_nac']}</td>";
@@ -121,7 +121,7 @@
                 echo "<tr class='dead-row'>";
                 echo "<td>{$mascota_muerta['id']}</td>";
                 echo "<td>{$mascota_muerta['nombre']}</td>";
-                echo "<td><img src='{$mascota_muerta['foto']}' alt='Foto de {$mascota_muerta['nombre']}' style='width: 50px; height: auto;'></td>";
+                echo "<td><img src='{$mascota_muerta['foto']}' alt='Foto de {$mascota_muerta['nombre']}' style='width: 50px; height: 40px;'></td>";
                 echo "<td>{$mascota_muerta['raza']}</td>";
                 echo "<td>{$mascota_muerta['color']}</td>";
                 echo "<td>{$mascota_muerta['fecha_de_nac']}</td>";

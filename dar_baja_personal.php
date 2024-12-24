@@ -11,12 +11,10 @@ if (isset($_GET['confirmacion']) && $_GET['confirmacion'] == 'true') {
 
     if ($conn->query($consulta_eliminar) === TRUE) {
         // Eliminación exitosa
-        header("Location: listar_personales.php?mensaje=Eliminación exitosa");
-        exit();
+        echo "<script>alert('Eliminacion exitosa'); window.location.href = 'gestionar-mi-perfil.php';</script>";
     } else {
         // Error al eliminar
-        header("Location: listar_personales.php?mensaje=Error al eliminar");
-        exit();
+        echo "<script>alert('Error'); window.location.href = 'gestionar-mi-perfil.php';</script>";
     }
 } else {
     // Mostrar confirmación en JavaScript

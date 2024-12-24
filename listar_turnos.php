@@ -1,5 +1,4 @@
 <?php
-// Iniciar sesión
 session_start();
 
 include 'conexion.php';
@@ -12,19 +11,17 @@ $consulta_turnos = "SELECT t.id, t.fecha_hora, t.servicio_id, t.estado, s.nombre
                     ORDER BY t.servicio_id";
 
 $resultado_turnos = $conn->query($consulta_turnos);
-
-// Mostrar la lista de turnos
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Listar Turnos Disponibles</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body class="container">
+<body>
 
 <nav class="navbar navbar-expand-lg  bg-dark ">
   <a class="navbar-brand" href="pagina.html"><img src="imagenes\logovet.png" alt="Logo" width="50" height="50"></a>
@@ -55,10 +52,11 @@ $resultado_turnos = $conn->query($consulta_turnos);
     </ul>
   </div>
 </nav>
-
+<br>
+<div class="container">
     <h2 class="mt-4">Lista de Turnos Disponibles</h2>
 
-    <table class="table table-bordered mt-3">
+    <table class="table table-bordered mt-3 container">
         <thead>
             <tr>
                 <th>ID</th>
@@ -92,6 +90,39 @@ $resultado_turnos = $conn->query($consulta_turnos);
 
         </tbody>
     </table>
+</div>
+    <br>
+
+<footer class="footer bg-dark text-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <br>
+        <h5>Mapa de Sitio</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Quienes somos?</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <br>
+        <h5>Contacto</h5>
+        <address>
+          123 Calle Principal<br>
+          Ciudad, País<br>
+          Teléfono: 123-456-7890<br>
+          Correo electrónico: info@example.com
+        </address>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

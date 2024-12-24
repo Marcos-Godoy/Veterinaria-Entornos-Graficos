@@ -18,21 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $actualizar_personal = "UPDATE personal SET nombre='$nombre', apellido='$apellido', email='$email', rol_id='$rol_id' WHERE id='$id_personal'";
 
         if ($conn->query($actualizar_personal) === TRUE) {
-            // Mensaje de éxito
-            echo "Datos actualizados correctamente.";
-
-            // Redirección a la página de listado después de 2 segundos
-            header("refresh:2;url=listar_personales.php");
+            echo "<script>alert('Datos actulizados exitosamente'); window.location.href = 'gestionar-mi-perfil.php';</script>";
         } else {
-            // Mensaje de error
-            echo "Error al actualizar los datos: " . $conn->error;
+            echo "<script>alert('Error'); window.location.href = 'gestionar-mi-perfil.php';</script>";
         }
     } else {
-        // El rol con ID no existe
-        echo "El rol con ID $rol_id no existe.";
+        echo "<script>alert('No existe ese rol'); window.location.href = 'gestionar-mi-perfil.php';</script>";
     }
 
-    // Cierra la conexión a la base de datos
     $conn->close();
 }
 ?>

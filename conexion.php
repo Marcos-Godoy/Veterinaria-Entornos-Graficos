@@ -24,7 +24,6 @@ $dbname = "veterin8_bd_entornos";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }

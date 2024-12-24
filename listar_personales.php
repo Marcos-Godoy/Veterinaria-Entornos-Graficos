@@ -87,7 +87,34 @@
   </table>
 </div>
 
-<!-- Footer -->
+<br>
+
+<footer class="footer bg-dark text-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <br>
+        <h5>Mapa de Sitio</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Quienes somos?</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <br>
+        <h5>Contacto</h5>
+        <address>
+          123 Calle Principal<br>
+          Ciudad, País<br>
+          Teléfono: 123-456-7890<br>
+          Correo electrónico: info@example.com
+        </address>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
