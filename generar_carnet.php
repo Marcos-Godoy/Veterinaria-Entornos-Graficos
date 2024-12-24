@@ -59,7 +59,7 @@ if ($resultado_mascota->num_rows > 0) {
         <a class='nav-link' href='servicios.html'>Servicios</a>
       </li>
       <li class='nav-item'>
-        <a class='nav-link' href='mi-perfil.html'>Mi Perfil</a>
+        <a class='nav-link' href='gestionar-mi-perfil.php'>Mi Perfil</a>
       </li>
     </ul>
     <ul class='navbar-nav ml-auto'>

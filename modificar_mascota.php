@@ -64,6 +64,37 @@ $conn->close();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg  bg-dark ">
+  <a class="navbar-brand" href="pagina.html"><img src="imagenes\logovet.png" alt="Logo" width="50" height="50"></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mx-auto" >
+      <li class="nav-item">
+        <a class="nav-link" href="quienes-somos.html">Quienes somos?</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contacto.html">Contacto</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="servicios.html">Servicios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="gestionar-mi-perfil.php">Mi Perfil</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">Iniciar Sesión</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container mt-4">
     <h2>Modificar Mascota</h2>
     <hr>
