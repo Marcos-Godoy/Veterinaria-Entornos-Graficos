@@ -2,7 +2,6 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'conexion.php';
 
-    // Obtén los datos del formulario
     $id_personal = $_POST["id_personal"];
     $nombre = $_POST["nombre"];
     $apellido = $_POST["apellido"];

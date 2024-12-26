@@ -17,9 +17,10 @@ if ($resultado_mascota->num_rows > 0) {
     $consulta_atenciones = "SELECT * FROM atenciones WHERE mascota_id = '$id_mascota'";
     $resultado_atenciones = $conn->query($consulta_atenciones);
 
-    // Muestra el carnet de la mascota con estilos CSS
-    echo "<html>";
+    echo "<!DOCTYPE html>";
+    echo "<html lang='es'>";
     echo "<head>";
+    echo "<title>Carnet de Mascota</title>";
     echo "<link type='text/css' rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>";
     echo "<meta charset='utf-8'>";
     echo "<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>";
@@ -39,7 +40,7 @@ if ($resultado_mascota->num_rows > 0) {
     </style>";
     echo "</head>";
     echo "<body><nav class='navbar navbar-expand-lg  bg-dark '>
-  <a class='navbar-brand' href='pagina.html'><img src='imagenes\\logovet.png' alt='Logo' width='50' height='50'></a>
+  <a class='navbar-brand' href='pagina.html'><img src='imagenes/logovet.png' alt='Logo' width='50' height='50'></a>
 
   <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
     <span class='navbar-toggler-icon'></span>

@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Listar Turnos Disponibles</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
 <?php
 session_start();
 
@@ -12,19 +20,9 @@ $consulta_turnos = "SELECT t.id, t.fecha_hora, t.servicio_id, t.estado, s.nombre
 
 $resultado_turnos = $conn->query($consulta_turnos);
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Listar Turnos Disponibles</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
 <body>
-
 <nav class="navbar navbar-expand-lg  bg-dark ">
-  <a class="navbar-brand" href="pagina.html"><img src="imagenes\logovet.png" alt="Logo" width="50" height="50"></a>
+  <a class="navbar-brand" href="pagina.html"><img src="imagenes/logovet.png" alt="Logo" width="50" height="50"></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -129,7 +127,6 @@ $resultado_turnos = $conn->query($consulta_turnos);
 </html>
 
 <?php
-// Cerrar la conexión a la base de datos
 $conn->close();
 ?>
 
