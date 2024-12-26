@@ -7,8 +7,8 @@ include 'conexion.php';
 $consulta_turnos = "SELECT t.id, t.fecha_hora, t.servicio_id, t.estado, s.nombre as nombre_servicio, s.tipo
                     FROM turnos t
                     INNER JOIN servicios s ON t.servicio_id = s.id
-                    WHERE t.estado = 'disponible'
-                    ORDER BY t.servicio_id";
+                    WHERE t.estado = 'disponible' and t.fecha_hora > NOW()
+                    ORDER BY t.servicio_id, t.fecha_hora";
 
 $resultado_turnos = $conn->query($consulta_turnos);
 ?>
@@ -90,6 +90,7 @@ $resultado_turnos = $conn->query($consulta_turnos);
 
         </tbody>
     </table>
+    <a href="gestionar-mi-perfil.php" class="btn btn-secondary">Volver</a>
 </div>
     <br>
 

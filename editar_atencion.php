@@ -77,7 +77,9 @@ if ($resultado_atencion->num_rows > 0) {
     echo "<textarea name='descripcion'>" . $atencion['descripcion'] . "</textarea><br>";
 
     echo "<input type='hidden' name='id_atencion' value='" . $atencion['id'] . "'>";
-    echo "<input type='submit' value='Guardar cambios'>";
+    //echo "<input type='submit' value='Guardar cambios'>";
+    echo '<button type="submit" class="btn btn-primary">Guardar Cambios</button>';
+    echo '<a href="gestionar-mi-perfil.php" class="btn btn-secondary">Volver</a>';
     echo "</form>";
     echo "</div> <br> <footer class='footer bg-dark text-light'>
   <div class='container'>

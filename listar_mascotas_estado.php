@@ -135,7 +135,8 @@
         ?>
     </tbody>
   </table>
-
+  <br>
+  <a href="gestionar-mi-perfil.php" class="btn btn-primary">Volver</a>
 </div>
 <br>
 <footer class="footer bg-dark text-light">

@@ -18,12 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $actualizar_personal = "UPDATE personal SET nombre='$nombre', apellido='$apellido', email='$email', rol_id='$rol_id' WHERE id='$id_personal'";
 
         if ($conn->query($actualizar_personal) === TRUE) {
-            echo "<script>alert('Datos actulizados exitosamente'); window.location.href = 'gestionar-mi-perfil.php';</script>";
+            echo "<script>alert('Datos actulizados exitosamente'); window.location.href = 'listar_personales.php';</script>";
         } else {
-            echo "<script>alert('Error'); window.location.href = 'gestionar-mi-perfil.php';</script>";
+            echo "<script>alert('Error'); window.location.href = 'listar_personales.php';</script>";
         }
     } else {
-        echo "<script>alert('No existe ese rol'); window.location.href = 'gestionar-mi-perfil.php';</script>";
+        echo "<script>alert('No existe ese rol'); window.location.href = 'listar_personales.php';</script>";
     }
 
     $conn->close();

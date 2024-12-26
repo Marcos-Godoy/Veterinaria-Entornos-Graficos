@@ -92,7 +92,7 @@ if ($resultado_mascota->num_rows > 0) {
     echo "</div> <br>";
 
     
-    echo "<div class='atenciones'>";
+    echo "<div class=' container atenciones'>";
     echo "<h2>Atenciones de {$mascota['nombre']}</h2><hr>";
 if ($resultado_atenciones->num_rows > 0) {
     echo "<table>";
@@ -116,7 +116,8 @@ if ($resultado_atenciones->num_rows > 0) {
 } else {
     echo "<p>No hay atenciones registradas para esta mascota.</p>";
 }
-    echo "</div><br> <footer class='footer bg-dark text-light'>
+
+    echo "<br><a href='gestionar-mi-perfil.php' class='btn btn-secondary'>Volver</a></div><br><footer class='footer bg-dark text-light'>
   <div class='container'>
     <div class='row'>
       <div class='col-md-6'>

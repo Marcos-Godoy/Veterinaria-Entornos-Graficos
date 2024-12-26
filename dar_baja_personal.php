@@ -11,10 +11,10 @@ if (isset($_GET['confirmacion']) && $_GET['confirmacion'] == 'true') {
 
     if ($conn->query($consulta_eliminar) === TRUE) {
         // Eliminación exitosa
-        echo "<script>alert('Eliminacion exitosa'); window.location.href = 'gestionar-mi-perfil.php';</script>";
+        echo "<script>alert('Eliminacion exitosa'); window.location.href = 'listar_personales.php';</script>";
     } else {
         // Error al eliminar
-        echo "<script>alert('Error'); window.location.href = 'gestionar-mi-perfil.php';</script>";
+        echo "<script>alert('Error'); window.location.href = 'listar_personales.php';</script>";
     }
 } else {
     // Mostrar confirmación en JavaScript
@@ -26,7 +26,6 @@ if (isset($_GET['confirmacion']) && $_GET['confirmacion'] == 'true') {
           }
         </script>";
 }
-// Cierra la conexión a la base de datos
 $conn->close();
 ?>
 

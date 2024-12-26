@@ -70,23 +70,53 @@
           <input type="email" class="form-control" id="email" name="email" value="<?php echo $personal['email']; ?>" required>
         </div>
         <div class="form-group">
-          <label for="rol_id">Rol ID:</label>
-          <input type="text" class="form-control" id="rol_id" name="rol_id" value="<?php echo $personal['rol_id']; ?>" required>
+          <label for="rol_id">Rol:</label>
+          <select class="form-control" id="rol_id" name="rol_id" required>
+            <option value="1" <?php if ($personal['rol_id'] == 1) echo 'selected'; ?>>Administrador</option>
+            <option value="2" <?php if ($personal['rol_id'] == 2) echo 'selected'; ?>>Peluquero</option>
+            <option value="3" <?php if ($personal['rol_id'] == 3) echo 'selected'; ?>>Veterinario</option>
+          </select>
         </div>
         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <a href="listar_personales.php" class="btn btn-secondary">Volver</a>
       </form>
   <?php
   } else {
       echo "<p>Personal no encontrado.</p>";
   }
 
-  // Cierra la conexión a la base de datos
   $conn->close();
   ?>
 
 </div>
 
-<!-- Footer -->
+<br>
+<footer class="footer bg-dark text-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <br>
+        <h5>Mapa de Sitio</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Quienes somos?</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <br>
+        <h5>Contacto</h5>
+        <address>
+          123 Calle Principal<br>
+          Ciudad, País<br>
+          Teléfono: 123-456-7890<br>
+          Correo electrónico: info@example.com
+        </address>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

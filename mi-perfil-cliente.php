@@ -52,7 +52,7 @@
             <h2>Mi Perfil</h2>
             <hr>
             <h4>Perfil de Cliente</h4>
-            <p>Desde aquí puedes consultar fichas clínicas, registrar a un cliente y/o un servicio.</p>
+            <p>Desde acá podés tomar turnos para tus mascotas y consultar los próximos turnos que tenés.</p>
         </div>
       </div>
       <br><br>

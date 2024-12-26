@@ -48,7 +48,7 @@
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Email</th>
-        <th>Rol ID</th>
+        <th>Rol</th>
         <th>Acciones</th>
         <th></th>
       </tr>
@@ -58,7 +58,7 @@
       include 'conexion.php';
 
       // Consulta para obtener la lista de personales
-      $consulta_personales = "SELECT * FROM personal";
+      $consulta_personales = "SELECT p.id, p.nombre, p.apellido, p.email, r.nombre as rol FROM personal p inner join roles r on p.rol_id = r.id";
       $resultado_personales = $conn->query($consulta_personales);
 
       // Muestra la lista de personales
@@ -69,7 +69,7 @@
               echo "<td>{$personal['nombre']}</td>";
               echo "<td>{$personal['apellido']}</td>";
               echo "<td>{$personal['email']}</td>";
-              echo "<td>{$personal['rol_id']}</td>";
+              echo "<td>{$personal['rol']}</td>";
               echo "<td>";
               echo "<a href='modificar_personal.php?id={$personal['id']}' class='btn btn-info'>Modificar</a>";
               echo "<a href='dar_baja_personal.php?id={$personal['id']}' class='btn btn-danger'>Dar de Baja</a>";
@@ -80,13 +80,12 @@
           echo "<tr><td colspan='6'>No hay personales registrados.</td></tr>";
       }
 
-      // Cierra la conexión a la base de datos
       $conn->close();
       ?>
     </tbody>
   </table>
+  <a href="gestionar-mi-perfil.php" class="btn btn-primary">Volver</a>
 </div>
-
 <br>
 
 <footer class="footer bg-dark text-light">

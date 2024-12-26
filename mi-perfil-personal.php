@@ -68,7 +68,7 @@ $result = $conn->query($sql);
             <h2>Mi Perfil</h2>
             <hr>
             <h4>Perfil de Personal</h4>
-            <p>Desde aquí puedes consultar fichas clínicas, registrar a un cliente y/o un servicio.</p>
+            <p>Desde acá podés consultar fichas clínicas, registrar y modificar atenciones de las mascotas de la veterinaria.</p>
         </div>
     </div>
     <br><br>
