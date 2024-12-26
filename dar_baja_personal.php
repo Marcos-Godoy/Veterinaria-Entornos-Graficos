@@ -1,10 +1,8 @@
 <?php
 include 'conexion.php';
 
-// Obtén el ID del personal a dar de baja desde la URL
 $id_personal = $_GET['id'];
 
-// Verifica si se ha enviado la confirmación desde JavaScript
 if (isset($_GET['confirmacion']) && $_GET['confirmacion'] == 'true') {
     // Consulta para eliminar físicamente el registro
     $consulta_eliminar = "DELETE FROM personal WHERE id = $id_personal";

@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Muestra las mascotas en una tabla si hay resultados
     if ($result->num_rows > 0) {
+        echo '<!DOCTYPE html>';
         echo '<html lang="es">';
         echo '<head>';
         echo '<meta charset="UTF-8">';
@@ -98,7 +99,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 </footer> 
 ';
-        // Agrega los scripts de Bootstrap y jQuery
         echo '<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>';
         echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>';
         echo '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>';
@@ -108,7 +108,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo '<p class="container">No hay mascotas asociadas al cliente con ID ' . $idCliente . '.</p>';
     }
 
-    // Cierra la conexión a la base de datos
     $conn->close();
 }
 ?>
