@@ -20,25 +20,23 @@ if ($resultado_mascota->num_rows > 0) {
     // Muestra el carnet de la mascota con estilos CSS
     echo "<html>";
     echo "<head>";
-    echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>";
+    echo "<link type='text/css' rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>";
     echo "<meta charset='utf-8'>";
     echo "<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>";
-    echo "<style>";
-    echo "body { font-family: 'Arial', sans-serif; background-color: #f0f0f0; }";
-    echo ".carnet { width: 500px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 15px; }";
-    echo ".carnet h2 { text-align: center; color: #333; }";
-    echo ".carnet .info { display: flex; align-items: center; }";
-    echo ".carnet img { max-width: 150px; height: auto; border-radius: 10px; margin-right: 20px; }";
-    echo ".carnet table { width: 100%; }";
-    echo ".carnet th, .carnet td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }";
-    echo ".atenciones { margin-top: 20px; }";
-    echo ".atenciones h2 { text-align: center; color: #333; }";
-    echo ".atenciones table { width: 100%; }";
-    echo ".atenciones th, .atenciones td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-    .container {
-      margin-top: 50px;
-    }";
-    echo "</style>";
+    echo "<style>
+      body { font-family: 'Arial', sans-serif; background-color: #f0f0f0; }
+      .carnet { width: 500px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 15px; }
+      .carnet h2 { text-align: center; color: #333; }
+      .carnet .info { display: flex; align-items: center; }
+      .carnet img { max-width: 150px; height: auto; border-radius: 10px; margin-right: 20px; }
+      .carnet table { width: 100%; }
+      .carnet th, .carnet td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+      .atenciones { margin-top: 20px; }
+      .atenciones h2 { text-align: center; color: #333; }
+      .atenciones table { width: 100%; }
+      .atenciones th, .atenciones td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+      .container { margin-top: 50px;}
+    </style>";
     echo "</head>";
     echo "<body><nav class='navbar navbar-expand-lg  bg-dark '>
   <a class='navbar-brand' href='pagina.html'><img src='imagenes\\logovet.png' alt='Logo' width='50' height='50'></a>

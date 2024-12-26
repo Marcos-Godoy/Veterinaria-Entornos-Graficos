@@ -17,15 +17,15 @@ if ($resultado_atencion->num_rows > 0) {
     echo "<head>";
     echo '<meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">';
-    echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>";
-    echo "<style>";
-    echo "body { font-family: 'Arial', sans-serif; background-color: #f0f0f0; }";
-    echo ".form-container { width: 500px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 15px; }";
-    echo "label { display: block; margin-bottom: 10px; }";
-    echo "input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; }";
-    echo "input[disabled], textarea[disabled] { background-color: #eee; }";
-    echo "input[type='submit'] { background-color: #4caf50; color: #fff; cursor: pointer; }";
-    echo "</style>";
+    echo "<link type='text/css' rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>";
+    echo "<style>
+      body { font-family: 'Arial', sans-serif; background-color: #f0f0f0; }
+      .form-container { width: 500px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 15px; }
+      label { display: block; margin-bottom: 10px; }
+      input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; }
+      input[disabled], textarea[disabled] { background-color: #eee; }
+      input[type='submit'] { background-color: #4caf50; color: #fff; cursor: pointer; }
+    </style>";
     echo "</head>";
     echo "<body><nav class='navbar navbar-expand-lg  bg-dark '>
   <a class='navbar-brand' href='pagina.html'><img src='imagenes\\logovet.png' alt='Logo' width='50' height='50'></a>

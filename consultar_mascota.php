@@ -17,9 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
         echo '<title>Consulta de Mascotas</title>';
         echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">';
-        echo '<style>';
-        echo '.container { margin-top: 50px; }';
-        echo '</style>';
+        echo '<style>.container { margin-top: 50px; }</style>';
         echo '</head>';
         echo '<body>';
 
