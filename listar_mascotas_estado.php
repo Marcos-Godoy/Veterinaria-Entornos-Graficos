@@ -136,6 +136,7 @@
     </tbody>
   </table>
   <br>
+  <a href="registrar_mascota.html" class="btn btn-success">Nueva Mascota</a>
   <a href="gestionar-mi-perfil.php" class="btn btn-primary">Volver</a>
 </div>
 <br>

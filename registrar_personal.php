@@ -13,12 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $insertar_personal = "INSERT INTO personal (email, clave, rol_id, nombre, apellido) VALUES ('$email', '$clave', '$rol_id', '$nombre', '$apellido')";
 
     if ($conn->query($insertar_personal) === TRUE) {
-        echo "<script>alert('Registro exitoso'); window.location.href = 'mi-perfil.html';</script>";
+        echo "<script>alert('Registro exitoso'); window.location.href = 'listar_personales.php';</script>";
     } else {
-        echo "<script>alert('Error en el registro'); window.location.href = 'mi-perfil.html';</script>";
+        echo "<script>alert('Error en el registro'); window.location.href = 'registrar_personal.html';</script>";
     }
 
-    // Cierra la conexión a la base de datos
     $conn->close();
 }
 ?>

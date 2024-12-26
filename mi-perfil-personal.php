@@ -61,7 +61,7 @@ $result = $conn->query($sql);
         <div class="col-md-3">
             <div class="list-group">
                 <a href="completar_atencion.html" class="list-group-item list-group-item-action">Registrar Atención</a>
-                <a href="consultar_carnet.html" class="list-group-item list-group-item-action">Consultar/Modificar Atenciones</a>
+                <a href="consultar_carnet.html" class="list-group-item list-group-item-action">Gestionar Atenciones</a>
             </div>
         </div>
         <div class="col-md-9">

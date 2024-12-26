@@ -84,6 +84,7 @@
       ?>
     </tbody>
   </table>
+  <a href="registrar_personal.html" class="btn btn-success">Nuevo Personal</a>
   <a href="gestionar-mi-perfil.php" class="btn btn-primary">Volver</a>
 </div>
 <br>
