@@ -49,15 +49,15 @@
   <h2>Registrar Cliente</h2>
   <form action="registrar-cliente.php" method="post">
     <div class="form-group">
-      <label for="nombre">Nombre:</label>
+      <label for="nombre">Nombre:<span class="text-danger">*</span></label>
       <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre" required>
     </div>
     <div class="form-group">
-      <label for="apellido">Apellido:</label>
+      <label for="apellido">Apellido:<span class="text-danger">*</span></label>
       <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese apellido" required>
     </div>
     <div class="form-group">
-      <label for="email">Correo electrónico:</label>
+      <label for="email">Correo electrónico:<span class="text-danger">*</span></label>
       <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese correo electrónico" required>
     </div>
     <div class="form-group">
@@ -73,7 +73,7 @@
       <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese telefono">
     </div>
     <div class="form-group">
-      <label for="clave">Clave:</label>
+      <label for="clave">Clave:<span class="text-danger">*</span></label>
       <input type="password" class="form-control" id="clave" name="clave" placeholder="Ingrese clave" required>
     </div>
     <button type="submit" class="btn btn-primary">Registrar Cliente</button>

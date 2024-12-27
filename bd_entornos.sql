@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 17, 2024 at 04:49 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 27-12-2024 a las 15:39:23
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bd_entornos`
+-- Base de datos: `bd_entornos`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `atenciones`
+-- Estructura de tabla para la tabla `atenciones`
 --
 
 CREATE TABLE `atenciones` (
@@ -38,17 +38,27 @@ CREATE TABLE `atenciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `atenciones`
+-- Volcado de datos para la tabla `atenciones`
 --
 
 INSERT INTO `atenciones` (`id`, `mascota_id`, `servicio_id`, `personal_id`, `fecha_hora`, `titulo`, `descripcion`) VALUES
-(1, 90, 1, 1, '2024-01-15', 'asf', 'asd'),
-(2, 2, 1, 1, '2024-01-11', 'Corte', ' Se realizo un corte de pelo del perro');
+(1, 1, 1, 1, '2024-01-15', 'Corte', 'ok'),
+(2, 2, 1, 1, '2024-01-11', 'Corte', ' Se realizo un corte de pelo del perro'),
+(3, 9, 1, 6, '2024-12-19', 'Servicio de corte de', 'ok'),
+(4, 3, 1, 3, '2024-12-24', 'Chequeo general', 'Problemas en el estomago pero ok'),
+(5, 3, 1, 5, '2024-12-24', 'Baño', 'Baño general'),
+(6, 6, 3, 5, '2024-12-20', 'Desparasitación', 'Se le sacaron pulgas'),
+(7, 6, 2, 3, '2025-11-11', 'Vacuna contra rabia', ''),
+(8, 4, 5, 3, '2024-12-28', 'Dolores', ''),
+(9, 7, 4, 5, '2024-12-26', 'Gripe', ''),
+(10, 9, 8, 5, '2024-12-28', 'Cirugia', ''),
+(11, 11, 3, 5, '2024-12-20', 'Chequeo general', 'Todo bien\r\n'),
+(12, 3, 1, 5, '2024-12-27', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clientes`
+-- Estructura de tabla para la tabla `clientes`
 --
 
 CREATE TABLE `clientes` (
@@ -63,26 +73,29 @@ CREATE TABLE `clientes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `clientes`
+-- Volcado de datos para la tabla `clientes`
 --
 
 INSERT INTO `clientes` (`id`, `nombre`, `apellido`, `email`, `ciudad`, `direccion`, `telefono`, `clave`) VALUES
-(1, 'Marcos', 'Perez', 'mgodoyquattoni@gmail', 'Rosario', 'Pellegrini 1000', '123 435 5654', '1'),
+(1, 'Marcos', 'Perez', 'cli@cli.com', 'Rosario', 'Pellegrini 1000', '123 435 5654', '1234'),
 (2, 'Juan', 'Lopez', 'juanlopez@gmail.com', 'Rosario', 'Cordoba 345', '123 435 2342', 'a'),
 (3, 'Alberto', 'Fernandez', 'albertito@gmail.com', 'Capital', '9 de Julio 567', '123 435 5654', 'a'),
-(4, 'Jose', 'Quattoni', 'jq@gmail.com', 'Mar del Plata', '13 a', '4327782', 'a');
+(4, 'Jose', 'Rossi', 'jq@gmail.com', 'Mar del Plata', '13 a', '123 345 4543', 'a'),
+(5, 'Lionel', 'Messi', 'lm@gmail.com', 'Rosario', 'Segui 3000', '3427856459', '1234'),
+(6, 'Paulo', 'Dybala', 'pd@gmail.com', 'Roma', 'Tucuman 123', '3427856434', '1234'),
+(7, 'Juan', 'Perez', 'jp@gmail.com', '', '', '', '1234');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mascotas`
+-- Estructura de tabla para la tabla `mascotas`
 --
 
 CREATE TABLE `mascotas` (
   `id` int(11) NOT NULL,
   `cliente_id` int(11) NOT NULL,
   `nombre` varchar(20) NOT NULL,
-  `foto` int(11) NOT NULL,
+  `foto` varchar(100) NOT NULL,
   `raza` varchar(20) NOT NULL,
   `color` varchar(20) NOT NULL,
   `fecha_de_nac` date NOT NULL,
@@ -90,20 +103,26 @@ CREATE TABLE `mascotas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `mascotas`
+-- Volcado de datos para la tabla `mascotas`
 --
 
 INSERT INTO `mascotas` (`id`, `cliente_id`, `nombre`, `foto`, `raza`, `color`, `fecha_de_nac`, `fecha_muerte`) VALUES
-(1, 1, 'Pepe', 0, 'Perro', 'Marron', '0000-00-00', '0000-00-00'),
-(2, 2, 'Bob', 0, 'Perro', 'Blanco', '0000-00-00', '2024-01-26'),
-(3, 2, 'Pancho', 0, 'Perro', 'Blanco', '2018-01-14', '0000-00-00'),
-(4, 1, 'Bambino', 0, 'Mestizo', 'Marron', '2021-04-14', '0000-00-00'),
-(5, 2, 'Roco', 0, 'Labrador', 'Amarillo', '2024-01-04', '0000-00-00');
+(1, 1, 'Pepe', 'uploads/pastor.jpg', 'Pastor Alemán', 'Marron', '2024-12-18', '0000-00-00'),
+(2, 2, 'Clio', 'uploads/pitbull.jpg', 'Pitbull', 'Marron', '2018-06-07', '0000-00-00'),
+(3, 3, 'Manaos', 'uploads/persa.jpg', 'Persa', 'Blanco', '2024-12-21', '0000-00-00'),
+(4, 1, 'Bambino', 'uploads/bulldog.jpg', 'Bulldog', 'Marron', '2021-04-14', '0000-00-00'),
+(5, 2, 'Roco', 'uploads/foto2.jpg', 'Labrador', 'Amarillo', '2024-01-04', '2024-12-05'),
+(6, 4, 'Tigre', 'uploads/ash.jpg', 'Ashera', 'Marron', '2019-10-25', '2024-12-26'),
+(7, 6, 'Siber', 'uploads/siberiano.jpg', 'Siberiano', 'Gris', '2021-02-04', '0000-00-00'),
+(8, 5, 'Hulk', 'uploads/vet1.jpg', 'Salchicha', 'Marron', '2022-06-24', '0000-00-00'),
+(9, 4, 'Pechito', 'uploads/pel1.jpg', 'Labrador', 'Blanco', '2019-06-05', '0000-00-00'),
+(10, 6, 'Admin', 'uploads/foto4.jpg', 'Loro', 'Verde', '2024-10-10', '2024-12-26'),
+(11, 4, 'Gol', 'uploads/foto1.jpg', 'Siberiano', 'Marron', '2024-12-27', '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal`
+-- Estructura de tabla para la tabla `personal`
 --
 
 CREATE TABLE `personal` (
@@ -116,18 +135,21 @@ CREATE TABLE `personal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `personal`
+-- Volcado de datos para la tabla `personal`
 --
 
 INSERT INTO `personal` (`id`, `email`, `clave`, `rol_id`, `nombre`, `apellido`) VALUES
+(1, 'lber@gmail.com', 1234, 2, 'Lucas', 'Bernardi'),
+(2, 'maxi@gmail.com', 1234, 3, 'Maximiliano', 'Rodriguez'),
 (3, 'angel@gmail.com', 10, 2, 'Angel', 'Di Maria'),
-(4, 'jgomez@mail.com', 1234, 1, 'Jonatan', 'Gomez'),
-(5, 'ag@mail.com', 1234, 1, 'Alicia', 'Gonzalez');
+(4, 'emar@gmail.com', 1234, 2, 'Emiliano', 'Martinez'),
+(5, 'admin@admin.com', 1234, 1, 'Diego', 'Maradona'),
+(6, 'vet@vet.com', 1234, 3, 'Nahuel', 'Guzman');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Estructura de tabla para la tabla `roles`
 --
 
 CREATE TABLE `roles` (
@@ -136,7 +158,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `roles`
+-- Volcado de datos para la tabla `roles`
 --
 
 INSERT INTO `roles` (`id`, `nombre`) VALUES
@@ -147,7 +169,7 @@ INSERT INTO `roles` (`id`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `servicios`
+-- Estructura de tabla para la tabla `servicios`
 --
 
 CREATE TABLE `servicios` (
@@ -158,19 +180,24 @@ CREATE TABLE `servicios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `servicios`
+-- Volcado de datos para la tabla `servicios`
 --
 
 INSERT INTO `servicios` (`id`, `nombre`, `tipo`, `precio`) VALUES
-(1, 'Corte', 'Peluqueria', '100'),
-(2, 'Cirugía', 'Salud', '200'),
-(5, 'Limpieza', 'Peluqueria', '100'),
-(6, 'Uñas', 'Salud', '300');
+(1, 'Consulta General', 'Veterinaria', '20000'),
+(2, 'Vacunación', 'Veterinaria', '10000'),
+(3, 'Desparasitación', 'Veterinaria', '20000'),
+(4, 'Tratamientos', 'Veterinaria', '15000'),
+(5, 'Curaciones', 'Veterinaria', '20000'),
+(6, 'Baño', 'Peluquería', '20000'),
+(7, 'Corte de Uñas', 'Peluquería', '15000'),
+(8, 'Cirugía', 'Veterinaria', '40000'),
+(9, 'Otros', '-', '-');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `turnos`
+-- Estructura de tabla para la tabla `turnos`
 --
 
 CREATE TABLE `turnos` (
@@ -178,110 +205,126 @@ CREATE TABLE `turnos` (
   `fecha_hora` datetime NOT NULL,
   `servicio_id` int(11) NOT NULL,
   `estado` varchar(20) NOT NULL,
-  `cliente_id` int(11) NOT NULL
+  `cliente_id` int(11) NOT NULL,
+  `personal_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `turnos`
+-- Volcado de datos para la tabla `turnos`
 --
 
-INSERT INTO `turnos` (`id`, `fecha_hora`, `servicio_id`, `estado`, `cliente_id`) VALUES
-(1, '2024-01-16 20:51:00', 1, 'ocupado', 3),
-(2, '2024-01-19 20:51:00', 1, 'ocupado', 2),
-(3, '2024-01-26 22:59:00', 6, 'ocupado', 3),
-(4, '2024-01-27 12:31:00', 1, 'ocupado', 2);
+INSERT INTO `turnos` (`id`, `fecha_hora`, `servicio_id`, `estado`, `cliente_id`, `personal_id`) VALUES
+(1, '2024-01-16 20:51:00', 1, 'ocupado', 3, 0),
+(2, '2024-01-19 20:51:00', 1, 'ocupado', 2, 0),
+(3, '2024-01-26 22:59:00', 6, 'ocupado', 3, 0),
+(4, '2024-01-27 12:31:00', 1, 'ocupado', 2, 0),
+(5, '2024-12-19 13:47:00', 1, 'ocupado', 5, 0),
+(6, '2024-12-21 13:47:00', 1, 'ocupado', 1, 0),
+(7, '2024-12-20 20:26:00', 1, 'disponible', 0, 3),
+(8, '2024-12-20 18:27:00', 1, 'ocupado', 1, 3),
+(9, '2024-12-20 12:41:00', 1, 'ocupado', 0, 3),
+(10, '2024-12-27 13:27:00', 1, 'ocupado', 1, 3),
+(11, '2025-01-10 15:40:00', 1, 'disponible', 0, 3),
+(12, '2025-01-10 15:45:00', 4, 'disponible', 0, 1),
+(13, '2025-06-25 17:00:00', 1, 'disponible', 0, 2),
+(14, '2025-06-26 12:30:00', 2, 'disponible', 0, 2),
+(15, '2025-06-26 16:30:00', 1, 'disponible', 0, 1),
+(16, '2025-07-28 14:30:00', 1, 'disponible', 0, 3),
+(17, '2025-07-27 16:00:00', 1, 'disponible', 0, 4),
+(18, '2025-05-28 16:30:00', 7, 'disponible', 0, 3),
+(19, '2025-07-27 11:00:00', 5, 'disponible', 0, 3);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `atenciones`
+-- Indices de la tabla `atenciones`
 --
 ALTER TABLE `atenciones`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `clientes`
+-- Indices de la tabla `clientes`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `mascotas`
+-- Indices de la tabla `mascotas`
 --
 ALTER TABLE `mascotas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `personal`
+-- Indices de la tabla `personal`
 --
 ALTER TABLE `personal`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `roles`
+-- Indices de la tabla `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `servicios`
+-- Indices de la tabla `servicios`
 --
 ALTER TABLE `servicios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `turnos`
+-- Indices de la tabla `turnos`
 --
 ALTER TABLE `turnos`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `atenciones`
+-- AUTO_INCREMENT de la tabla `atenciones`
 --
 ALTER TABLE `atenciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `clientes`
+-- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `mascotas`
+-- AUTO_INCREMENT de la tabla `mascotas`
 --
 ALTER TABLE `mascotas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `personal`
+-- AUTO_INCREMENT de la tabla `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `roles`
+-- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `servicios`
+-- AUTO_INCREMENT de la tabla `servicios`
 --
 ALTER TABLE `servicios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `turnos`
+-- AUTO_INCREMENT de la tabla `turnos`
 --
 ALTER TABLE `turnos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

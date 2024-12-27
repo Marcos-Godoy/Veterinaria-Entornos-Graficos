@@ -103,7 +103,7 @@ $conn->close();
     <form action="modificar_mascota.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $mascota['id']; ?>">
         <div class="form-group">
-            <label for="nombre">Nombre de la Mascota:</label>
+            <label for="nombre">Nombre de la Mascota:<span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $mascota['nombre']; ?>" required>
         </div>
         <div class="form-group">
