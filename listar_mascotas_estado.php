@@ -8,7 +8,7 @@ $pagina_actual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 $offset = ($pagina_actual - 1) * $registros_por_pagina;
 
 // Consulta SQL para obtener el número total de registros de mascotas activas
-$total_registros_query = "SELECT COUNT(*) as total FROM Mascotas WHERE fecha_muerte = '0000-00-00'";
+$total_registros_query = "SELECT COUNT(*) as total FROM mascotas WHERE fecha_muerte = '0000-00-00'";
 $total_registros_result = $conn->query($total_registros_query);
 $total_registros = $total_registros_result->fetch_assoc()['total'];
 
@@ -16,7 +16,7 @@ $total_registros = $total_registros_result->fetch_assoc()['total'];
 $total_paginas = ceil($total_registros / $registros_por_pagina);
 
 // Consulta SQL para obtener los registros de la página actual de mascotas activas
-$consulta_mascotas_activas = "SELECT * FROM Mascotas WHERE fecha_muerte = '0000-00-00' LIMIT $registros_por_pagina OFFSET $offset";
+$consulta_mascotas_activas = "SELECT * FROM mascotas WHERE fecha_muerte = '0000-00-00' LIMIT $registros_por_pagina OFFSET $offset";
 $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
 ?>
 
@@ -146,7 +146,7 @@ $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
         </thead>
         <tbody>
             <?php
-            $consulta_mascotas_muertas = "SELECT * FROM Mascotas WHERE fecha_muerte != '0000-00-00'";
+            $consulta_mascotas_muertas = "SELECT * FROM mascotas WHERE fecha_muerte != '0000-00-00'";
             $resultado_mascotas_muertas = $conn->query($consulta_mascotas_muertas);
 
             if ($resultado_mascotas_muertas->num_rows > 0) {
