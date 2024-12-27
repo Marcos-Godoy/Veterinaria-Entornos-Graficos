@@ -22,7 +22,10 @@ $resultado_turnos = $conn->query($consulta_turnos);
 ?>
 <body>
 <nav class="navbar navbar-expand-lg  bg-dark ">
-  <a class="navbar-brand" href="pagina.html"><img src="imagenes/logovet.png" alt="Logo" width="50" height="50"></a>
+<a class="navbar-brand" href="pagina.html">
+      <img src="imagenes/logovet.png" alt="Logo" width="50" height="50">
+        Veterinaria San Anton
+    </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -90,27 +93,29 @@ $resultado_turnos = $conn->query($consulta_turnos);
     </table>
     <a href="gestionar-mi-perfil.php" class="btn btn-secondary">Volver</a>
 </div>
-    <br>
+<br>
 
-<footer class="footer bg-dark text-light">
+    <footer class="footer bg-dark text-light">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
         <br>
         <h5>Mapa de Sitio</h5>
         <ul class="list-unstyled">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Quienes somos?</a></li>
-          <li><a href="#">Servicios</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="pagina.html">Inicio</a></li>
+          <li><a href="quienes-somos.html">Quienes somos?</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="login.html">Iniciar Sesión</a></li>
         </ul>
       </div>
       <div class="col-md-6">
         <br>
         <h5>Contacto</h5>
         <address>
+          Veterinaria San Anton<br>
           123 Calle Principal<br>
-          Ciudad, País<br>
+          Rosario, Argentina<br>
           Teléfono: 123-456-7890<br>
           Correo electrónico: info@example.com
         </address>
@@ -119,9 +124,9 @@ $resultado_turnos = $conn->query($consulta_turnos);
   </div>
 </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
