@@ -1,7 +1,10 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Registrar Mascota</title>
+  <title>Formulario de Contacto</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -12,7 +15,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg  bg-dark ">
-  <a class="navbar-brand" href="pagina.html">
+  <a class="navbar-brand" href="pagina.php">
     <img src="imagenes/logovet.png" alt="Logo" width="50" height="50">
       Veterinaria San Anton
   </a>
@@ -24,61 +27,56 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mx-auto" >
       <li class="nav-item">
-        <a class="nav-link" href="quienes-somos.html">Quienes somos?</a>
+        <a class="nav-link" href="quienes-somos.php">Quienes somos?</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="contacto.html">Contacto</a>
+        <a class="nav-link" href="contacto.php">Contacto</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="servicios.html">Servicios</a>
+        <a class="nav-link" href="servicios.php">Servicios</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="gestionar-mi-perfil.php">Mi Perfil</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="login.html">Iniciar Sesión</a>
-      </li>
+      <?php if (isset($_SESSION['usuario_id'])): ?>
+        <li class="nav-item">
+            <p class="nav-link" style="color: #007bff;margin: 0; padding: 0.5rem 1rem; text-decoration: none;"><?php echo $_SESSION['nombre']; ?></p>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php">Cerrar sesión</a>
+        </li>
+      <?php else: ?>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Iniciar sesión</a>
+        </li>
+      <?php endif; ?>
     </ul>
   </div>
 </nav>
-<br>  
+<br>    
 
 <div class="container">
-  <h2>Registrar Mascota</h2>
-  <hr>
-  <form action="procesar_registro_mascota.php" method="post" enctype="multipart/form-data">
+  <h2>Formulario de Contacto</h2>
+  <form action="enviar_email.php" method="post">
     <div class="form-group">
-      <label for="cliente_id">Cliente ID:<span class="text-danger">*</span></label>
-      <input type="text" class="form-control" id="cliente_id" name="cliente_id" placeholder="Ingrese ID del cliente" required>
+      <label for="nombre">Nombre:</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre">
     </div>
     <div class="form-group">
-      <label for="nombre">Nombre de la Mascota:<span class="text-danger">*</span></label>
-      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre de la mascota" required>
+      <label for="email">Correo electrónico:</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico">
     </div>
     <div class="form-group">
-      <label for="foto">Foto:<span class="text-danger">*</span></label>
-      <input type="file" class="form-control" id="foto" name="foto" required>
+      <label for="mensaje">Mensaje:</label>
+      <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Ingrese su mensaje"></textarea>
     </div>
-    <div class="form-group">
-      <label for="raza">Raza:</label>
-      <input type="text" class="form-control" id="raza" name="raza" placeholder="Ingrese raza">
-    </div>
-    <div class="form-group">
-      <label for="color">Color:</label>
-      <input type="text" class="form-control" id="color" name="color" placeholder="Ingrese color">
-    </div>
-    <div class="form-group">
-      <label for="fecha_de_nac">Fecha de Nacimiento:</label>
-      <input type="date" class="form-control" id="fecha_de_nac" name="fecha_de_nac">
-    </div>
-    <button type="submit" class="btn btn-primary">Registrar Mascota</button>
-    <a href="listar_mascotas_estado.php" class="btn btn-secondary">Volver</a>
+    <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
 </div>
+<br><br>
 
-<br>
 <footer class="footer bg-dark text-light">
   <div class="container">
     <div class="row">
@@ -86,10 +84,10 @@
         <br>
         <h5>Mapa de Sitio</h5>
         <ul class="list-unstyled">
-          <li><a href="pagina.html">Inicio</a></li>
-          <li><a href="quienes-somos.html">Quienes somos?</a></li>
-          <li><a href="servicios.html">Servicios</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="pagina.php">Inicio</a></li>
+          <li><a href="quienes-somos.php">Quienes somos?</a></li>
+          <li><a href="servicios.php">Servicios</a></li>
+          <li><a href="contacto.php">Contacto</a></li>
           <li><a href="login.html">Iniciar Sesión</a></li>
         </ul>
       </div>
@@ -107,6 +105,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>

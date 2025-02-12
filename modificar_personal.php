@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +13,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg  bg-dark ">
-    <a class="navbar-brand" href="pagina.html">
+    <a class="navbar-brand" href="pagina.php">
       <img src="imagenes/logovet.png" alt="Logo" width="50" height="50">
         Veterinaria San Anton
     </a>
@@ -21,22 +25,25 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mx-auto" >
       <li class="nav-item">
-        <a class="nav-link" href="quienes-somos.html">Quienes somos?</a>
+        <a class="nav-link" href="quienes-somos.php">Quienes somos?</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="contacto.html">Contacto</a>
+        <a class="nav-link" href="contacto.php">Contacto</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="servicios.html">Servicios</a>
+        <a class="nav-link" href="servicios.php">Servicios</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="gestionar-mi-perfil.php">Mi Perfil</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="login.html">Iniciar Sesión</a>
-      </li>
+        <li class="nav-item">
+            <p class="nav-link" style="color: #007bff;margin: 0; padding: 0.5rem 1rem; text-decoration: none;"><?php echo $_SESSION['nombre']; ?></p>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logout.php">Cerrar sesión</a>
+        </li>
     </ul>
   </div>
 </nav>
@@ -100,11 +107,11 @@
         <br>
         <h5>Mapa de Sitio</h5>
         <ul class="list-unstyled">
-          <li><a href="pagina.html">Inicio</a></li>
-          <li><a href="quienes-somos.html">Quienes somos?</a></li>
-          <li><a href="servicios.html">Servicios</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="login.html">Iniciar Sesión</a></li>
+          <li><a href="pagina.php">Inicio</a></li>
+          <li><a href="quienes-somos.php">Quienes somos?</a></li>
+          <li><a href="servicios.php">Servicios</a></li>
+          <li><a href="contacto.php">Contacto</a></li>
+          <li><a href="logout.php">Cerrar Sesión</a></li>
         </ul>
       </div>
       <div class="col-md-6">

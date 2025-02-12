@@ -33,23 +33,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if ($conn->query($insertarTurno) === TRUE) {
                     // Turno generado con éxito
-                    echo "<script>alert('Turno generado con éxito.'); window.location.href = 'generar_turno.html';</script>";
+                    echo "<script>alert('Turno generado con éxito.'); window.location.href = 'generar_turno.php';</script>";
                 } else {
                     // Error al generar el turno
-                    echo "<script>alert('Error al generar el turno: " . $conn->error . "'); window.location.href = 'generar_turno.html';</script>";
+                    echo "<script>alert('Error al generar el turno: " . $conn->error . "'); window.location.href = 'generar_turno.php';</script>";
                 }
             } else {
                 // Fecha y hora no válidas
-                echo "<script>alert('Error: La fecha y hora ingresadas deben ser futuras.'); window.location.href = 'generar_turno.html';</script>";
+                echo "<script>alert('Error: La fecha y hora ingresadas deben ser futuras.'); window.location.href = 'generar_turno.php';</script>";
             }
             } else {
-                echo "<script>alert('Error: El personal ya tiene un turno asignado en esa fecha y hora.'); window.location.href = 'generar_turno.html';</script>";
+                echo "<script>alert('Error: El personal ya tiene un turno asignado en esa fecha y hora.'); window.location.href = 'generar_turno.php';</script>";
             }
         } else {
-            echo "<script>alert('Error: El servicio ID o Personal ID ingresado no existen.'); window.location.href = 'generar_turno.html';</script>";
+            echo "<script>alert('Error: El servicio ID o Personal ID ingresado no existen.'); window.location.href = 'generar_turno.php';</script>";
         }
     } else {
-        echo "<script>alert('Error: No se puede asignar un turno a un administrador.'); window.location.href = 'generar_turno.html';</script>";
+        echo "<script>alert('Error: No se puede asignar un turno a un administrador.'); window.location.href = 'generar_turno.php';</script>";
     }
 }
 

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -42,7 +46,7 @@
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Cerrar sesión</a>
       </li>
-  </ul>
+    </ul>
   </div>
 </nav>
 <br>
@@ -113,5 +117,3 @@
 </footer>
 </body>
 </html>
-
-

@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($insertar_personal) === TRUE) {
         echo "<script>alert('Registro exitoso'); window.location.href = 'listar_personales.php';</script>";
     } else {
-        echo "<script>alert('Error en el registro'); window.location.href = 'registrar_personal.html';</script>";
+        echo "<script>alert('Error en el registro'); window.location.href = 'ingresar_personal.php';</script>";
     }
 
     $conn->close();

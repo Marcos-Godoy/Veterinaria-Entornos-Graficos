@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<script>alert('Error en el registro'); window.location.href = 'listar_mascotas_estado.php';</script>";
         }
     } else {
-        echo "<script>alert('El ID del cliente no existe'); window.location.href = 'registrar_mascota.html';</script>";
+        echo "<script>alert('El ID del cliente no existe'); window.location.href = 'registrar_mascota.php';</script>";
     }
 
     $conn->close();

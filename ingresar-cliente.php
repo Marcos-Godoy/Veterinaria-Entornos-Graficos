@@ -1,26 +1,21 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Página</title>
+  <title>Registrar Cliente</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <style type="text/css">
-    .carousel-inner img {
-      width: 100%;
-      height: 500px;
-    }
-  </style>
 </head>
 <body>
 
-  <?php session_start(); ?>
-
-<nav class="navbar navbar-expand-lg bg-dark">
+<nav class="navbar navbar-expand-lg  bg-dark ">
   <a class="navbar-brand" href="pagina.php">
     <img src="imagenes/logovet.png" alt="Logo" width="50" height="50">
       Veterinaria San Anton
@@ -31,7 +26,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav mx-auto">
+    <ul class="navbar-nav mx-auto" >
       <li class="nav-item">
         <a class="nav-link" href="quienes-somos.php">Quienes somos?</a>
       </li>
@@ -46,41 +41,53 @@
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-      <?php if (isset($_SESSION['usuario_id'])): ?>
-        <li class="nav-item">
-          <a class="nav-link" href="perfil.php"><?php echo $_SESSION['nombre']; ?></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="logout.php">Cerrar sesión</a>
-        </li>
-      <?php else: ?>
-        <li class="nav-item">
-          <a class="nav-link" href="login.html">Iniciar sesión</a>
-        </li>
-      <?php endif; ?>
+      <li class="nav-item">
+          <p class="nav-link" style="color: #007bff;margin: 0; padding: 0.5rem 1rem; text-decoration: none;"><?php echo $_SESSION['nombre']; ?></p>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php">Cerrar sesión</a>
+      </li>
     </ul>
   </div>
 </nav>
+<br>    
 
-<div id="carouselExample" class="carousel slide" data-ride="carousel" > 
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="imagenes/foto1.jpg" alt="First slide">
+<div class="container">
+  <h2>Registrar Cliente</h2>
+  <form action="registrar-cliente.php" method="post">
+    <div class="form-group">
+      <label for="nombre">Nombre:<span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre" required>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="imagenes/foto2.jpg" alt="Second slide">
+    <div class="form-group">
+      <label for="apellido">Apellido:<span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese apellido" required>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="imagenes/foto3.jpg" alt="Second slide">
+    <div class="form-group">
+      <label for="email">Correo electrónico:<span class="text-danger">*</span></label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese correo electrónico" required>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="imagenes/foto4.jpg" alt="Second slide">
+    <div class="form-group">
+      <label for="ciudad">Ciudad:</label>
+      <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ingrese ciudad">
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="imagenes/foto5.jpg" alt="Second slide">
+    <div class="form-group">
+      <label for="direccion">Dirección:</label>
+      <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingrese direccion">
     </div>
-  </div>
+    <div class="form-group">
+      <label for="telefono">Telefono:</label>
+      <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese telefono">
+    </div>
+    <div class="form-group">
+      <label for="clave">Clave:<span class="text-danger">*</span></label>
+      <input type="password" class="form-control" id="clave" name="clave" placeholder="Ingrese clave" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar Cliente</button>
+    <a href="gestionar-mi-perfil.php" class="btn btn-secondary">Volver</a>
+  </form>
 </div>
+<br><br><br>
 
 <footer class="footer bg-dark text-light">
   <div class="container">
@@ -111,13 +118,5 @@
   </div>
 </footer>
 
-<script>
-  // Inicializa el carrusel
-  $(document).ready(function(){
-    $('#carouselExample').carousel();
-  });
-</script>
-
 </body>
 </html>
-

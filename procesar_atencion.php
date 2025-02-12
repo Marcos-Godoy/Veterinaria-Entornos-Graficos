@@ -33,14 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 //echo "Atención completada con éxito";
                 echo "<script>alert('Atencion completada con exito'); window.location.href = 'gestionar-mi-perfil.php';</script>";
             } else {
-                echo "<script>alert('Error al completar la atencion'); window.location.href = 'completar_atencion.html';</script>";
+                echo "<script>alert('Error al completar la atencion'); window.location.href = 'completar_atencion.php';</script>";
             }
         } else {
             //echo "Error: El servicio con el ID '$servicio_id' no existe.";
-            echo "<script>alert('Error: El servicio con el ID {$servicio_id} no existe.'); window.location.href = 'completar_atencion.html';</script>";
+            echo "<script>alert('Error: El servicio con el ID {$servicio_id} no existe.'); window.location.href = 'completar_atencion.php';</script>";
         }
     } else {
-        echo "<script>alert('Error: La mascota con el nombre {$nombre_mascota} no existe o esta muerta.'); window.location.href = 'completar_atencion.html';</script>";
+        echo "<script>alert('Error: La mascota con el nombre {$nombre_mascota} no existe o esta muerta.'); window.location.href = 'completar_atencion.php';</script>";
     }
 
     $conn->close();

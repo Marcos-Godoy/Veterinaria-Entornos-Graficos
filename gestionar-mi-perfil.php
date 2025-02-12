@@ -19,14 +19,14 @@ if ($tipoUsuario === 'cliente') {
     // Si es personal, verificamos el rol
     if ($_SESSION['rol_id'] == 1) {
         // Contenido para personal (administrador)
-        header("Location: mi-perfil.html");
+        header("Location: mi-perfil.php");
     } else {
         // Para peluqueros y veterinarios
         header("Location: mi-perfil-personal.php");
     }
 } else {
     // Tipo de usuario no reconocido, redirigir a la página de inicio
-    header("Location: pagina.html");
+    header("Location: pagina.php");
     exit();
 }
 ?>

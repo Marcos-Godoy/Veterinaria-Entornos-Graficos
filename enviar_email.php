@@ -14,11 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mail($destinatario, $asunto, $contenido);
     /*
     if (mail($destinatario, $asunto, $contenido)) {
-        echo "<script>alert('Su consulta ha sido enviada, en breve recibirá nuestra respuesta.'); window.location.href = 'contacto.html';</script>";
+        echo "<script>alert('Su consulta ha sido enviada, en breve recibirá nuestra respuesta.'); window.location.href = 'contacto.php';</script>";
     } else {
-        echo "<script>alert('Hubo un problema al enviar su consulta. Por favor, inténtelo de nuevo más tarde.'); window.location.href = 'contacto.html';</script>";
+        echo "<script>alert('Hubo un problema al enviar su consulta. Por favor, inténtelo de nuevo más tarde.'); window.location.href = 'contacto.php';</script>";
     }*/
-    echo "<script>alert('Su consulta ha sido enviada, en breve recibirá nuestra respuesta.'); window.location.href = 'contacto.html';</script>";
+    echo "<script>alert('Su consulta ha sido enviada, en breve recibirá nuestra respuesta.'); window.location.href = 'contacto.php';</script>";
     exit();
 }
 ?>
