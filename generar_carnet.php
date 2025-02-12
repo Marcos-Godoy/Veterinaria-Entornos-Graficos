@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'conexion.php';
 
 // Obtiene el nombre de la mascota desde el formulario (POST) o por la URL (GET)
@@ -64,11 +65,16 @@ if ($resultado_mascota->num_rows > 0) {
         <a class='nav-link' href='gestionar-mi-perfil.php'>Mi Perfil</a>
       </li>
     </ul>
+
     <ul class='navbar-nav ml-auto'>
-      <li class='nav-item'>
-        <a class='nav-link' href='login.html'>Iniciar Sesión</a>
-      </li>
+        <li class='nav-item'>
+          <p class='nav-link' style='color: #007bff; margin: 0; padding: 0.5rem 1rem; text-decoration: none;'>"; echo $_SESSION['nombre']; echo "</p>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='logout.php'>Cerrar sesión</a>
+        </li>
     </ul>
+
   </div>
 </nav>
 <br><br>";
@@ -131,7 +137,7 @@ if ($resultado_atenciones->num_rows > 0) {
           <li><a href='quienes-somos.html'>Quienes somos?</a></li>
           <li><a href='servicios.html'>Servicios</a></li>
           <li><a href='contacto.html'>Contacto</a></li>
-          <li><a href='login.html'>Iniciar Sesión</a></li>
+          <li><a href='logout.php'>Cerrar Sesión</a></li>
         </ul>
       </div>
       <div class='col-md-6'>
