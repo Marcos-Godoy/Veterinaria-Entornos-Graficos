@@ -124,7 +124,7 @@ $result = $conn->query($sql);
           <li><a href="quienes-somos.php">Quienes somos?</a></li>
           <li><a href="servicios.php">Servicios</a></li>
           <li><a href="contacto.php">Contacto</a></li>
-          <li><a href="login.html">Iniciar Sesión</a></li>
+          <li><a href="logout.php">Cerrar Sesión</a></li>
         </ul>
       </div>
       <div class="col-md-6">
