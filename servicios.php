@@ -157,7 +157,11 @@
           <li><a href="quienes-somos.php">Quienes somos?</a></li>
           <li><a href="servicios.php">Servicios</a></li>
           <li><a href="contacto.php">Contacto</a></li>
-          <li><a href="login.html">Iniciar Sesión</a></li>
+          <?php if (isset($_SESSION['usuario_id'])): ?>
+            <li><a href="logout.php">Cerrar Sesión</a></li>
+          <?php else: ?>
+            <li><a href="login.html">Iniciar Sesión</a></li>
+          <?php endif; ?>
         </ul>
       </div>
       <div class="col-md-6">
