@@ -23,6 +23,7 @@ if ($resultado_mascota->num_rows > 0) {
     echo "<head>";
     echo "<title>Carnet de Mascota</title>";
     echo "<link type='text/css' rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>";
+    echo "<link rel='icon' href='imagenes/logovet.png' type='image/png'>";
     echo "<meta charset='utf-8'>";
     echo "<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>";
     echo "<style>
@@ -87,7 +88,7 @@ if ($resultado_mascota->num_rows > 0) {
     echo "<div class='carnet'>";
     echo "<h2>Carnet de {$mascota['nombre']}</h2><hr>";
     echo "<div class='info'>";
-    echo "<img src='{$mascota['foto']}' alt='Foto de {$mascota['nombre']}'>";
+    echo "<img src='{$mascota['foto']}' alt='Foto de {$mascota['nombre']}' title='Foto de {$mascota['nombre']}'>";
     echo "<table>";
     echo "<tr><th>ID</th><td>" . $mascota['id'] . "</td></tr>";
     echo "<tr><th>Nombre</th><td>" . $mascota['nombre'] . "</td></tr>";

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Listar Turnos Disponibles</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="imagenes/logovet.png" type="image/png">
 </head>
 <?php
 session_start();
@@ -23,7 +24,7 @@ $resultado_turnos = $conn->query($consulta_turnos);
 <body>
 <nav class="navbar navbar-expand-lg  bg-dark ">
 <a class="navbar-brand" href="pagina.php">
-      <img src="imagenes/logovet.png" alt="Logo" width="50" height="50">
+      <img src="imagenes/logovet.png" alt="Logo" title="Logo" width="50" height="50">
         Veterinaria San Anton
     </a>
 

@@ -8,7 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+  <link rel="icon" href="imagenes/logovet.png" type="image/png">
   <style type="text/css">
     .carousel-inner img {
       width: 100%;
@@ -22,7 +22,7 @@
 
 <nav class="navbar navbar-expand-lg bg-dark">
   <a class="navbar-brand" href="pagina.php">
-    <img src="imagenes/logovet.png" alt="Logo" width="50" height="50">
+    <img src="imagenes/logovet.png" alt="Logo" title="Logo" width="50" height="50">
       Veterinaria San Anton
   </a>
 
@@ -65,19 +65,19 @@
 <div id="carouselExample" class="carousel slide" data-ride="carousel" > 
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="imagenes/foto1.jpg" alt="First slide">
+      <img class="d-block w-100" src="imagenes/foto1.jpg" alt="First slide" title="Foto 1">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="imagenes/foto2.jpg" alt="Second slide">
+      <img class="d-block w-100" src="imagenes/foto2.jpg" alt="Second slide" title="Foto 2">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="imagenes/foto3.jpg" alt="Second slide">
+      <img class="d-block w-100" src="imagenes/foto3.jpg" alt="Thrid slide" title="Foto 3">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="imagenes/foto4.jpg" alt="Second slide">
+      <img class="d-block w-100" src="imagenes/foto4.jpg" alt="Fourth slide" title="Foto 4">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="imagenes/foto5.jpg" alt="Second slide">
+      <img class="d-block w-100" src="imagenes/foto5.jpg" alt="Fifth slide" title="Foto 5">
     </div>
   </div>
 </div>

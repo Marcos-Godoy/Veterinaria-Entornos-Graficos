@@ -28,11 +28,12 @@ $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Listar Mascotas por Estado</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="imagenes/logovet.png" type="image/png">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg  bg-dark ">
     <a class="navbar-brand" href="pagina.php">
-      <img src="imagenes/logovet.png" alt="Logo" width="50" height="50">
+      <img src="imagenes/logovet.png" alt="Logo" title="Logo" width="50" height="50">
         Veterinaria San Anton
     </a>
 
@@ -88,7 +89,7 @@ $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
                     echo "<tr style='background-color: #c8e6c9;'>";
                     echo "<td>{$mascota_activa['id']}</td>";
                     echo "<td>{$mascota_activa['nombre']}</td>";
-                    echo "<td><img src='{$mascota_activa['foto']}' alt='Foto de {$mascota_activa['nombre']}' style='width: 50px; height: 40px;'></td>";
+                    echo "<td><img src='{$mascota_activa['foto']}' alt='Foto de {$mascota_activa['nombre']}' title='Foto de {$mascota_activa['nombre']}' style='width: 50px; height: 40px;'></td>";
                     echo "<td>{$mascota_activa['raza']}</td>";
                     echo "<td>{$mascota_activa['color']}</td>";
                     echo "<td>{$mascota_activa['fecha_de_nac']}</td>";
@@ -158,7 +159,7 @@ $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
                     echo "<tr style='background-color: #ffcdd2;'>";
                     echo "<td>{$mascota_muerta['id']}</td>";
                     echo "<td>{$mascota_muerta['nombre']}</td>";
-                    echo "<td><img src='{$mascota_muerta['foto']}' alt='Foto de {$mascota_muerta['nombre']}' style='width: 50px; height: 40px;'></td>";
+                    echo "<td><img src='{$mascota_muerta['foto']}' alt='Foto de {$mascota_muerta['nombre']}' title='Foto de {$mascota_muerta['nombre']}' style='width: 50px; height: 40px;'></td>";
                     echo "<td>{$mascota_muerta['raza']}</td>";
                     echo "<td>{$mascota_muerta['color']}</td>";
                     echo "<td>{$mascota_muerta['fecha_de_nac']}</td>";

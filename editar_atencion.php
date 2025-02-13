@@ -20,6 +20,7 @@ if ($resultado_atencion->num_rows > 0) {
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="icon" href="imagenes/logovet.png" type="image/png">
         <style>
             body { font-family: 'Arial', sans-serif; background-color: #f0f0f0; }
             .form-container { width: 500px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 15px; }
@@ -32,7 +33,7 @@ if ($resultado_atencion->num_rows > 0) {
     <body>
     <nav class="navbar navbar-expand-lg bg-dark">
         <a class="navbar-brand" href="pagina.php">
-            <img src="imagenes/logovet.png" alt="Logo" width="50" height="50">
+            <img src="imagenes/logovet.png" alt="Logo" title="Logo" width="50" height="50">
             Veterinaria San Anton
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

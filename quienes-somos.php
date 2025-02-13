@@ -12,6 +12,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="icon" href="imagenes/logovet.png" type="image/png">
 
   <style type="text/css">
     .centered-box {
@@ -36,7 +37,7 @@
 
 <nav class="navbar navbar-expand-lg  bg-dark ">
   <a class="navbar-brand" href="pagina.php">
-    <img src="imagenes/logovet.png" alt="Logo" width="50" height="50">
+    <img src="imagenes/logovet.png" alt="Logo" title="Logo" width="50" height="50">
       Veterinaria San Anton
   </a>
 
@@ -107,7 +108,7 @@ cuales prestan servicios a la clínica y están disponibles para consultas a dom
     <!-- Tarjetas para la primera fila -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 100%;">
-        <img src="imagenes/vet1.jpg" class="card-img-top" alt="Veterinario">
+        <img src="imagenes/vet1.jpg" class="card-img-top" alt="Veterinario" title="Veterinario">
         <div class="card-body">
           <h5 class="card-title">Nombre Apellido</h5>
           <p class="card-text">Veterinario</p>
@@ -117,7 +118,7 @@ cuales prestan servicios a la clínica y están disponibles para consultas a dom
 
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 100%;">
-        <img src="imagenes/vet1.jpg" class="card-img-top" alt="Veterinario">
+        <img src="imagenes/vet1.jpg" class="card-img-top" alt="Veterinario" title="Veterinario">
         <div class="card-body">
           <h5 class="card-title">Nombre Apellido</h5>
           <p class="card-text">Veterinario</p>
@@ -127,7 +128,7 @@ cuales prestan servicios a la clínica y están disponibles para consultas a dom
 
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 100%;">
-        <img src="imagenes/vet1.jpg" class="card-img-top" alt="Veterinario">
+        <img src="imagenes/vet1.jpg" class="card-img-top" alt="Veterinario" title="Veterinario">
         <div class="card-body">
           <h5 class="card-title">Nombre Apellido</h5>
           <p class="card-text">Veterinario</p>
@@ -138,7 +139,7 @@ cuales prestan servicios a la clínica y están disponibles para consultas a dom
     <!-- Tarjetas para la segunda fila -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 100%;">
-        <img src="imagenes/vet1.jpg" class="card-img-top" alt="Veterinario">
+        <img src="imagenes/pel.jpg" class="card-img-top" alt="Peluquero" title="Peluquero">
         <div class="card-body">
           <h5 class="card-title">Nombre Apellido</h5>
           <p class="card-text">Peluquero</p>
@@ -148,7 +149,7 @@ cuales prestan servicios a la clínica y están disponibles para consultas a dom
 
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 100%;">
-        <img src="imagenes/vet1.jpg" class="card-img-top" alt="Veterinario">
+        <img src="imagenes/pel.jpg" class="card-img-top" alt="Peluquero" title="Peluquero">
         <div class="card-body">
           <h5 class="card-title">Nombre Apellido</h5>
           <p class="card-text">Peluquero</p>
@@ -158,7 +159,7 @@ cuales prestan servicios a la clínica y están disponibles para consultas a dom
 
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 100%;">
-        <img src="imagenes/vet1.jpg" class="card-img-top" alt="Veterinario">
+        <img src="imagenes/sec.jpg" class="card-img-top" alt="Secretaria" title="Secretaria">
         <div class="card-body">
           <h5 class="card-title">Nombre Apellido</h5>
           <p class="card-text">Secretaria</p>
