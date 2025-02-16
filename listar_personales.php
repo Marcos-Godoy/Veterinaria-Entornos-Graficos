@@ -82,8 +82,8 @@
               echo "<td>{$personal['email']}</td>";
               echo "<td>{$personal['rol']}</td>";
               echo "<td>";
-              echo "<a href='modificar_personal.php?id={$personal['id']}' class='btn btn-info'>Modificar</a>";
-              echo "<a href='dar_baja_personal.php?id={$personal['id']}' class='btn btn-danger'>Dar de Baja</a>";
+              echo "<a href='modificar_personal.php?id={$personal['id']}' class='btn btn-info' title='Modificar personal'>Modificar</a>";
+              echo "<a href='dar_baja_personal.php?id={$personal['id']}' class='btn btn-danger' title='Eliminar personal'>Dar de Baja</a>";
               echo "</td>";
               echo "</tr>";
           }
@@ -95,8 +95,8 @@
       ?>
     </tbody>
   </table>
-  <a href="ingresar_personal.php" class="btn btn-success">Nuevo Personal</a>
-  <a href="gestionar-mi-perfil.php" class="btn btn-primary">Volver</a>
+  <a href="ingresar_personal.php" class="btn btn-success" title="Registrar un nuevo personal">Nuevo Personal</a>
+  <a href="gestionar-mi-perfil.php" class="btn btn-primary" title="Volver a pestaña anterior">Volver</a>
 </div>
 <br>
 

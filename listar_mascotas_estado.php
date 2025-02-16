@@ -95,9 +95,9 @@ $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
                     echo "<td>{$mascota_activa['fecha_de_nac']}</td>";
                     echo "<td>";
                     echo "<div class='btn-group' role='group'>";
-                    echo "<a href='generar_carnet.php?nombre_mascota={$mascota_activa['nombre']}' class='btn btn-info'>Ver Carnet</a>";
-                    echo "<a href='modificar_mascota.php?id={$mascota_activa['id']}' class='btn btn-warning'>Modificar</a>";
-                    echo "<button class='btn btn-danger' data-toggle='modal' data-target='#eliminarModal' data-id='{$mascota_activa['id']}'>Eliminar</button>";
+                    echo "<a href='generar_carnet.php?nombre_mascota={$mascota_activa['nombre']}' class='btn btn-info' title='Consultar carnet de mascota'>Ver Carnet</a>";
+                    echo "<a href='modificar_mascota.php?id={$mascota_activa['id']}' class='btn btn-warning' title='Modificar mascota'>Modificar</a>";
+                    echo "<button class='btn btn-danger' data-toggle='modal' data-target='#eliminarModal' data-id='{$mascota_activa['id']}' title='Eliminar mascota'>Eliminar</button>";
                     echo "</div>";
                     echo "</td>";
                     echo "</tr>";
@@ -175,8 +175,8 @@ $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
         </tbody>
     </table>
     <br>
-    <a href="registrar_mascota.php" class="btn btn-success">Nueva Mascota</a>
-    <a href="gestionar-mi-perfil.php" class="btn btn-primary">Volver</a>
+    <a href="registrar_mascota.php" class="btn btn-success" title="Registrar nueva mascota">Nueva Mascota</a>
+    <a href="gestionar-mi-perfil.php" class="btn btn-primary" title="Volver a pestaña anterior">Volver</a>
 </div>
 <br>
 <footer class="footer bg-dark text-light">

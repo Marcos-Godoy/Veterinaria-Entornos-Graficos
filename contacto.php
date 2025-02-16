@@ -73,7 +73,7 @@
       <label for="mensaje">Mensaje:</label>
       <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Ingrese su mensaje"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="submit" class="btn btn-primary" title="Enviar mail a Veterinaria San Anton">Enviar</button>
   </form>
 </div>
 <br><br>

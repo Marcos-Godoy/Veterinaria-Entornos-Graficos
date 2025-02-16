@@ -115,9 +115,9 @@ if ($resultado_atenciones->num_rows > 0) {
         echo "<td>" . $atencion['titulo'] . "</td>";
         echo "<td>" . $atencion['descripcion'] . "</td>";
         if (!empty($mascota['fecha_muerte']) && $mascota['fecha_muerte'] != '0000-00-00') {
-          echo "<td><a href='editar_atencion.php?id=" . $atencion['id'] . "' class = 'btn btn-primary disabled'>Editar</a></td>";
+          echo "<td><a href='editar_atencion.php?id=" . $atencion['id'] . "' class = 'btn btn-primary disabled' title='No puede editar una mascota fallecida'>Editar</a></td>";
         } else {
-          echo "<td><a href='editar_atencion.php?id=" . $atencion['id'] . "' class = 'btn btn-primary'>Editar</a></td>";
+          echo "<td><a href='editar_atencion.php?id=" . $atencion['id'] . "' class = 'btn btn-primary' title='Editar mascota'>Editar</a></td>";
         }
         echo "</tr>";
     }
@@ -126,7 +126,7 @@ if ($resultado_atenciones->num_rows > 0) {
     echo "<p>No hay atenciones registradas para esta mascota.</p>";
 }
 
-    echo "<br><a href='gestionar-mi-perfil.php' class='btn btn-secondary'>Volver</a></div><br>
+    echo "<br><a href='gestionar-mi-perfil.php' class='btn btn-secondary' title='Volver a pestaña anterior'>Volver</a></div><br>
     <footer class='footer bg-dark text-light'>
   <div class='container'>
     <div class='row'>

@@ -87,8 +87,8 @@
             <option value="3" <?php if ($personal['rol_id'] == 3) echo 'selected'; ?>>Veterinario</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-        <a href="listar_personales.php" class="btn btn-secondary">Volver</a>
+        <button type="submit" class="btn btn-primary" title="Confirmar modificación de personal">Guardar Cambios</button>
+        <a href="listar_personales.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
       </form>
   <?php
   } else {

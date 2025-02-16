@@ -114,7 +114,7 @@ $conn->close();
         <div class="form-group">
             <label for="foto">Foto:</label>
             <input type="file" class="form-control" id="foto" name="foto">
-            <img src="<?php echo $mascota['foto']; ?>" alt="Foto de <?php echo $mascota['nombre']; ?>" style="width: 100px; height: auto;">
+            <img src="<?php echo $mascota['foto']; ?>" alt="Foto de <?php echo $mascota['nombre']; ?>" style="width: 100px; height: auto;" title="Foto de la mascota">
         </div>
         <div class="form-group">
             <label for="raza">Raza:</label>
@@ -132,8 +132,8 @@ $conn->close();
             <label for="fecha_muerte">Fecha de Muerte:</label>
             <input type="date" class="form-control" id="fecha_muerte" name="fecha_muerte" value="<?php echo $mascota['fecha_muerte']; ?>">
         </div>
-        <button type="submit" class="btn btn-primary">Actualizar Mascota</button>
-        <a href="listar_mascotas_estado.php" class="btn btn-secondary">Volver</a>
+        <button type="submit" class="btn btn-primary" title="Confirmar modificación de mascota">Guardar Cambios</button>
+        <a href="listar_mascotas_estado.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
     </form>
 </div>
 <br>

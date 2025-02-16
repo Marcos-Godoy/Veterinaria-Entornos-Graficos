@@ -56,14 +56,14 @@ session_start();
     <div class="row">
       <div class="col-md-3">
         <div class="list-group">
-          <a href="ingresar_cliente.php" class="list-group-item list-group-item-action active">Registrar Cliente</a>
+          <a href="ingresar_cliente.php" class="list-group-item list-group-item-action active" title="Registrar un nuevo cliente en el sistema">Registrar Cliente</a>
           <!--<a href="ingresar_personal.php" class="list-group-item list-group-item-action">Registrar Personal</a>-->
-          <a href="listar_personales.php" class="list-group-item list-group-item-action">Gestionar Personales</a>
+          <a href="listar_personales.php" class="list-group-item list-group-item-action" title="Registrar, consultar, modificar y eliminar personal">Gestionar Personales</a>
           <!--<a href="registrar_mascota.php" class="list-group-item list-group-item-action">Registrar Mascota</a>-->
-          <a href="listar_mascotas_estado.php" class="list-group-item list-group-item-action">Gestionar Mascotas</a>
-          <a href="completar_atencion.php" class="list-group-item list-group-item-action">Registrar Atención</a>
-          <a href="consultar_carnet.php" class="list-group-item list-group-item-action">Gestionar Atenciones</a>
-          <a href="generar_turno.php" class="list-group-item list-group-item-action">Generar Turnos</a>
+          <a href="listar_mascotas_estado.php" class="list-group-item list-group-item-action" title="Registrar, consultar, modificar y eliminar personal">Gestionar Mascotas</a>
+          <a href="completar_atencion.php" class="list-group-item list-group-item-action" title="Registrar una nueva atención de una mascota">Registrar Atención</a>
+          <a href="consultar_carnet.php" class="list-group-item list-group-item-action" title="Consultar y modificar atenciones">Gestionar Atenciones</a>
+          <a href="generar_turno.php" class="list-group-item list-group-item-action" title="Crear nuevos turnos">Generar Turnos</a>
           <!--<a href="buscar_cliente.html" class="list-group-item list-group-item-action">Listar Mascotas por Cliente</a>-->
         </div>
       </div>

@@ -61,8 +61,8 @@
       <label for="nombre_mascota">Nombre de la Mascota:<span class="text-danger">*</span></label>
       <input type="text" class="form-control" id="nombre_mascota" name="nombre_mascota" placeholder="Nombre de la mascota" required>
     </div>
-    <button type="submit" class="btn btn-primary">Generar Carnet</button>
-    <a href="gestionar-mi-perfil.php" class="btn btn-secondary">Volver</a>
+    <button type="submit" class="btn btn-primary" title="Consultar carnet de mascota">Generar Carnet</button>
+    <a href="gestionar-mi-perfil.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
   </form>
 </div>
 

@@ -84,7 +84,7 @@ $resultado_turnos = $conn->query($consulta_turnos);
                     echo "<td>{$turno['tipo']}</td>";
 
                     // Botón para tomar el turno
-                    echo "<td><a href='tomar_turno.php?id={$turno['id']}' class='btn btn-primary'>Tomar Turno</a></td>";
+                    echo "<td><a href='tomar_turno.php?id={$turno['id']}' class='btn btn-primary' title='Elegir este turno'>Tomar Turno</a></td>";
 
                     echo "</tr>";
                 }
@@ -95,7 +95,7 @@ $resultado_turnos = $conn->query($consulta_turnos);
 
         </tbody>
     </table>
-    <a href="gestionar-mi-perfil.php" class="btn btn-secondary">Volver</a>
+    <a href="gestionar-mi-perfil.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
 </div>
 <br>
 

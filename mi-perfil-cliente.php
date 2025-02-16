@@ -56,7 +56,7 @@
     <div class="row">
         <div class="col-md-3">
             <div class="list-group">
-                <a href="tomar_turno.php" class="list-group-item list-group-item-action active">Solicitar Turno</a>
+                <a href="tomar_turno.php" class="list-group-item list-group-item-action active" title="Tomar un turno">Solicitar Turno</a>
             </div>
         </div>
         <div class="col-md-9">

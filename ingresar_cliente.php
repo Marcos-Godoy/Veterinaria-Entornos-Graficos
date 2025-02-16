@@ -84,8 +84,8 @@
       <label for="clave">Clave:<span class="text-danger">*</span></label>
       <input type="password" class="form-control" id="clave" name="clave" placeholder="Ingrese clave" required>
     </div>
-    <button type="submit" class="btn btn-primary">Registrar Cliente</button>
-    <a href="gestionar-mi-perfil.php" class="btn btn-secondary">Volver</a>
+    <button type="submit" class="btn btn-primary" title="Confirmar registro de nuevo cliente">Registrar Cliente</button>
+    <a href="gestionar-mi-perfil.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
   </form>
 </div>
 <br><br><br>

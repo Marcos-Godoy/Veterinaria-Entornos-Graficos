@@ -90,8 +90,8 @@ if ($resultado_atencion->num_rows > 0) {
             <textarea name="descripcion"><?php echo $atencion['descripcion']; ?></textarea><br>
 
             <input type="hidden" name="id_atencion" value="<?php echo $atencion['id']; ?>">
-            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-            <a href="gestionar-mi-perfil.php" class="btn btn-secondary">Volver</a>
+            <button type="submit" class="btn btn-primary" title="Confirmar modificación de atención">Guardar Cambios</button>
+            <a href="gestionar-mi-perfil.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
         </form>
     </div>
     <br>

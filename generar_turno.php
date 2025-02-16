@@ -81,8 +81,8 @@ session_start();
               <label for="personal_id">Personal ID:<span class="text-danger">*</span></label>
               <input type="text" class="form-control" id="personal_id" name="personal_id" required>
             </div>
-            <button type="submit" class="btn btn-primary">Generar Turno</button>
-            <a href="gestionar-mi-perfil.php" class="btn btn-secondary">Volver</a>
+            <button type="submit" class="btn btn-primary" title="Confirmar datos del nuevo turno">Generar Turno</button>
+            <a href="gestionar-mi-perfil.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
         </form>
     </div>
 </div>

@@ -88,8 +88,8 @@
       <label for="descripcion">Descripción:</label>
       <textarea class="form-control" id="descripcion" name="descripcion" rows="4" placeholder="Ingrese la descripción"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Completar Atención</button>
-    <a href="gestionar-mi-perfil.php" class="btn btn-secondary">Volver</a>
+    <button type="submit" class="btn btn-primary" title="Registrar nueva atención de mascota">Completar Atención</button>
+    <a href="gestionar-mi-perfil.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
   </form>
 </div>
 
