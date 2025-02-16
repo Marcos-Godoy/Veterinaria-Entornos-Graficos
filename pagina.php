@@ -62,6 +62,11 @@
   </div>
 </nav>
 
+<header class="bg-primary text-white text-center py-3">
+  <h1>Bienvenidos a Veterinaria San Anton</h1>
+  <p>Tu mejor opción para el cuidado de tus mascotas</p>
+</header>
+
 <div id="carouselExample" class="carousel slide" data-ride="carousel" > 
   <div class="carousel-inner">
     <div class="carousel-item active">
