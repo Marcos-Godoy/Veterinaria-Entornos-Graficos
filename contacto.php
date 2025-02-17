@@ -56,10 +56,11 @@
     </ul>
   </div>
 </nav>
-<br>    
+<br><br>    
 
 <div class="container">
-  <h2>Formulario de Contacto</h2>
+  <h1 class="text-center">Formulario de Contacto</h1>
+  <hr>
   <form action="enviar_email.php" method="post">
     <div class="form-group">
       <label for="nombre">Nombre:</label>
@@ -76,7 +77,7 @@
     <button type="submit" class="btn btn-primary" title="Enviar mail a Veterinaria San Anton">Enviar</button>
   </form>
 </div>
-<br><br>
+<br><br><br>
 
 <footer class="footer bg-dark text-light">
   <div class="container">

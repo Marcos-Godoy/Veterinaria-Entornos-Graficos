@@ -67,13 +67,13 @@ session_start();
               <select class="form-control" id="servicio_id" name="servicio_id" required>
                 <option value="" disabled selected>Seleccione un servicio</option>
                 <option value="1">Consulta General</option>
-                <option value="2">Vacunación</option>
-                <option value="3">Desparasitación</option>
+                <option value="2">Vacunaciones</option>
+                <option value="3">Desparasitaciones</option>
                 <option value="4">Tratamientos</option>
                 <option value="5">Curaciones</option>
-                <option value="6">Baño</option>
-                <option value="7">Corte de Uñas</option>
-                <option value="8">Cirugía</option>
+                <option value="6">Limpiezas</option>
+                <option value="7">Cortes</option>
+                <option value="8">Operaciones</option>
                 <option value="9">Otros</option>
               </select>
             </div>

@@ -76,11 +76,10 @@
     </ul>
   </div>
 </nav>
-<br>
-
+<br><br>
 
 <div class="container">
-  <h2 style="text-align: justify;">Quienes somos?</h2>
+  <h1 class="text-center">¿Quienes Somos?</h1><hr>
   <br>
   <div class="centered-box">
   <h2>Historia de la veterinaria</h2>

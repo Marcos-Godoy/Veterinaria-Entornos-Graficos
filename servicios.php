@@ -105,8 +105,13 @@
   </div>
 </div>
 
-
 <br>
+<div>
+  <h1 style='text-align: center'>Conoce Nuestros Servicios</h1>
+  <hr style='width: 85%'>
+</div>
+<br>
+
 <div class="centered-box">
   <h2>Cuidados Animales</h2>
   <hr>

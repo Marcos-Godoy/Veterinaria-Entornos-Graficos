@@ -14,6 +14,14 @@
       width: 100%;
       height: 500px;
     }
+    .card-custom {
+      background-color: #f8f9fa;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+    .card-custom:hover {
+      transform: scale(1.05);
+      background-color: #e9ecef;
+    }
   </style>
 </head>
 <body>
@@ -86,6 +94,37 @@
     </div>
   </div>
 </div>
+
+<div class="container my-5">
+    <h2 class="text-center">Opiniones de nuestros clientes</h2><hr>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card h-100 card-custom">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Juan Pérez</h5>
+            <p class="card-text flex-grow-1">"Excelente servicio y atención. Mis mascotas siempre reciben el mejor cuidado."</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 card-custom">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">María García</h5>
+            <p class="card-text flex-grow-1">"El personal es muy amable y profesional. Recomiendo esta veterinaria a todos."</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 card-custom">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Lionel Messi</h5>
+            <p class="card-text flex-grow-1">"Siempre confío en Veterinaria San Anton para el cuidado de mis mascotas. Son los mejores."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 <footer class="footer bg-dark text-light">
   <div class="container">
