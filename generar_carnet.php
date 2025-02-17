@@ -33,7 +33,7 @@ if ($resultado_mascota->num_rows > 0) {
     echo "<style>
       body { font-family: 'Arial', sans-serif; background-color: #f0f0f0; }
       .carnet { width: 500px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 15px; }
-      .carnet h2 { text-align: center; color: #333; }
+      .carnet h1 { text-align: center; color: #333; }
       .carnet .info { display: flex; align-items: center; }
       .carnet img { max-width: 150px; height: auto; border-radius: 10px; margin-right: 20px; }
       .carnet table { width: 100%; }
@@ -90,7 +90,7 @@ if ($resultado_mascota->num_rows > 0) {
     } 
 
     echo "<div class='carnet'>";
-    echo "<h2>Carnet de {$mascota['nombre']}</h2><hr>";
+    echo "<h1>Carnet de {$mascota['nombre']}</h1><hr>";
     echo "<div class='info'>";
     echo "<img src='{$mascota['foto']}' alt='Foto de {$mascota['nombre']}' title='Foto de {$mascota['nombre']}'>";
     echo "<table>";

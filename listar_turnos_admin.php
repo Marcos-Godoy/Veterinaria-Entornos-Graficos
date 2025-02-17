@@ -60,7 +60,7 @@ $resultado_turnos = $conn->query($consulta_turnos);
 </nav>
 <br>
 <div class="container">
-    <h2 class="mt-4">Lista de Próximos Turnos</h2>
+    <h1 class="mt-4">Lista de Próximos Turnos</h1>
 
     <table class="table table-bordered mt-3 container">
         <thead>

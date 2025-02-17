@@ -51,10 +51,10 @@ session_start();
     </ul>
   </div>
 </nav>
-<br>  
+<br><br>
 
 <div class="container">
-  <h2>Registrar Mascota</h2>
+  <h1>Registrar Mascota</h1>
   <hr>
   <form action="procesar_registro_mascota.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
@@ -86,7 +86,7 @@ session_start();
   </form>
 </div>
 
-<br>
+<br><br>
 <footer class="footer bg-dark text-light">
   <div class="container">
     <div class="row">

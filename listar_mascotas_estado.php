@@ -77,6 +77,7 @@ $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
 <br>
 
 <div class="container mt-4">
+  <h1>Listado de Mascotas</h1><hr>
     <h3>Mascotas Activas</h3>
     <table class="table table-striped">
         <thead>

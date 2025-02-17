@@ -54,8 +54,7 @@ session_start();
 
 <div class="container mt-4">
     <div class="carnet">
-        <h2>Generar Turno</h2>
-        <hr>
+        <h1>Generar Turno</h1><hr>
         <form action="procesar_turno.php" method="post">
             <div class="form-group">
                 <label for="fecha_hora">Fecha y Hora:<span class="text-danger">*</span></label>

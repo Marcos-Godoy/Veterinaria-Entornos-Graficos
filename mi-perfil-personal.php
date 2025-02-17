@@ -74,7 +74,7 @@ $result = $conn->query($sql);
             </div>
         </div>
         <div class="col-md-9">
-            <h2>Mi Perfil: <?php echo $_SESSION["nombre"]?></h2>
+            <h1>Mi Perfil: <?php echo $_SESSION["nombre"]?></h1>
             <hr>
             <h4>Perfil de Personal</h4>
             <p>Desde acá podés consultar fichas clínicas, registrar y modificar atenciones de las mascotas de la veterinaria.</p>

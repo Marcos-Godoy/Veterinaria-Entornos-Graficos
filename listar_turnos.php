@@ -59,7 +59,7 @@ $resultado_turnos = $conn->query($consulta_turnos);
 </nav>
 <br>
 <div class="container">
-    <h2 class="mt-4">Lista de Turnos Disponibles</h2>
+    <h1 class="mt-4">Lista de Turnos Disponibles</h1>
 
     <table class="table table-bordered mt-3 container">
         <thead>
@@ -97,9 +97,9 @@ $resultado_turnos = $conn->query($consulta_turnos);
     </table>
     <a href="gestionar-mi-perfil.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
 </div>
-<br>
+<br><br>
 
-    <footer class="footer bg-dark text-light">
+  <footer class="footer bg-dark text-light">
   <div class="container">
     <div class="row">
       <div class="col-md-6">

@@ -51,7 +51,7 @@
 <br>
 
 <div class="container mt-4">
-  <h2>Modificar Personal</h2><hr>
+  <h1>Modificar Personal</h1><hr>
 
   <?php
   include 'conexion.php';

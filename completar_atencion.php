@@ -54,7 +54,7 @@
 <br><br>
 
 <div class="container">
-  <h2>Completar Atención</h2>
+  <h1>Completar Atención</h1>
   <hr>
   <form action="procesar_atencion.php" method="post">
     <div class="form-group">

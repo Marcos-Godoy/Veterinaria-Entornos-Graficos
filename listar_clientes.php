@@ -49,7 +49,7 @@
 </nav>
 <br>
 <div class="container mt-4">
-  <h2>Listado de Clientes</h2>
+  <h1>Listado de Clientes</h1>
   <br>
   <table class="table">
     <thead>

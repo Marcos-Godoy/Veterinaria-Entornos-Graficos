@@ -56,13 +56,13 @@
     <div class="row">
         <div class="col-md-3">
             <div class="list-group">
-            <a href="listar_mascotas_estado.php" class="list-group-item list-group-item-action" title="Consultar historia clínica">Mis Mascotas</a>
-                <a href="tomar_turno.php" class="list-group-item list-group-item-action active" title="Tomar un turno">Solicitar Turno</a>
-                <a href="cambiar_clave.php" class="list-group-item list-group-item-action" title="Cambiar contraseña de usuario">Cambiar Contraseña</a>
+              <a href="listar_mascotas_estado.php" class="list-group-item list-group-item-action active" title="Ver historia clínica de mis mascotas">Consultar Historias Clínicas</a>
+              <a href="tomar_turno.php" class="list-group-item list-group-item-action" title="Tomar un turno">Solicitar Turno</a>
+              <a href="cambiar_clave.php" class="list-group-item list-group-item-action" title="Cambiar contraseña de usuario">Cambiar Contraseña</a>
             </div>
         </div>
         <div class="col-md-9">
-            <h2>Mi Perfil: <?php echo $_SESSION["nombre"]?></h2>
+            <h1>Mi Perfil: <?php echo $_SESSION["nombre"]?></h1>
             <hr>
             <h4>Perfil de Cliente</h4>
             <p>Desde acá podés tomar turnos para tus mascotas y consultar los próximos turnos que tenés.</p>

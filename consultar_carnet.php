@@ -55,7 +55,7 @@
 </nav>
 <br>
 <div class="container">
-  <h2>Consultar Carnet de Mascota</h2><hr>
+  <h1>Consultar Carnet de Mascota</h1><hr>
   <form action="generar_carnet.php" method="post">
     <div class="form-group">
       <label for="nombre_mascota">Nombre de la Mascota:<span class="text-danger">*</span></label>
@@ -66,7 +66,7 @@
   </form>
 </div>
 
-<br>
+<br><br>
 <footer class="footer bg-dark text-light">
   <div class="container">
     <div class="row">

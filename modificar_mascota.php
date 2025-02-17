@@ -100,7 +100,7 @@ $conn->close();
 </nav>
 <br>
 <div class="container mt-4">
-    <h2>Modificar Mascota</h2>
+    <h1>Modificar Mascota</h1>
     <hr>
     <form action="modificar_mascota.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $mascota['id']; ?>">

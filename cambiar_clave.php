@@ -49,10 +49,10 @@
     </ul>
   </div>
 </nav>
-<br><br><br>
+<br><br>
 
 <div class="container">
-  <h2>Cambiar Contraseña</h2>
+  <h1>Cambiar Contraseña</h1>
   <hr>
   <form action="cambiar_clave.php" method="post">
     <div class="form-group">

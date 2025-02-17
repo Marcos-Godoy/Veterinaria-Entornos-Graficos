@@ -54,7 +54,7 @@
 <br><br>
 
 <div class="container">
-  <h2>Registrar Cliente</h2>
+  <h1>Registrar Cliente</h1>
   <hr>
   <form action="registrar-cliente.php" method="post">
     <div class="form-group">

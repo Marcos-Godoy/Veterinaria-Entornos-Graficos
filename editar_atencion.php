@@ -73,7 +73,7 @@ if ($resultado_atencion->num_rows > 0) {
     </nav>
     <br><br>
     <div class="form-container">
-        <h2>Editar Atención</h2>
+        <h1 class="text-center">Editar Atención</h1><hr>
         <form action="procesar_edicion_atencion.php" method="post">
             <label for="id_atencion">ID de Atención:</label>
             <input type="text" name="id_atencion" value="<?php echo $atencion['id']; ?>" disabled><br>
