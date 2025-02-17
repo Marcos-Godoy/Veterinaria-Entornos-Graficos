@@ -23,7 +23,7 @@ if ($resultado_atencion->num_rows > 0) {
         <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="icon" href="imagenes/logovet.png" type="image/png">
         <style>
-            body { font-family: 'Arial', sans-serif; background-color: #f0f0f0; }
+            body { background-color: #f0f0f0; }
             .form-container { width: 500px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 15px; }
             label { display: block; margin-bottom: 10px; }
             input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; }
@@ -43,16 +43,16 @@ if ($resultado_atencion->num_rows > 0) {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="quienes-somos.php">Quienes somos?</a>
+                    <a class="nav-link" href="quienes-somos.php" title="Información de la Veterinaria">Quienes somos?</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contacto.php">Contacto</a>
+                    <a class="nav-link" href="contacto.php" title="Formulario de consultas">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="servicios.php">Servicios</a>
+                    <a class="nav-link" href="servicios.php" title="Nuestros servicios">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="gestionar-mi-perfil.php">Mi Perfil</a>
+                    <a class="nav-link" href="gestionar-mi-perfil.php" title="Acciones de usuario">Mi Perfil</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -61,11 +61,11 @@ if ($resultado_atencion->num_rows > 0) {
                         <p class="nav-link" style="color: #007bff; margin: 0; padding: 0.5rem 1rem; text-decoration: none;"><?php echo $_SESSION['nombre']; ?></p>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="logout.php">Cerrar sesión</a>
+                        <a class="nav-link" href="logout.php" title="Cerrar sesión">Cerrar sesión</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.html">Iniciar sesión</a>
+                        <a class="nav-link" href="login.html" title="Iniciar sesión">Iniciar sesión</a>
                     </li>
                 <?php endif; ?>
             </ul>
@@ -107,11 +107,11 @@ if ($resultado_atencion->num_rows > 0) {
                     <br>
                     <h5>Mapa de Sitio</h5>
                     <ul class="list-unstyled">
-                        <li><a href="pagina.php">Inicio</a></li>
-                        <li><a href="quienes-somos.php">Quienes somos?</a></li>
-                        <li><a href="servicios.php">Servicios</a></li>
-                        <li><a href="contacto.php">Contacto</a></li>
-                        <li><a href="logout.php">Cerrar Sesión</a></li>
+                        <li><a href="pagina.php" title="Página principal">Inicio</a></li>
+                        <li><a href="quienes-somos.php" title="Información de la Veterinaria">Quienes somos?</a></li>
+                        <li><a href="servicios.php" title="Nuestros servicios">Servicios</a></li>
+                        <li><a href="contacto.php" title="Formulario de consultas">Contacto</a></li>
+                        <li><a href="logout.php" title="Cerrar sesión">Cerrar Sesión</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6">
