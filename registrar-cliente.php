@@ -16,9 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($consulta) === TRUE) {
         // Registro exitoso, muestra el cartel y redirige a la página de perfil
-        echo "<script>alert('Registro exitoso'); window.location.href = 'mi-perfil.php';</script>";
+        echo "<script>alert('Registro exitoso'); window.location.href = 'listar_clientes.php';</script>";
     } else {
-        echo "<script>alert('Error en el registro'); window.location.href = 'mi-perfil.php';</script>";
+        echo "<script>alert('Error en el registro');</script>";
     }
 
     $conn->close();

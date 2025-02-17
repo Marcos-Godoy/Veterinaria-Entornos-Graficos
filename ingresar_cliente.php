@@ -51,10 +51,11 @@
     </ul>
   </div>
 </nav>
-<br>    
+<br><br>
 
 <div class="container">
   <h2>Registrar Cliente</h2>
+  <hr>
   <form action="registrar-cliente.php" method="post">
     <div class="form-group">
       <label for="nombre">Nombre:<span class="text-danger">*</span></label>
@@ -85,7 +86,7 @@
       <input type="password" class="form-control" id="clave" name="clave" placeholder="Ingrese clave" required>
     </div>
     <button type="submit" class="btn btn-primary" title="Confirmar registro de nuevo cliente">Registrar Cliente</button>
-    <a href="gestionar-mi-perfil.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
+    <a href="listar_clientes.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
   </form>
 </div>
 <br><br><br>

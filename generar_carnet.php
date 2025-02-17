@@ -2,9 +2,13 @@
 session_start();
 include 'conexion.php';
 
-// Obtiene el nombre de la mascota desde el formulario (POST) o por la URL (GET)
-$nombre_mascota = isset($_POST['nombre_mascota']) ? $_POST['nombre_mascota'] : (isset($_GET['nombre_mascota']) ? $_GET['nombre_mascota'] : null);
+//$nombre_mascota = isset($_POST['nombre_mascota']) ? $_POST['nombre_mascota'] : (isset($_GET['nombre_mascota']) ? $_GET['nombre_mascota'] : null);
 
+if(isset($_POST['nombre_mascota'])) {
+    $nombre_mascota = $_POST['nombre_mascota'];
+} else {
+    $nombre_mascota = $_GET['nombre_mascota'];
+} 
 // Consulta para obtener la información de la mascota
 $consulta_mascota = "SELECT * FROM mascotas WHERE nombre = '$nombre_mascota'";
 $resultado_mascota = $conn->query($consulta_mascota);
@@ -117,7 +121,11 @@ if ($resultado_atenciones->num_rows > 0) {
         if (!empty($mascota['fecha_muerte']) && $mascota['fecha_muerte'] != '0000-00-00') {
           echo "<td><a href='editar_atencion.php?id=" . $atencion['id'] . "' class = 'btn btn-primary disabled' title='No puede editar una mascota fallecida'>Editar</a></td>";
         } else {
-          echo "<td><a href='editar_atencion.php?id=" . $atencion['id'] . "' class = 'btn btn-primary' title='Editar mascota'>Editar</a></td>";
+          if(isset($_SESSION['rol_id'])){
+            echo "<td><a href='editar_atencion.php?id=" . $atencion['id'] . "&nombre=" . $mascota['nombre'] . "' class='btn btn-primary' title='Editar mascota'>Editar</a></td>";
+          } else {
+            echo "<td>Sin Acciones</td>";
+          }
         }
         echo "</tr>";
     }
@@ -125,9 +133,9 @@ if ($resultado_atenciones->num_rows > 0) {
 } else {
     echo "<p>No hay atenciones registradas para esta mascota.</p>";
 }
-
-    echo "<br><a href='gestionar-mi-perfil.php' class='btn btn-secondary' title='Volver a pestaña anterior'>Volver</a></div><br>
-    <footer class='footer bg-dark text-light'>
+echo "<br><a href='listar_mascotas_estado.php' class='btn btn-primary' title='Volver a pestaña anterior'>Volver</a><br></div>";
+echo "
+<footer class='footer bg-dark text-light'>
   <div class='container'>
     <div class='row'>
       <div class='col-md-6'>

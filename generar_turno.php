@@ -54,9 +54,8 @@ session_start();
 
 <div class="container mt-4">
     <div class="carnet">
-        <h2 class="text-center">Generar Turno</h2>
+        <h2>Generar Turno</h2>
         <hr>
-
         <form action="procesar_turno.php" method="post">
             <div class="form-group">
                 <label for="fecha_hora">Fecha y Hora:<span class="text-danger">*</span></label>
@@ -82,7 +81,7 @@ session_start();
               <input type="text" class="form-control" id="personal_id" name="personal_id" required>
             </div>
             <button type="submit" class="btn btn-primary" title="Confirmar datos del nuevo turno">Generar Turno</button>
-            <a href="gestionar-mi-perfil.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
+            <a href="listar_turnos_admin.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
         </form>
     </div>
 </div>

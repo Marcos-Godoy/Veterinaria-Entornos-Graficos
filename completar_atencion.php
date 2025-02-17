@@ -51,7 +51,7 @@
     </ul>
     </div>
   </nav>
-<br>
+<br><br>
 
 <div class="container">
   <h2>Completar Atención</h2>
@@ -93,7 +93,7 @@
   </form>
 </div>
 
-<br>
+<br><br>
 
 <footer class="footer bg-dark text-light">
   <div class="container">

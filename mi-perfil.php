@@ -56,19 +56,17 @@ session_start();
     <div class="row">
       <div class="col-md-3">
         <div class="list-group">
-          <a href="ingresar_cliente.php" class="list-group-item list-group-item-action active" title="Registrar un nuevo cliente en el sistema">Registrar Cliente</a>
-          <!--<a href="ingresar_personal.php" class="list-group-item list-group-item-action">Registrar Personal</a>-->
+          <a href="listar_clientes.php" class="list-group-item list-group-item-action active" title="Registrar un nuevo cliente en el sistema">Gestionar Clientes</a>
           <a href="listar_personales.php" class="list-group-item list-group-item-action" title="Registrar, consultar, modificar y eliminar personal">Gestionar Personales</a>
-          <!--<a href="registrar_mascota.php" class="list-group-item list-group-item-action">Registrar Mascota</a>-->
           <a href="listar_mascotas_estado.php" class="list-group-item list-group-item-action" title="Registrar, consultar, modificar y eliminar personal">Gestionar Mascotas</a>
+          <a href="listar_turnos_admin.php" class="list-group-item list-group-item-action" title="Crear nuevos turnos">Gestionar Turnos</a>
           <a href="completar_atencion.php" class="list-group-item list-group-item-action" title="Registrar una nueva atención de una mascota">Registrar Atención</a>
           <a href="consultar_carnet.php" class="list-group-item list-group-item-action" title="Consultar y modificar atenciones">Gestionar Atenciones</a>
-          <a href="generar_turno.php" class="list-group-item list-group-item-action" title="Crear nuevos turnos">Generar Turnos</a>
-          <!--<a href="buscar_cliente.html" class="list-group-item list-group-item-action">Listar Mascotas por Cliente</a>-->
+          <a href="cambiar_clave.php" class="list-group-item list-group-item-action" title="Cambiar la contraseña de usuario">Cambiar Contraseña</a>
         </div>
       </div>
       <div class="col-md-9">
-        <h2>Mi Perfil</h2>
+        <h2>Mi Perfil: <?php echo $_SESSION["nombre"]?></h2>
         <hr>
         <h4>Perfil de Administrador</h4>
         <p>Desde aqui podes consultar fichas clinicas, registrar a un cliente y/o un servicio, etc. </p>

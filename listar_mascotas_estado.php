@@ -9,7 +9,11 @@ $pagina_actual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 $offset = ($pagina_actual - 1) * $registros_por_pagina;
 
 // Consulta SQL para obtener el número total de registros de mascotas activas
-$total_registros_query = "SELECT COUNT(*) as total FROM mascotas WHERE fecha_muerte = '0000-00-00'";
+if(isset($_SESSION["rol_id"])){
+  $total_registros_query = "SELECT COUNT(*) as total FROM mascotas WHERE fecha_muerte = '0000-00-00'";
+} else {
+  $total_registros_query = "SELECT COUNT(*) as total FROM mascotas WHERE fecha_muerte = '0000-00-00' AND cliente_id = '".$_SESSION['usuario_id']."'";
+}
 $total_registros_result = $conn->query($total_registros_query);
 $total_registros = $total_registros_result->fetch_assoc()['total'];
 
@@ -17,7 +21,11 @@ $total_registros = $total_registros_result->fetch_assoc()['total'];
 $total_paginas = ceil($total_registros / $registros_por_pagina);
 
 // Consulta SQL para obtener los registros de la página actual de mascotas activas
-$consulta_mascotas_activas = "SELECT * FROM mascotas WHERE fecha_muerte = '0000-00-00' LIMIT $registros_por_pagina OFFSET $offset";
+if(isset($_SESSION["rol_id"])){
+  $consulta_mascotas_activas = "SELECT * FROM mascotas WHERE fecha_muerte = '0000-00-00' LIMIT $registros_por_pagina OFFSET $offset";
+} else {
+  $consulta_mascotas_activas = "SELECT * FROM mascotas WHERE fecha_muerte = '0000-00-00' AND cliente_id = '".$_SESSION['usuario_id']."' LIMIT $registros_por_pagina OFFSET $offset";
+}
 $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
 ?>
 
@@ -95,9 +103,15 @@ $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
                     echo "<td>{$mascota_activa['fecha_de_nac']}</td>";
                     echo "<td>";
                     echo "<div class='btn-group' role='group'>";
-                    echo "<a href='generar_carnet.php?nombre_mascota={$mascota_activa['nombre']}' class='btn btn-info' title='Consultar carnet de mascota'>Ver Carnet</a>";
-                    echo "<a href='modificar_mascota.php?id={$mascota_activa['id']}' class='btn btn-warning' title='Modificar mascota'>Modificar</a>";
-                    echo "<button class='btn btn-danger' data-toggle='modal' data-target='#eliminarModal' data-id='{$mascota_activa['id']}' title='Eliminar mascota'>Eliminar</button>";
+                    echo "<a href='generar_carnet.php?nombre_mascota={$mascota_activa['nombre']}' class='btn btn-info' title='Consultar carnet de mascota'>Ver Carnet</a>";                     
+                    if(isset($_SESSION["rol_id"]))
+                    {
+                      if($_SESSION["rol_id"]==1)
+                      {
+                        echo "<a href='modificar_mascota.php?id={$mascota_activa['id']}' class='btn btn-warning' title='Modificar mascota'>Modificar</a>";
+                        echo "<button class='btn btn-danger' data-toggle='modal' data-target='#eliminarModal' data-id='{$mascota_activa['id']}' title='Eliminar mascota'>Eliminar</button>";
+                      }
+                    }
                     echo "</div>";
                     echo "</td>";
                     echo "</tr>";
@@ -151,7 +165,12 @@ $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
         </thead>
         <tbody>
             <?php
-            $consulta_mascotas_muertas = "SELECT * FROM mascotas WHERE fecha_muerte != '0000-00-00'";
+            if(isset($_SESSION["rol_id"]))
+            {
+              $consulta_mascotas_muertas = "SELECT * FROM mascotas WHERE fecha_muerte != '0000-00-00'";
+            } else {
+              $consulta_mascotas_muertas = "SELECT * FROM mascotas WHERE fecha_muerte != '0000-00-00' AND cliente_id = '".$_SESSION['usuario_id']."'";
+            }
             $resultado_mascotas_muertas = $conn->query($consulta_mascotas_muertas);
 
             if ($resultado_mascotas_muertas->num_rows > 0) {
@@ -175,10 +194,14 @@ $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
         </tbody>
     </table>
     <br>
-    <a href="registrar_mascota.php" class="btn btn-success" title="Registrar nueva mascota">Nueva Mascota</a>
+    <?php
+      if(isset($_SESSION["rol_id"]) && $_SESSION["rol_id"]==1){
+        echo '<a href="registrar_mascota.php" class="btn btn-success" title="Registrar nueva mascota">Nueva Mascota</a>';
+      }
+    ?>
     <a href="gestionar-mi-perfil.php" class="btn btn-primary" title="Volver a pestaña anterior">Volver</a>
 </div>
-<br>
+<br><br>
 <footer class="footer bg-dark text-light">
   <div class="container">
     <div class="row">

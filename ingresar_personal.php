@@ -1,5 +1,5 @@
 <?php
-session_start();
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -51,10 +51,11 @@ session_start();
     </ul>
   </div>
 </nav>
-<br>    
+<br><br>  
 
 <div class="container">
   <h2>Registrar Personal</h2>
+  <hr>
   <form action="registrar_personal.php" method="post">
     <div class="form-group">
       <label for="nombre">Nombre:<span class="text-danger">*</span></label>
@@ -85,7 +86,7 @@ session_start();
     <a href="listar_personales.php" class="btn btn-secondary">Volver</a>
   </form>
 </div>
-<br>
+<br><br>
 
 <footer class="footer bg-dark text-light">
   <div class="container">

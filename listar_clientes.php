@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Listado de Personales</title>
+  <title>Listado de Clientes</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="icon" href="imagenes/logovet.png" type="image/png">
 </head>
@@ -49,7 +49,7 @@
 </nav>
 <br>
 <div class="container mt-4">
-  <h2>Listado de Personales</h2>
+  <h2>Listado de Clientes</h2>
   <br>
   <table class="table">
     <thead>
@@ -58,43 +58,41 @@
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Email</th>
-        <th>Rol</th>
-        <th>Acciones</th>
+        <th>Ciudad</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Clave</th>
       </tr>
     </thead>
     <tbody>
       <?php
       
       include 'conexion.php';
+      $consulta = "select * from clientes";
+      $result = $conn->query($consulta);
 
-      // Consulta para obtener la lista de personales
-      $consulta_personales = "SELECT p.id, p.nombre, p.apellido, p.email, r.nombre as rol FROM personal p inner join roles r on p.rol_id = r.id";
-      $resultado_personales = $conn->query($consulta_personales);
-
-      // Muestra la lista de personales
-      if ($resultado_personales->num_rows > 0) {
-          while ($personal = $resultado_personales->fetch_assoc()) {
+      if ($result->num_rows > 0) {
+          while ($cli = $result->fetch_assoc()) {
               echo "<tr>";
-              echo "<td>{$personal['id']}</td>";
-              echo "<td>{$personal['nombre']}</td>";
-              echo "<td>{$personal['apellido']}</td>";
-              echo "<td>{$personal['email']}</td>";
-              echo "<td>{$personal['rol']}</td>";
-              echo "<td>";
-              echo "<a href='modificar_personal.php?id={$personal['id']}' class='btn btn-info' title='Modificar personal'>Modificar</a>";
-              echo "<a href='dar_baja_personal.php?id={$personal['id']}' class='btn btn-danger' title='Eliminar personal'>Dar de Baja</a>";
-              echo "</td>";
+              echo "<td>{$cli['id']}</td>";
+              echo "<td>{$cli['nombre']}</td>";
+              echo "<td>{$cli['apellido']}</td>";
+              echo "<td>{$cli['email']}</td>";
+              echo "<td>{$cli['ciudad']}</td>";
+              echo "<td>{$cli['direccion']}</td>";
+              echo "<td>{$cli['telefono']}</td>";
+              echo "<td>{$cli['clave']}</td>";
               echo "</tr>";
           }
       } else {
-          echo "<tr><td colspan='6'>No hay personales registrados.</td></tr>";
+          echo "<tr><td colspan='6'>No hay clientes registrados.</td></tr>";
       }
 
       $conn->close();
       ?>
     </tbody>
   </table>
-  <a href="ingresar_personal.php" class="btn btn-success" title="Registrar un nuevo personal">Nuevo Personal</a>
+  <a href="ingresar_cliente.php" class="btn btn-success" title="Registrar un nuevo cliente">Registrar Cliente</a>
   <a href="gestionar-mi-perfil.php" class="btn btn-primary" title="Volver a pestaña anterior">Volver</a>
 </div>
 <br><br>

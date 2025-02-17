@@ -68,12 +68,13 @@ $result = $conn->query($sql);
     <div class="row">
         <div class="col-md-3">
             <div class="list-group">
-                <a href="completar_atencion.php" class="list-group-item list-group-item-action" title="Registrar una nueva atención de una mascota">Registrar Atención</a>
-                <a href="consultar_carnet.php" class="list-group-item list-group-item-action" title="Consultar y modificar atenciones">Gestionar Atenciones</a>
+                <a href="completar_atencion.php" class="list-group-item list-group-item-action active" title="Registrar una nueva atención de una mascota">Registrar Atención</a>
+                <a href="listar_mascotas_estado.php" class="list-group-item list-group-item-action" title="Consultar y modificar atenciones">Gestionar Atenciones</a>
+                <a href="cambiar_clave.php" class="list-group-item list-group-item-action" title="Cambiar contraseña de usuario">Cambiar Contraseña</a>
             </div>
         </div>
         <div class="col-md-9">
-            <h2>Mi Perfil</h2>
+            <h2>Mi Perfil: <?php echo $_SESSION["nombre"]?></h2>
             <hr>
             <h4>Perfil de Personal</h4>
             <p>Desde acá podés consultar fichas clínicas, registrar y modificar atenciones de las mascotas de la veterinaria.</p>

@@ -20,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $raza = $_POST["raza"];
     $color = $_POST["color"];
     $fecha_de_nac = $_POST["fecha_de_nac"];
-    $fecha_muerte = $_POST["fecha_muerte"];
 
     // Manejo de la foto
     if ($_FILES["foto"]["name"]) {
@@ -40,12 +39,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Actualiza los datos de la mascota en la base de datos
-    $update_query = "UPDATE mascotas SET nombre='$nombre', raza='$raza', color='$color', fecha_de_nac='$fecha_de_nac', fecha_muerte='$fecha_muerte' $foto_query WHERE id=$id";
+    $update_query = "UPDATE mascotas SET nombre='$nombre', raza='$raza', color='$color', fecha_de_nac='$fecha_de_nac' $foto_query WHERE id=$id";
     if ($conn->query($update_query) === TRUE) {
-        //echo "Mascota actualizada exitosamente.";
         echo "<script>alert('Actualizacion exitosa'); window.location.href = 'listar_mascotas_estado.php';</script>";
     } else {
-        //echo "Error: " . $update_query . "<br>" . $conn->error;
         echo "<script>alert('Error en actualizar mascota'); window.location.href = 'listar_mascotas_estado.php';</script>";
     }
 } else {
@@ -101,7 +98,7 @@ $conn->close();
     </ul>
   </div>
 </nav>
-
+<br>
 <div class="container mt-4">
     <h2>Modificar Mascota</h2>
     <hr>
@@ -128,15 +125,11 @@ $conn->close();
             <label for="fecha_de_nac">Fecha de Nacimiento:</label>
             <input type="date" class="form-control" id="fecha_de_nac" name="fecha_de_nac" value="<?php echo $mascota['fecha_de_nac']; ?>">
         </div>
-        <div class="form-group">
-            <label for="fecha_muerte">Fecha de Muerte:</label>
-            <input type="date" class="form-control" id="fecha_muerte" name="fecha_muerte" value="<?php echo $mascota['fecha_muerte']; ?>">
-        </div>
         <button type="submit" class="btn btn-primary" title="Confirmar modificación de mascota">Guardar Cambios</button>
         <a href="listar_mascotas_estado.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
     </form>
 </div>
-<br>
+<br><br>
 <footer class="footer bg-dark text-light">
   <div class="container">
     <div class="row">

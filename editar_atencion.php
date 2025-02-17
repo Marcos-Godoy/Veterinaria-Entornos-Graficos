@@ -5,6 +5,7 @@ include 'conexion.php';
 
 // Obtiene el ID de la atención desde la URL
 $id_atencion = $_GET['id'];
+$nombre = $_GET['nombre'];
 
 // Consulta para obtener la información de la atención
 $consulta_atencion = "SELECT * FROM atenciones WHERE id = '$id_atencion'";
@@ -77,6 +78,9 @@ if ($resultado_atencion->num_rows > 0) {
             <label for="id_atencion">ID de Atención:</label>
             <input type="text" name="id_atencion" value="<?php echo $atencion['id']; ?>" disabled><br>
 
+            <label for="nombre_mascota">Mascota:</label>
+            <input type="text" name="nombre_mascota" value="<?php echo $nombre; ?>" disabled><br>
+
             <label for="servicio">Servicio:</label>
             <input type="text" name="servicio" value="<?php echo obtenerNombreServicio($atencion['servicio_id'], $conn); ?>" disabled><br>
 
@@ -90,8 +94,9 @@ if ($resultado_atencion->num_rows > 0) {
             <textarea name="descripcion"><?php echo $atencion['descripcion']; ?></textarea><br>
 
             <input type="hidden" name="id_atencion" value="<?php echo $atencion['id']; ?>">
+            <input type="hidden" name="nombre_mascota" value="<?php echo $nombre; ?>"> <!-- Campo oculto para nombre_mascota -->
             <button type="submit" class="btn btn-primary" title="Confirmar modificación de atención">Guardar Cambios</button>
-            <a href="gestionar-mi-perfil.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
+            <a href="generar_carnet.php?nombre_mascota=<?php echo $nombre; ?>" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
         </form>
     </div>
     <br>

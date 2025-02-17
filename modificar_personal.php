@@ -48,9 +48,10 @@
     </ul>
   </div>
 </nav>
+<br>
 
 <div class="container mt-4">
-  <h2>Modificar Personal</h2>
+  <h2>Modificar Personal</h2><hr>
 
   <?php
   include 'conexion.php';
@@ -100,7 +101,7 @@
 
 </div>
 
-<br>
+<br><br>
 <footer class="footer bg-dark text-light">
   <div class="container">
     <div class="row">
