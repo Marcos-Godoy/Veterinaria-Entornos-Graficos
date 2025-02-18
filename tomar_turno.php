@@ -1,5 +1,4 @@
 <?php
-// Iniciar sesión
 session_start();
 
 // Verificar si el usuario está autenticado como cliente

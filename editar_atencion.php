@@ -1,27 +1,25 @@
 <?php
-// filepath: /c:/xampp/htdocs/Veterinaria/Veterinaria-Entornos-Graficos/editar_atencion.php
-session_start();
-include 'conexion.php';
+    // filepath: /c:/xampp/htdocs/Veterinaria/Veterinaria-Entornos-Graficos/editar_atencion.php
+    session_start();
+    include 'conexion.php';
 
-// Obtiene el ID de la atención desde la URL
-$id_atencion = $_GET['id'];
-$nombre = $_GET['nombre'];
+    // Obtiene el ID de la atención desde la URL
+    $id_atencion = $_GET['id'];
+    $nombre = $_GET['nombre'];
 
-// Consulta para obtener la información de la atención
-$consulta_atencion = "SELECT * FROM atenciones WHERE id = '$id_atencion'";
-$resultado_atencion = $conn->query($consulta_atencion);
+    // Consulta para obtener la información de la atención
+    $consulta_atencion = "SELECT * FROM atenciones WHERE id = '$id_atencion'";
+    $resultado_atencion = $conn->query($consulta_atencion);
 
-// Verifica si la atención existe
-if ($resultado_atencion->num_rows > 0) {
-    $atencion = $resultado_atencion->fetch_assoc();
-    ?>
+    // Verifica si la atención existe
+    if ($resultado_atencion->num_rows > 0) {
+        $atencion = $resultado_atencion->fetch_assoc();
+?>
     <!DOCTYPE html>
     <html lang="es">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link rel="icon" href="imagenes/logovet.png" type="image/png">
+        <title>Editar Atención</title>
+        <?php include 'headers.php'; ?>
         <style>
             body { background-color: #f0f0f0; }
             .form-container { width: 500px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 15px; }
@@ -32,45 +30,9 @@ if ($resultado_atencion->num_rows > 0) {
         </style>
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg bg-dark">
-        <a class="navbar-brand" href="pagina.php">
-            <img src="imagenes/logovet.png" alt="Logo" title="Logo" width="50" height="50">
-            Veterinaria San Anton
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="quienes-somos.php" title="Información de la Veterinaria">Quienes somos?</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contacto.php" title="Formulario de consultas">Contacto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="servicios.php" title="Nuestros servicios">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="gestionar-mi-perfil.php" title="Acciones de usuario">Mi Perfil</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <?php if (isset($_SESSION['usuario_id'])): ?>
-                    <li class="nav-item">
-                        <p class="nav-link" style="color: #007bff; margin: 0; padding: 0.5rem 1rem; text-decoration: none;"><?php echo $_SESSION['nombre']; ?></p>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php" title="Cerrar sesión">Cerrar sesión</a>
-                    </li>
-                <?php else: ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html" title="Iniciar sesión">Iniciar sesión</a>
-                    </li>
-                <?php endif; ?>
-            </ul>
-        </div>
-    </nav>
+    <?php
+        include 'navbar.php';
+    ?>
     <br><br>
     <div class="form-container">
         <h1 class="text-center">Editar Atención</h1><hr>
@@ -100,34 +62,9 @@ if ($resultado_atencion->num_rows > 0) {
         </form>
     </div>
     <br>
-    <footer class="footer bg-dark text-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <br>
-                    <h5>Mapa de Sitio</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="pagina.php" title="Página principal">Inicio</a></li>
-                        <li><a href="quienes-somos.php" title="Información de la Veterinaria">Quienes somos?</a></li>
-                        <li><a href="servicios.php" title="Nuestros servicios">Servicios</a></li>
-                        <li><a href="contacto.php" title="Formulario de consultas">Contacto</a></li>
-                        <li><a href="logout.php" title="Cerrar sesión">Cerrar Sesión</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <br>
-                    <h5>Contacto</h5>
-                    <address>
-                        Veterinaria San Anton<br>
-                        123 Calle Principal<br>
-                        Rosario, Argentina<br>
-                        Teléfono: 123-456-7890<br>
-                        Correo electrónico: info@example.com
-                    </address>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php
+        include 'footer.php';
+    ?>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

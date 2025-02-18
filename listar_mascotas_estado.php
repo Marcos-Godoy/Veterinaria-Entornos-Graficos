@@ -1,81 +1,46 @@
 <?php
-session_start();
-include 'conexion.php';
+  session_start();
+  include 'conexion.php';
 
-$registros_por_pagina = 5;
+  $registros_por_pagina = 5;
 
-// Obtener el número de la página actual desde la URL, por defecto es 1
-$pagina_actual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
-$offset = ($pagina_actual - 1) * $registros_por_pagina;
+  // Obtener el número de la página actual desde la URL, por defecto es 1
+  $pagina_actual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+  $offset = ($pagina_actual - 1) * $registros_por_pagina;
 
-// Consulta SQL para obtener el número total de registros de mascotas activas
-if(isset($_SESSION["rol_id"])){
-  $total_registros_query = "SELECT COUNT(*) as total FROM mascotas WHERE fecha_muerte = '0000-00-00'";
-} else {
-  $total_registros_query = "SELECT COUNT(*) as total FROM mascotas WHERE fecha_muerte = '0000-00-00' AND cliente_id = '".$_SESSION['usuario_id']."'";
-}
-$total_registros_result = $conn->query($total_registros_query);
-$total_registros = $total_registros_result->fetch_assoc()['total'];
+  // Consulta SQL para obtener el número total de registros de mascotas activas
+  if(isset($_SESSION["rol_id"])){
+    $total_registros_query = "SELECT COUNT(*) as total FROM mascotas WHERE fecha_muerte = '0000-00-00'";
+  } else {
+    $total_registros_query = "SELECT COUNT(*) as total FROM mascotas WHERE fecha_muerte = '0000-00-00' AND cliente_id = '".$_SESSION['usuario_id']."'";
+  }
+  $total_registros_result = $conn->query($total_registros_query);
+  $total_registros = $total_registros_result->fetch_assoc()['total'];
 
-// Calcular el número total de páginas
-$total_paginas = ceil($total_registros / $registros_por_pagina);
+  // Calcular el número total de páginas
+  $total_paginas = ceil($total_registros / $registros_por_pagina);
 
-// Consulta SQL para obtener los registros de la página actual de mascotas activas
-if(isset($_SESSION["rol_id"])){
-  $consulta_mascotas_activas = "SELECT * FROM mascotas WHERE fecha_muerte = '0000-00-00' LIMIT $registros_por_pagina OFFSET $offset";
-} else {
-  $consulta_mascotas_activas = "SELECT * FROM mascotas WHERE fecha_muerte = '0000-00-00' AND cliente_id = '".$_SESSION['usuario_id']."' LIMIT $registros_por_pagina OFFSET $offset";
-}
-$resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
+  // Consulta SQL para obtener los registros de la página actual de mascotas activas
+  if(isset($_SESSION["rol_id"])){
+    $consulta_mascotas_activas = "SELECT * FROM mascotas WHERE fecha_muerte = '0000-00-00' LIMIT $registros_por_pagina OFFSET $offset";
+  } else {
+    $consulta_mascotas_activas = "SELECT * FROM mascotas WHERE fecha_muerte = '0000-00-00' AND cliente_id = '".$_SESSION['usuario_id']."' LIMIT $registros_por_pagina OFFSET $offset";
+  }
+  $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Listar Mascotas por Estado</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="icon" href="imagenes/logovet.png" type="image/png">
+    <?php include 'headers.php'; ?>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg  bg-dark ">
-    <a class="navbar-brand" href="pagina.php">
-      <img src="imagenes/logovet.png" alt="Logo" title="Logo" width="50" height="50">
-        Veterinaria San Anton
-    </a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav mx-auto" >
-      <li class="nav-item">
-        <a class="nav-link" href="quienes-somos.php" title="Información de la Veterinaria">Quienes somos?</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="contacto.php" title="Formulario de consultas">Contacto</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="servicios.php" title="Nuestros servicios">Servicios</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="gestionar-mi-perfil.php" title="Acciones de usuario">Mi Perfil</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <p class="nav-link" style="color: #007bff;margin: 0; padding: 0.5rem 1rem; text-decoration: none;"><?php echo $_SESSION['nombre']; ?></p>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="logout.php" title="Cerrar sesión">Cerrar sesión</a>
-        </li>
-    </ul>
-  </div>
-</nav>
+<?php
+  include 'navbar.php';
+?>
 <br>
-
 <div class="container mt-4">
   <h1>Listado de Mascotas</h1><hr>
     <h3>Mascotas Activas</h3>
@@ -203,34 +168,9 @@ $resultado_mascotas_activas = $conn->query($consulta_mascotas_activas);
     <a href="gestionar-mi-perfil.php" class="btn btn-primary" title="Volver a pestaña anterior">Volver</a>
 </div>
 <br><br>
-<footer class="footer bg-dark text-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <br>
-        <h5>Mapa de Sitio</h5>
-        <ul class="list-unstyled">
-          <li><a href="pagina.php" title="Página principal">Inicio</a></li>
-          <li><a href="quienes-somos.php" title="Información de la Veterinaria">Quienes somos?</a></li>
-          <li><a href="servicios.php" title="Nuestros servicios">Servicios</a></li>
-          <li><a href="contacto.php" title="Formulario de consultas">Contacto</a></li>
-          <li><a href="logout.php" title="Cerrar sesión">Cerrar Sesión</a></li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <br>
-        <h5>Contacto</h5>
-        <address>
-          Veterinaria San Anton<br>
-          123 Calle Principal<br>
-          Rosario, Argentina<br>
-          Teléfono: 123-456-7890<br>
-          Correo electrónico: info@example.com
-        </address>
-      </div>
-    </div>
-  </div>
-</footer>
+<?php
+  include 'footer.php';
+?>
 
 <!-- Modal para eliminar mascota -->
 <div class="modal fade" id="eliminarModal" tabindex="-1" role="dialog" aria-labelledby="eliminarModalLabel" aria-hidden="true">
