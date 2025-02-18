@@ -44,51 +44,52 @@
 <div class="container mt-4">
   <h1>Listado de Mascotas</h1><hr>
     <h3>Mascotas Activas</h3>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Foto</th>
-                <th>Raza</th>
-                <th>Color</th>
-                <th>Fecha de Nacimiento</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if ($resultado_mascotas_activas->num_rows > 0) {
-                while ($mascota_activa = $resultado_mascotas_activas->fetch_assoc()) {
-                    echo "<tr style='background-color: #c8e6c9;'>";
-                    echo "<td>{$mascota_activa['id']}</td>";
-                    echo "<td>{$mascota_activa['nombre']}</td>";
-                    echo "<td><img src='{$mascota_activa['foto']}' alt='Foto de {$mascota_activa['nombre']}' title='Foto de {$mascota_activa['nombre']}' style='width: 50px; height: 40px;'></td>";
-                    echo "<td>{$mascota_activa['raza']}</td>";
-                    echo "<td>{$mascota_activa['color']}</td>";
-                    echo "<td>{$mascota_activa['fecha_de_nac']}</td>";
-                    echo "<td>";
-                    echo "<div class='btn-group' role='group'>";
-                    echo "<a href='generar_carnet.php?nombre_mascota={$mascota_activa['nombre']}' class='btn btn-info' title='Consultar carnet de mascota'>Ver Carnet</a>";                     
-                    if(isset($_SESSION["rol_id"]))
-                    {
-                      if($_SESSION["rol_id"]==1)
+    <div class="table-responsive">
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Foto</th>
+                  <th>Raza</th>
+                  <th>Color</th>
+                  <th>Fecha de Nacimiento</th>
+                  <th>Acciones</th>
+              </tr>
+          </thead>
+          <tbody>
+              <?php
+              if ($resultado_mascotas_activas->num_rows > 0) {
+                  while ($mascota_activa = $resultado_mascotas_activas->fetch_assoc()) {
+                      echo "<tr style='background-color: #c8e6c9;'>";
+                      echo "<td>{$mascota_activa['id']}</td>";
+                      echo "<td>{$mascota_activa['nombre']}</td>";
+                      echo "<td><img src='{$mascota_activa['foto']}' alt='Foto de {$mascota_activa['nombre']}' title='Foto de {$mascota_activa['nombre']}' style='width: 50px; height: 40px;'></td>";
+                      echo "<td>{$mascota_activa['raza']}</td>";
+                      echo "<td>{$mascota_activa['color']}</td>";
+                      echo "<td>{$mascota_activa['fecha_de_nac']}</td>";
+                      echo "<td>";
+                      echo "<div class='btn-group' role='group'>";
+                      echo "<a href='generar_carnet.php?nombre_mascota={$mascota_activa['nombre']}' class='btn btn-info' title='Consultar carnet de mascota'>Ver Carnet</a>";                     
+                      if(isset($_SESSION["rol_id"]))
                       {
-                        echo "<a href='modificar_mascota.php?id={$mascota_activa['id']}' class='btn btn-warning' title='Modificar mascota'>Modificar</a>";
-                        echo "<button class='btn btn-danger' data-toggle='modal' data-target='#eliminarModal' data-id='{$mascota_activa['id']}' title='Eliminar mascota'>Eliminar</button>";
+                        if($_SESSION["rol_id"]==1)
+                        {
+                          echo "<a href='modificar_mascota.php?id={$mascota_activa['id']}' class='btn btn-warning' title='Modificar mascota'>Modificar</a>";
+                          echo "<button class='btn btn-danger' data-toggle='modal' data-target='#eliminarModal' data-id='{$mascota_activa['id']}' title='Eliminar mascota'>Eliminar</button>";
+                        }
                       }
-                    }
-                    echo "</div>";
-                    echo "</td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr style='background-color: #c8e6c9><td colspan='7'>No hay mascotas activas registradas.</td></tr>";
-            }
-            ?>
-        </tbody>
-    </table>
-
+                      echo "</div>";
+                      echo "</td>";
+                      echo "</tr>";
+                  }
+              } else {
+                  echo "<tr style='background-color: #c8e6c9><td colspan='7'>No hay mascotas activas registradas.</td></tr>";
+              }
+              ?>
+          </tbody>
+      </table>
+    </div>
     <!-- Paginación -->
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
@@ -117,48 +118,50 @@
     </nav>
 
     <h3>Mascotas Muertas</h3>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Foto</th>
-                <th>Raza</th>
-                <th>Color</th>
-                <th>Fecha de Nacimiento</th>
-                <th>Fecha de Muerte</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if(isset($_SESSION["rol_id"]))
-            {
-              $consulta_mascotas_muertas = "SELECT * FROM mascotas WHERE fecha_muerte != '0000-00-00'";
-            } else {
-              $consulta_mascotas_muertas = "SELECT * FROM mascotas WHERE fecha_muerte != '0000-00-00' AND cliente_id = '".$_SESSION['usuario_id']."'";
-            }
-            $resultado_mascotas_muertas = $conn->query($consulta_mascotas_muertas);
+    <div class="table-responsive">
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Foto</th>
+                  <th>Raza</th>
+                  <th>Color</th>
+                  <th>Fecha de Nacimiento</th>
+                  <th>Fecha de Muerte</th>
+              </tr>
+          </thead>
+          <tbody>
+              <?php
+              if(isset($_SESSION["rol_id"]))
+              {
+                $consulta_mascotas_muertas = "SELECT * FROM mascotas WHERE fecha_muerte != '0000-00-00'";
+              } else {
+                $consulta_mascotas_muertas = "SELECT * FROM mascotas WHERE fecha_muerte != '0000-00-00' AND cliente_id = '".$_SESSION['usuario_id']."'";
+              }
+              $resultado_mascotas_muertas = $conn->query($consulta_mascotas_muertas);
 
-            if ($resultado_mascotas_muertas->num_rows > 0) {
-                while ($mascota_muerta = $resultado_mascotas_muertas->fetch_assoc()) {
-                    echo "<tr style='background-color: #ffcdd2;'>";
-                    echo "<td>{$mascota_muerta['id']}</td>";
-                    echo "<td>{$mascota_muerta['nombre']}</td>";
-                    echo "<td><img src='{$mascota_muerta['foto']}' alt='Foto de {$mascota_muerta['nombre']}' title='Foto de {$mascota_muerta['nombre']}' style='width: 50px; height: 40px;'></td>";
-                    echo "<td>{$mascota_muerta['raza']}</td>";
-                    echo "<td>{$mascota_muerta['color']}</td>";
-                    echo "<td>{$mascota_muerta['fecha_de_nac']}</td>";
-                    echo "<td>{$mascota_muerta['fecha_muerte']}</td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr style='background-color: #ffcdd2'><td colspan='8'>No hay mascotas muertas registradas.</td></tr>";
-            }
+              if ($resultado_mascotas_muertas->num_rows > 0) {
+                  while ($mascota_muerta = $resultado_mascotas_muertas->fetch_assoc()) {
+                      echo "<tr style='background-color: #ffcdd2;'>";
+                      echo "<td>{$mascota_muerta['id']}</td>";
+                      echo "<td>{$mascota_muerta['nombre']}</td>";
+                      echo "<td><img src='{$mascota_muerta['foto']}' alt='Foto de {$mascota_muerta['nombre']}' title='Foto de {$mascota_muerta['nombre']}' style='width: 50px; height: 40px;'></td>";
+                      echo "<td>{$mascota_muerta['raza']}</td>";
+                      echo "<td>{$mascota_muerta['color']}</td>";
+                      echo "<td>{$mascota_muerta['fecha_de_nac']}</td>";
+                      echo "<td>{$mascota_muerta['fecha_muerte']}</td>";
+                      echo "</tr>";
+                  }
+              } else {
+                  echo "<tr style='background-color: #ffcdd2'><td colspan='8'>No hay mascotas muertas registradas.</td></tr>";
+              }
 
-            $conn->close();
-            ?>
-        </tbody>
-    </table>
+              $conn->close();
+              ?>
+          </tbody>
+      </table>
+    </div>
     <br>
     <?php
       if(isset($_SESSION["rol_id"]) && $_SESSION["rol_id"]==1){
@@ -198,10 +201,6 @@
     </div>
   </div>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script>
   $('#eliminarModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget);

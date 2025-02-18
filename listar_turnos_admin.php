@@ -26,46 +26,47 @@ $resultado_turnos = $conn->query($consulta_turnos);
 <br>
 <div class="container">
     <h1 class="mt-4">Lista de Próximos Turnos</h1>
+    <div class="table-responsive">
+      <table class="table table-bordered mt-3 container table-striped">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Fecha y Hora</th>
+                  <th>Nombre del Servicio</th>
+                  <th>Tipo del Servicio</th>
+                  <th>Estado</th>
+                  <th>Personal</th>
+                  <th>Cliente</th>
+                  <th>Acción</th>
+              </tr>
+          </thead>
+          <tbody>
 
-    <table class="table table-bordered mt-3 container">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Fecha y Hora</th>
-                <th>Nombre del Servicio</th>
-                <th>Tipo del Servicio</th>
-                <th>Estado</th>
-                <th>Personal</th>
-                <th>Cliente</th>
-                <th>Acción</th>
-            </tr>
-        </thead>
-        <tbody>
+              <?php
+              // Mostrar la lista de turnos
+              if ($resultado_turnos->num_rows > 0) {
+                  while ($turno = $resultado_turnos->fetch_assoc()) {
+                      echo "<tr>";
+                      echo "<td>{$turno['id']}</td>";
+                      echo "<td>{$turno['fecha_hora']}</td>";
+                      echo "<td>{$turno['nombre_servicio']}</td>";
+                      echo "<td>{$turno['tipo']}</td>";
+                      echo "<td>{$turno['estado']}</td>";
+                      echo "<td>{$turno['per']}</td>";
+                      echo "<td>{$turno['cli']}</td>";
 
-            <?php
-            // Mostrar la lista de turnos
-            if ($resultado_turnos->num_rows > 0) {
-                while ($turno = $resultado_turnos->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>{$turno['id']}</td>";
-                    echo "<td>{$turno['fecha_hora']}</td>";
-                    echo "<td>{$turno['nombre_servicio']}</td>";
-                    echo "<td>{$turno['tipo']}</td>";
-                    echo "<td>{$turno['estado']}</td>";
-                    echo "<td>{$turno['per']}</td>";
-                    echo "<td>{$turno['cli']}</td>";
+                      echo "<td><a href='eliminar_turno.php?id={$turno['id']}' class='btn btn-danger' title='Eliminar turno'>Eliminar</a></td>";
 
-                    echo "<td><a href='eliminar_turno.php?id={$turno['id']}' class='btn btn-danger' title='Eliminar turno'>Eliminar</a></td>";
+                      echo "</tr>";
+                  }
+              } else {
+                  echo "<tr><td colspan='6'>No hay turnos disponibles.</td></tr>";
+              }
+              ?>
 
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='6'>No hay turnos disponibles.</td></tr>";
-            }
-            ?>
-
-        </tbody>
-    </table>
+          </tbody>
+      </table>
+    </div>
     <a href="generar_turno.php" class="btn btn-primary" title="Ingresar un nuevo turno">Generar Turno</a>
     <a href="gestionar-mi-perfil.php" class="btn btn-secondary" title="Volver a pestaña anterior">Volver</a>
 </div>
@@ -73,10 +74,6 @@ $resultado_turnos = $conn->query($consulta_turnos);
 <?php
   include 'footer.php';
 ?>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

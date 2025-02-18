@@ -36,7 +36,6 @@
 
             // Verificar si el usuario está autenticado
             if (!isset($_SESSION['usuario_id'])) {
-                // Redirigir al inicio de sesión si no está autenticado
                 header("Location: login.html");
                 exit();
             }
@@ -55,7 +54,6 @@
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    //$fechaHora = date("d/m/Y H:i", strtotime($row['fecha_hora']));
                     $fechaHora = date("Y-m-d H:i", strtotime($row['fecha_hora']));
                     $timestampFechaHora = strtotime($fechaHora);
 

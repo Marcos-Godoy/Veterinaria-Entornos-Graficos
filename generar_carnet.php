@@ -60,7 +60,6 @@ if ($resultado_mascota->num_rows > 0) {
     echo "<tr><th>Raza</th><td>" . $mascota['raza'] . "</td></tr>";
     echo "<tr><th>Color</th><td>" . $mascota['color'] . "</td></tr>";
     echo "<tr><th>Fecha de Nacimiento</th><td>" . $mascota['fecha_de_nac'] . "</td></tr>";
-    //echo "<tr><th>Fecha de Muerte</th><td>" . $mascota['fecha_muerte'] . "</td></tr>";
     echo "</table>";
     echo "</div>";
     echo "</div> <br>";
@@ -69,7 +68,8 @@ if ($resultado_mascota->num_rows > 0) {
     echo "<div class=' container atenciones'>";
     echo "<h2>Atenciones de {$mascota['nombre']}</h2><hr>";
 if ($resultado_atenciones->num_rows > 0) {
-    echo "<table>";
+    echo "<div class='table-responsive'>";
+    echo "<table class='table table-striped'>";
     echo "<tr><th>ID</th><th>Servicio</th><th>Personal</th><th>Fecha y Hora</th><th>Título</th><th>Descripción</th><th>Acciones</th></tr>";
     while ($atencion = $resultado_atenciones->fetch_assoc()) {
         echo "<tr>";
@@ -90,23 +90,17 @@ if ($resultado_atenciones->num_rows > 0) {
         }
         echo "</tr>";
     }
-    echo "</table>";
+    echo "</table></div>";
 } else {
     echo "<p>No hay atenciones registradas para esta mascota.</p>";
 }
 echo "<br><a href='listar_mascotas_estado.php' class='btn btn-primary' title='Volver a pestaña anterior'>Volver</a><br></div>";
 include 'footer.php';
-
-    echo "<script src='https://code.jquery.com/jquery-3.2.1.slim.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>";
-    echo "</body>";
-    echo "</html>";
+echo "</body>";
+echo "</html>";
 } else {
     echo "<script>alert('No se encontró la mascota con el nombre proporcionado.'); window.location.href = 'consultar_carnet.php';</script>";
 }
-
-// Cierra la conexión a la base de datos
 $conn->close();
 
 // Funciones auxiliares para obtener nombres de servicio y personal
@@ -120,7 +114,6 @@ function obtenerNombreServicio($servicio_id, $conn) {
         return "Desconocido";
     }
 }
-
 function obtenerNombrePersonal($personal_id, $conn) {
     $consulta = "SELECT email FROM personal WHERE id = '$personal_id'";
     $resultado = $conn->query($consulta);

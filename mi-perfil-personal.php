@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if (!isset($_SESSION['usuario_id'])) {
+      header("Location: login.html");
+      exit();
+  }
+  include 'conexion.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,17 +14,8 @@
 </head>
 <body>
 <?php
-session_start();
-
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.html");
-    exit();
-}
-
-include 'conexion.php';
 include 'navbar.php';
 
-// Consultar los turnos del personal desde la base de datos
 $personal_id = $_SESSION['usuario_id'];
 $sql = "SELECT fecha_hora FROM turnos WHERE personal_id = $personal_id AND estado = 'ocupado' order by fecha_hora";
 $result = $conn->query($sql);
@@ -44,7 +43,6 @@ $result = $conn->query($sql);
     <hr>
     <?php
     if ($result === false) {
-        // Mostrar mensaje de error si la consulta falla
         echo "Error en la consulta: " . $conn->error;
     }
 
