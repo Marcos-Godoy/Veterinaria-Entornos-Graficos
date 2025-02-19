@@ -18,16 +18,21 @@ $id_turno = $_GET['id'];
 
 include 'conexion.php';
 
-// Actualizar el estado del turno a 'ocupado' y asignar el cliente_id
 $cliente_id = $_SESSION['usuario_id'];
-$actualizar_turno = "UPDATE turnos SET estado = 'ocupado', cliente_id = $cliente_id WHERE id = $id_turno";
+// Verificar si el cliente tiene al menos una mascota asociada
+$consulta_mascota = "SELECT * FROM mascotas WHERE cliente_id = $cliente_id and fecha_muerte = '0000-00-00'";
+$resultado_mascota = $conn->query($consulta_mascota);
 
-if ($conn->query($actualizar_turno) === TRUE) {
-    // Éxito al tomar el turno
-    echo "<script>alert('¡Turno tomado con éxito!'); window.location.href = 'listar_turnos.php';</script>";
+if ($resultado_mascota->num_rows > 0) {
+    $actualizar_turno = "UPDATE turnos SET estado = 'ocupado', cliente_id = $cliente_id WHERE id = $id_turno";
+
+    if ($conn->query($actualizar_turno) === TRUE) {
+        echo "<script>alert('¡Turno tomado con éxito!'); window.location.href = 'listar_turnos.php';</script>";
+    } else {
+        echo "<script>alert('Error al tomar el turno.'); window.location.href = 'listar_turnos.php';</script>";
+    }
 } else {
-    // Error al tomar el turno
-    echo "<script>alert('Error al tomar el turno.'); window.location.href = 'listar_turnos.php';</script>";
+    echo "<script>alert('No puedes tomar un turno porque no tienes mascotas activas asociadas.'); window.location.href = 'listar_turnos.php';</script>";
 }
 
 $conn->close();

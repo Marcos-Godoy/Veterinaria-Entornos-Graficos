@@ -54,6 +54,7 @@
                   <th>Raza</th>
                   <th>Color</th>
                   <th>Fecha de Nacimiento</th>
+                  <th>Dueño</th>
                   <th>Acciones</th>
               </tr>
           </thead>
@@ -68,6 +69,7 @@
                       echo "<td>{$mascota_activa['raza']}</td>";
                       echo "<td>{$mascota_activa['color']}</td>";
                       echo "<td>{$mascota_activa['fecha_de_nac']}</td>";
+                      echo "<td>{$mascota_activa['cliente_id']}</td>";
                       echo "<td>";
                       echo "<div class='btn-group' role='group'>";
                       echo "<a href='generar_carnet.php?nombre_mascota={$mascota_activa['nombre']}' class='btn btn-info' title='Consultar carnet de mascota'>Ver Carnet</a>";                     
@@ -84,7 +86,7 @@
                       echo "</tr>";
                   }
               } else {
-                  echo "<tr style='background-color: #c8e6c9><td colspan='7'>No hay mascotas activas registradas.</td></tr>";
+                  echo "<tr style='background-color:#c8e6c9'><td colspan='8'>No hay mascotas activas registradas.</td></tr>";
               }
               ?>
           </tbody>
@@ -129,6 +131,8 @@
                   <th>Color</th>
                   <th>Fecha de Nacimiento</th>
                   <th>Fecha de Muerte</th>
+                  <th>Dueño</th>
+                  <th>Acciones</th>
               </tr>
           </thead>
           <tbody>
@@ -151,10 +155,14 @@
                       echo "<td>{$mascota_muerta['color']}</td>";
                       echo "<td>{$mascota_muerta['fecha_de_nac']}</td>";
                       echo "<td>{$mascota_muerta['fecha_muerte']}</td>";
+                      echo "<td>{$mascota_muerta['cliente_id']}</td>";
+                      echo "<td>";
+                      echo "<div class='btn-group' role='group'>";
+                      echo "<a href='generar_carnet.php?nombre_mascota={$mascota_muerta['nombre']}' class='btn btn-info' title='Consultar carnet de mascota'>Ver Carnet</a></div></td>";
                       echo "</tr>";
                   }
               } else {
-                  echo "<tr style='background-color: #ffcdd2'><td colspan='8'>No hay mascotas muertas registradas.</td></tr>";
+                  echo "<tr style='background-color: #ffcdd2'><td colspan='9'>No hay mascotas muertas registradas.</td></tr>";
               }
 
               $conn->close();

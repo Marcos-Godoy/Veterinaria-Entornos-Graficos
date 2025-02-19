@@ -2,8 +2,6 @@
 session_start();
 include 'conexion.php';
 
-//$nombre_mascota = isset($_POST['nombre_mascota']) ? $_POST['nombre_mascota'] : (isset($_GET['nombre_mascota']) ? $_GET['nombre_mascota'] : null);
-
 if(isset($_POST['nombre_mascota'])) {
     $nombre_mascota = $_POST['nombre_mascota'];
 } else {
@@ -60,6 +58,7 @@ if ($resultado_mascota->num_rows > 0) {
     echo "<tr><th>Raza</th><td>" . $mascota['raza'] . "</td></tr>";
     echo "<tr><th>Color</th><td>" . $mascota['color'] . "</td></tr>";
     echo "<tr><th>Fecha de Nacimiento</th><td>" . $mascota['fecha_de_nac'] . "</td></tr>";
+    echo "<tr><th>Dueño</th><td>" . $mascota['cliente_id'] . "</td></tr>";
     echo "</table>";
     echo "</div>";
     echo "</div> <br>";
@@ -99,7 +98,7 @@ include 'footer.php';
 echo "</body>";
 echo "</html>";
 } else {
-    echo "<script>alert('No se encontró la mascota con el nombre proporcionado.'); window.location.href = 'consultar_carnet.php';</script>";
+    echo "<script>alert('No se encontró la mascota con el nombre proporcionado.'); window.location.href = 'listar_mascotas_estado.php';</script>";
 }
 $conn->close();
 
